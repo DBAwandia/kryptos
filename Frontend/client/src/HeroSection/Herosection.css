@@ -1,0 +1,113 @@
+a{
+    text-decoration: none;
+}
+.Herosection{
+    width: 100%;
+    background-color: #f8f8f6;
+    position: relative;
+}
+
+.video_container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.video_mp4{
+    width: 100%;
+    object-fit: cover;
+    z-index: 99999;
+    position: absolute;
+}
+.hero_container{
+    width: 35%;
+    position: absolute;
+    left: 10%;
+    z-index: 999999;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.hero_header{
+    font-size: 5rem;
+    line-height: var(--line-height-header-main);
+    letter-spacing: var(--letter-spacing);
+    font-weight: bolder;
+}
+.hero_description{
+    font-size: var( --page-list-font);
+    line-height: var(  --line-height-main);
+    letter-spacing: var(--letter-spacing);
+    color: var(--color);
+}
+.hero_button{
+    width: var( --button-width);
+    border: 0;
+    height: var(--button-height);
+    font-size: var(--page-list-font);
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    background-color: #7387ff;
+    color: white;
+}
+.hero_button:hover{
+    background-color: #97a3e4;
+}
+@media screen and (max-width: 642px) {
+    .Herosection{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .video_mp4{
+        height: 100%;
+        object-fit: cover;
+    }
+    .hero_container{
+        width: 80%;
+        top: 5%;
+        gap: 2rem;
+    }
+    .hero_header{
+        font-size: 1.6rem;
+        letter-spacing: var(--mobile-letter-spacing);
+        line-height: var( --mobile-header-line-height);
+    }
+    .hero_description{
+        font-size: var(--mobile-font);
+        letter-spacing: var(--mobile-letter-spacing);
+        line-height: var( --mobile-line-height);
+        font-weight: 595;
+    }
+    .hero_button{
+        width: var(--mobile-button-width);
+        height: var(--mobile-button-height);
+        font-size: var( --mobile-page-list-font);
+        letter-spacing: normal;
+        border-radius: 4px;
+    }
+}
+@media screen and (max-width: 245px) {
+    .hero_container{
+        width: 90%;
+        top: 5%;
+        gap: 0.5rem;
+    }
+    .hero_header{
+        font-size: 1rem;
+        line-height: 26px;
+        
+    }
+    .hero_description{
+        font-size: 0.8rem;
+        line-height: 22px;
+    }
+    .hero_button{
+        width: var(--mobile-button-width);
+        height: var(--mobile-button-height);
+        font-size: var( --mobile-page-list-font);
+        letter-spacing: var(--mobile-letter-spacing);
+    }
+}

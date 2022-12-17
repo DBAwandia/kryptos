@@ -1,0 +1,104 @@
+/* Reapeted css for HomeMarketCoins */
+.HomeMarketCoinss{
+    width: 100%;
+    padding: var(--padding-main);
+    text-align: center;
+    background-color: #f5f5f5;
+
+}
+.HomeMarketCoinss > h1{
+    font-size: var( --header-h1);
+    letter-spacing: var(--letter-spacing);
+    font-weight: bolder;
+    margin: 5rem 0px;
+}
+.HomeMarketCoins_table{
+    width: 100%;
+}
+.table_head{
+    width: 100%;
+    position: relative;
+}
+.table_row{
+    width: 100%;
+    margin-left: 10rem !important;
+}
+.table_cell{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+}
+
+.markets_loading{
+   position: absolute;
+   left: 50%;
+   top: 55% !important;
+}
+.to_add_favorite{
+    width: 70%;
+    padding: 2.5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5.5rem;
+}
+.coin_name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.coin_name > img{
+    width: 4.5rem !important;
+    height: 4.5rem !important;
+    text-align: center;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.coin_name_and_symbol{
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.coin_name_and_symbols{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coin_names{
+    font-size: var(--header-h3);
+    font-weight: bold;
+}
+.coin_symbols{
+    font-size: var(--header-h3);
+    font-weight: 450;
+}
+.star{
+    font-size: 3.3rem !important;
+    color: #5b5b5b !important;
+    cursor: pointer;
+}
+.star:hover{
+    color: #ffad32 !important;
+}
+.footer{
+    width: 100%;
+    padding: 0 !important;
+}
+.homemarket_button > button{
+    width: 12rem;
+    border: 0;
+    height: 4rem;
+    font-size: 1.7rem;
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #7387ff;
+    color: white;
+}
+.homemarket_button > button:hover{
+    background-color: #97a3e4;
+}
+

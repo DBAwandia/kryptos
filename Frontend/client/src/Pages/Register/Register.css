@@ -1,0 +1,227 @@
+a{
+    text-decoration: none;
+}
+.Register{
+    width: 100%;
+    height: 100vh;
+    background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.9), 
+        rgba(0, 0, 0, 0.9)) ,
+        url("https://t3.ftcdn.net/jpg/02/15/88/20/360_F_215882061_qY754KpkJaID0DiTerV0AmwDLEnnGItx.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+
+}
+.register_container{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    text-align: center;
+    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 4rem;
+    left: 32%;
+    top: 5%;
+    padding: var(--padding-main);
+}
+.register_header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.register_logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.register_logo > h1{
+        font-size: 2.3rem;
+        letter-spacing: normal;
+}
+.register_logo > img{
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.close{
+    font-size: 4rem !important;
+    cursor: pointer;
+    color: black;
+
+}
+.register_description{
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+    align-items: center;
+    font-size: var(  --page-list-font);
+    color: var( --color);
+}
+.register_description > a > span{
+    cursor: pointer;
+    color: #7387ff;
+}
+.register_input > input{
+    width: 95%;
+    height: 6rem;
+    font-size: 2rem;
+    padding-left: 4rem;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+}
+
+.register_input > input{
+    width: 95%;
+    height: 7rem;
+    background-color: #eff1f5;
+    font-size: var(--page-list-font);
+    padding-left: 4rem;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+}
+.register_input > p{
+    text-align: start;
+    margin: 2rem 1.9rem;
+    font-size: var(  --page-list-font);
+    cursor: pointer;
+}
+.register_button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+}
+
+.registers{
+    width: var( --button-width);
+    border: 0;
+    height: var(--button-height);
+    font-size: var(--page-list-font);
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    background-color: #7387ff;
+    color: purple;
+}
+.cancelss{
+    width: var( --button-width) !important;
+    border: 0;
+    height: var(--button-height);
+    font-size: var(--page-list-font);
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    background-color: #f0f2f5;
+    color: black;
+}
+@media screen and (max-width: 642px) {
+    .register_container{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        gap: 1rem;
+        padding: var( --mobile-padding-main);
+    }
+    .register_logo{
+        gap: 0.5rem;
+    }
+    .register_logo > img{
+        width: 2.4rem ;
+        height: 2.4rem;
+    }
+    .register_logo > h1{
+        font-size: var(--mobile-font-header2);
+    }
+    .register_header{
+        position: relative;
+    }
+    .close{
+        font-size: 1.8rem !important;
+        margin-left: 4rem !important;
+    }
+    .register_description{
+        margin-left: 0.5rem;
+        font-weight: bold;
+        width: 100%;
+        font-size: var(--mobile-page-list-font);
+    }
+    .register_input > input{
+        width: 98%;
+        height: 3.6rem;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font);
+        padding-left: 2rem;
+
+    }
+    .register_input > p{
+        width: 100%;
+        margin: 2rem 0.5rem;
+        color: lightgrey;
+        font-size: var(--mobile-page-list-font);
+    }
+    .register_button{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .registers{
+        width: 98%;
+        border-radius: 5px;
+        height: 3.6rem;
+        font-size: var(--mobile-page-list-font);
+    }
+    .cancelss{
+        width: 98% !important;
+        height: 3.6rem;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font);
+    }
+}
+@media screen and (max-width: 242px) {
+    .register_logo > img{
+        display: none;
+    }
+    .register_logo > h1{
+        font-size: 1rem;
+    }
+    .close{
+        font-size: 1.3rem;
+    }
+    .register_description{
+        margin: 0;
+    }
+    .register_input > input{
+        height: 3rem;
+        font-size: 0.8rem;
+    }
+    .register_container{
+        box-shadow: 0;
+    }
+    .register_button{
+        gap: 0.5rem;
+    }
+    .registers{
+        height: 2.2rem;
+    }
+    .cancelss{
+        height: 2.2rem;
+    }
+}

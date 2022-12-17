@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,500&family=Poppins:wght@200;300;400&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color:transparent;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+ul,li{
+  list-style: none;
+}
+:root{
+  --page-list-font: 2.3rem;
+  --page-font: 1.82rem;
+  --container-size: 100%;
+  --header-h1: 3.8rem;
+  --header-h2:2.7rem;
+  --header-h3:2rem;
+  --letter-spacing: 3px;
+  --header-h3:1.75rem;
+  --padding-main: 2rem 3.2rem ;
+  --line-height-main: 3.9rem;
+  --line-height-header-main: 7.9rem;
+  --button-width: 15rem;
+  --button-height: 6.3rem;
+  --button-radius: 16px;  
+  --color: #252831;
+
+  --mobile-header-line-height: 2.8rem;
+  --mobile-line-height: 1.8rem;
+  --mobile-page-list-font: 0.95rem;
+  --mobile-button-width: 6rem;
+  --mobile-button-height: 2.5rem;
+  --mobile-letter-spacing: 1px;
+  --mobile-font: 0.95rem;
+  --mobile-font-header1: 1.6rem;
+  --mobile-font-header2: 1.1rem;
+  --mobile-padding-main: 0.9rem 0.3rem;
+  --description-padding: 0px 7px;
+}

@@ -1,0 +1,25 @@
+.MarketFooter{
+    width: 100%;
+    height: 10rem;
+    background: rgba(252, 252, 252, 0.38);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+    border: 1px solid rgba(252, 252, 252, 0.33);
+}
+.MarketFooter_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.MarketFooter_icons_and_name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-direction: column;
+    justify-content: space-between;
+}

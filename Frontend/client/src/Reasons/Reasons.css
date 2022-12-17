@@ -1,0 +1,109 @@
+.reasons{
+    width: 100%;
+    /* height: 100%; */
+    text-align: center;
+    align-items: center;
+    padding: var(--padding-main);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    
+}
+.reasons_header{
+    font-size: var( --header-h1);
+    letter-spacing: var(--letter-spacing);
+    font-weight: bolder;
+}
+.reasons_description{
+    font-size: var(  --page-list-font);
+    letter-spacing: var(--letter-spacing);
+    color: var(--color);
+}
+.reasons_containers{
+    width: 100%;
+    height: 100%;
+    padding: var(--padding-main);
+    display: grid;
+    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.reasons_container{
+    width: 100%;
+    padding: 5% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+.lazyload_image{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+}
+.reasons_container > h2{
+    font-size: var(--header-h2);
+    letter-spacing: var(--letter-spacing);
+    font-weight: bold;
+    color: #252831;
+}
+.reasons_container > p{
+    width: 70%;
+    font-size: var(  --page-list-font);
+    letter-spacing: normal;
+    color: var(--color);
+}
+@media screen and (max-width: 642px) {
+    .reasons{
+        padding: var(--mobile-padding-main);
+        gap: 2rem;
+    }
+    .reasons_header{
+        font-size: var( --mobile-font-header1);
+        letter-spacing: normal;
+        font-weight: bolder;
+    }
+    .reasons_description{
+        font-size: var(  --mobile-font);
+        text-align:justify;
+        padding: var(--description-padding);
+        line-height: var(--mobile-line-height);
+        letter-spacing: normal;
+    }
+    .reasons_containers{
+        padding: 15px 5px;
+        gap: 0.8rem;
+        grid-template-columns:  1fr 1fr;
+    }
+    .reasons_container{
+        padding: 0;
+        gap: 1rem;
+    }
+    .lazyload_image{
+        width: 8rem;
+        height: 8rem;
+    }
+    .reasons_container > h2{
+        letter-spacing: normal;
+        font-size: var(--mobile-font-header2);
+    }
+    .reasons_container > p{
+        width: 90%;
+        line-height:normal;
+        font-size: var(--mobile-font);
+    }
+}
+@media screen and (max-width: 242px) {
+    .reasons_header{
+        letter-spacing: normal;
+    }
+    .reasons_description{
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    .reasons_containers{
+        grid-template-columns:   1fr;
+    }
+}
