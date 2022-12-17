@@ -11,3 +11,10 @@
     animation:s3 1s infinite linear;
   }
   @keyframes s3 {to{transform: rotate(1turn)}}
+
+  @media screen and (max-width: 642px) {
+    .custom-loader {
+        width:35px;
+        height:35px;
+    }
+  }

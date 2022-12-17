@@ -10,15 +10,40 @@
     position: relative;
 }
 .table_row{
-    width: 100%;
-    margin-left: 10rem !important;
+    width: 100% !important;
 }
-.table_cell{
+.table_cell_asset{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+}
+.table_cell_Price{
     font-size: var(--header-h3) !important;
     padding: 2rem 2rem !important;
     border-bottom:  0px !important;
 }
-.table_cells{
+.table_cell_perfomance{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+}
+.table_cell_percentage{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+}
+.table_cell_track{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+}
+.table_cell_chart{
+    font-size: var(--header-h3) !important;
+    padding: 2rem 2rem !important;
+    border-bottom:  0px !important;
+}
+.table_cell_current_price{
     font-size: var(--header-h3) !important;
     padding: 2rem 2rem !important;
     border-bottom:  0px !important;
@@ -30,14 +55,14 @@
     gap: 1rem;
     font-size: var(  --page-list-font);
     letter-spacing: normal;
-    color: #7387ff;
+    color: #B00020;
     margin-left: 60%;
     margin-top: 2rem;
   
 }
 .not_found_icon{
     font-size: var(  --page-list-font) !important;
-    color: #97a3e4!important;
+    color: #B00020 !important;
 }
 .market_loading{
    position: absolute;
@@ -53,7 +78,7 @@
     gap: 5.5rem;
 }
 .coin_name{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
 
@@ -92,10 +117,6 @@
 .star:hover{
     color: #ffad32 !important;
 }
-.footer{
-    width: 100%;
-    padding: 0 !important;
-}
 .homemarket_button > button{
     width: 12rem;
     border: 0;
@@ -112,28 +133,67 @@
     background-color: #97a3e4;
 }
 @media screen and (max-width: 642px) {
+    .HomeMarketCoins{
+        width: 87%;
+        padding: 0px 0.3rem;
+    }
+    .table_head{
+        width: 100% !important;
+    }
     .table_row{
-        margin-left: 1rem !important;
+        width: 100% !important;
+        margin-left: 0rem !important;
     }
-    .table_cell{
+    .body_row{
+        width: 100% !important;
+    }
+    .table_body{
+        width: 100% !important;
+    }
+    .table_cell_asset{
         font-size: var( --mobile-font-header2) !important;
-        padding: 0.5rem 0.5rem !important;
+        padding: 0.3rem 0.3rem !important;
     }
-    .table_cells{
+    .table_cell_Price{
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
+    }
+    .table_cell_perfomance{
         display: none !important;
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
+    }
+    .table_cell_percentage{
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_track{
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_chart{
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_current_price{
+        font-size: var( --mobile-font-header2) !important;
+        padding: 0.3rem 0.3rem !important;
     }
     .to_add_favorite{
         width: 100%;
         padding: 1rem 0rem;
-        gap: 3rem;
+        gap: 0rem;
     }
     .coin_name > img{
-        width: 2.3rem !important;
-        height: 2.3rem !important;
+        width: 2.1rem !important;
+        height: 2.1rem !important;
        
     }
     .coin_name_and_symbol{
-        margin-left: 1.5rem;
+        margin-left: 1.2rem;
     }
     .coin_names{
         font-size: var( --mobile-font-header2);
@@ -142,6 +202,8 @@
         font-size: var( --mobile-font-header2);
     }
     .star{
+        position: absolute !important;
+        right: 0.7rem !important;
         font-size: 1.8rem !important;
     }
     .homemarket_button > button{
@@ -149,5 +211,19 @@
         height: 2.9rem;
         font-size: 0.95rem;
         border-radius: 6px;
+    }
+    .not_search_found{
+        width: 100%;
+        margin-left: 13%;
+        gap: 0;
+        font-size: var(--mobile-font);
+    }
+    .not_found_icon{
+        font-size: var( --mobile-font-header1) !important;
+        display: none !important;
+    }
+    .market_loading{
+        top: 43%;
+        left: 37%;
     }
 }

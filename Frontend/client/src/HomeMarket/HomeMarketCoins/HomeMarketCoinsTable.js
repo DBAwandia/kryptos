@@ -37,7 +37,7 @@ function HomeMarketCoinsTable({searchs}) {
 
    fetchData(URL)
 
-      },3000)
+      },3500)
       
   // },1000)
     
@@ -58,11 +58,11 @@ const isSearchIncorrect = Search(data)
       <Table className='HomeMarketCoins_table'>
         <TableHead className='table_head'>
           <TableRow className='table_row'>
-            <TableCell className='table_cell' sx={{fontWeight: "bold"}}>Asset</TableCell>
-            <TableCell  align='right' className='table_cell' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell align='right' className='table_cells' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
-            <TableCell align='right' className='table_cell' sx={{fontWeight: "bold"}}>24h %</TableCell>
-              <TableCell align='right' className='table_cell' sx={{fontWeight: "bold"}}>All tracks</TableCell>
+            <TableCell className='table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
+            <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
+            <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
+            <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
+              <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
         {isSearchIncorrect.length === 0  && <div className='not_search_found'>
@@ -73,9 +73,9 @@ const isSearchIncorrect = Search(data)
         <div className='market_loading'>
             <LoadingAnimation/>
          </div>
-          : <TableBody>
+          : <TableBody className='table_body'>
           {Search(data)?.map((item)=>(
-            <TableRow key={item.id}>
+            <TableRow key={item.id} className="body_row">
               <div className='to_add_favorite'>
                 <StarOutline className='star' />
                 <div className='coin_name'>
@@ -86,12 +86,13 @@ const isSearchIncorrect = Search(data)
                   </div>
                 </div>
               </div>
-                <TableCell align="right" className='table_cell'>
-                   {item?.current_price}
+                <TableCell  className='table_cell_current_price'>
+                   ${item?.current_price.toFixed(2)}
+                   {/* <p>35%</p> */}
                 </TableCell>
-                <TableCell align="right" className='table_cells'>chart</TableCell>
-                <TableCell align="right" className='table_cell'>+35%</TableCell>
-                <TableCell align="right" className='table_cell'>
+                <TableCell  className='table_cell_chart'>chart</TableCell>
+                <TableCell  className='table_cell_percentage'>+35%</TableCell>
+                <TableCell align='right'  className='table_cell_track'>
                   <div className='homemarket_button'>
                     <button>Start tracking</button>
                   </div>

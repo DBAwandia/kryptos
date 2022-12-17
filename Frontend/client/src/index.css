@@ -36,6 +36,7 @@ ul,li{
   --button-radius: 16px;  
   --color: #252831;
 
+  --error-color: #B00020;
   --mobile-header-line-height: 2.8rem;
   --mobile-line-height: 1.8rem;
   --mobile-page-list-font: 0.95rem;
@@ -44,7 +45,7 @@ ul,li{
   --mobile-letter-spacing: 1px;
   --mobile-font: 0.95rem;
   --mobile-font-header1: 1.6rem;
-  --mobile-font-header2: 1.1rem;
+  --mobile-font-header2: 0.98rem;
   --mobile-padding-main: 0.9rem 0.3rem;
   --description-padding: 0px 7px;
 }
