@@ -1,10 +1,25 @@
 .HomeMarket{
     width: 100%;
+    height: 100vh;
+     /* contain: paint; */
+     overflow-x: hidden;
     background-color: #f5f5f5;
     position: relative;
 }
+.HomeMarkets{
+    width: 100%;
+    height: 100vh;
+     /* contain: paint; */
+}
 .market_sidebar{
-    display: none;
+    width: 100%;
+    display: block;
+    position: absolute;
+     bottom: 0;
+     right: 0;
+     left: 0;
+    z-index: 99999999999999999;
+    /* top: 6.83%; */
 }
 .market_side_bar{
     display: none;
@@ -74,7 +89,9 @@
 }
 .HomeMarket_coin_search_input{
     width: 100%;
-    position: relative;
+    position: sticky;
+    z-index:99999999999999999999;
+    top: 3px;
     
 }
 .HomeMarket_coin_search_input > input{
@@ -89,6 +106,9 @@
     box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
     -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
     -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease; 
 }
 input::-webkit-input-placeholder{
     color: rgb(194, 189, 189);
@@ -102,16 +122,26 @@ input::-webkit-input-placeholder{
     font-size: 3rem !important;
     color: lightgray !important;
 }
-
+.HomeMarketCoins{
+    width: 100%;
+    height: 80vh !important;
+}
 .footer{
     width: 100%;
 }
 @media screen and (max-width: 642px) {
     .HomeMarket{
-        overflow: hidden;
+        contain: paint;
     }
     .HomeMarketCoins{
         width: 100%;
+    }
+    .market_sidebar{
+        width: 100%;
+        display: block;
+        /* position: absolute; */
+        z-index: 99999999999999999;
+        /* top: 6.83%; */
     }
     .HomeMarketCoins{
         margin-bottom: 3rem;
@@ -141,6 +171,13 @@ input::-webkit-input-placeholder{
         margin-left: 1rem;
         font-size: var(--mobile-font-header2);
         letter-spacing: normal;
+        
+    }
+    .HomeMarket_coin_search_input{
+        width: 100% !important;
+        position: sticky !important;
+        top: 0.1rem !important;
+        
     }
     .HomeMarket_coin_search_input > input{
         width: 99%;

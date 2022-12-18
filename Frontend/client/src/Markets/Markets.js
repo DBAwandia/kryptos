@@ -52,43 +52,44 @@ function Markets() {
 
 const datas = data.splice(7,100)
 
-console.log(price,data)
+// console.log(price,data)
   return (
     <TableContainer className='HomeMarketCoinss'>
       <h1>MARKETS</h1>
       <Table className='HomeMarketCoins_table'>
         <TableHead className='table_head'>
           <TableRow className='table_row'>
-            <TableCell className='table_cell' sx={{fontWeight: "bold"}}>Asset</TableCell>
-            <TableCell  align='right' className='table_cell' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell align='right' className='table_cell' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
-            <TableCell align='right' className='table_cell' sx={{fontWeight: "bold"}}>24h %</TableCell>
-              <TableCell align='right' className='table_cell' sx={{fontWeight: "bold"}}>All tracks</TableCell>
+            <TableCell className='Market_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
+            <TableCell   className='Market_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
+            <TableCell  className='Market_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
+            <TableCell  className='Market_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
+              <TableCell  className='Market_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
         {loading ?
-        <div className='markets_loading'>
+        <div className='market_loading'>
             <LoadingAnimation/>
          </div>
-          : <TableBody>
+          : <TableBody className='table_body'>
           {data?.map((item)=>(
-            <TableRow key={item.id}>
-              <div className='to_add_favorite'>
-                <StarOutline className='star' />
-                <div className='coin_name'>
+            <TableRow key={item.id} className="body_row">
+              <div className='market_coin_name_to_add_favorite'>
+                <StarOutline className='stars' />
+                <div className='market_coin_name'>
                   <img src={item?.image} alt="" />
-                  <div className="coin_name_and_symbol">
-                    <p className='coin_names'>{item?.name}</p>
-                    <p className='coin_symbols'>{item?.symbol}</p>
+                  <div className="market_coin_name_and_symbol">
+                    <p className='market_coin_names'>{item?.name}</p>
+                    <p className='market_coin_symbols'>{item?.symbol}</p>
                   </div>
                 </div>
               </div>
-                <TableCell align="right" className='table_cell'>
-                   {price}
+                <TableCell  className='Market_current_price'>
+                   ${item?.current_price.toFixed(2)}
+                   {/* <p>35%</p> */}
                 </TableCell>
-                <TableCell align="right" className='table_cell'>chart</TableCell>
-                <TableCell align="right" className='table_cell'>+35%</TableCell>
-                <TableCell align="right" className='table_cell'>
+                <TableCell  className='Market_chart'>chart</TableCell>
+                <TableCell  className='Market_percentage'>+35%</TableCell>
+                <TableCell align='right'  className='Market_track'>
                   <div className='homemarket_button'>
                     <button>Start tracking</button>
                   </div>

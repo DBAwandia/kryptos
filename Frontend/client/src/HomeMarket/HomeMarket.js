@@ -4,13 +4,31 @@ import "./HomeMarket.css"
 import Footer from "../Footer/Footer"
 import HomeMarketCoinsTable from './HomeMarketCoins/HomeMarketCoinsTable'
 import MarketFooter from './MarketFooter/MarketFooter'
+import { useScrollDirection } from 'react-use-scroll-direction'
+
 function HomeMarket() {
   const [active, setActive] = useState("market")
   const [searchs, setSearchs] = useState("")
   
+  const { 
+    isScrolling,
+    isScrollingX,
+    isScrollingY,
+    isScrollingUp, 
+    isScrollingDown,
+    isScrollingLeft,
+    isScrollingRight,
+    scrollDirection,
+  } = useScrollDirection()
 
+  console.log(isScrollingY)
+
+  const value = window.scrollY
+  console.log(value)
+
+  
   return (
-    <div className='HomeMarket'>
+    <div className={value > "500" ?"HomeMarkets":"HomeMarket"}>
 
       <div className='market_side_bar'>
         <Dehaze />
@@ -18,7 +36,6 @@ function HomeMarket() {
       <div className='market_sidebar'>
         <MarketFooter/>
       </div>
-
       <div className='HomeMarket_container'>
             <div className='HomeMaret_navbar'>
               <div className='HomeMarket_logo'>

@@ -1,5 +1,6 @@
 .HomeMarketCoins{
     width: 100%;
+    overflow-y: scroll;
     padding: var(--padding-main);
 }
 .HomeMarketCoins_table{
@@ -69,6 +70,7 @@
    left: 50%;
    top: 58%;
 }
+
 .to_add_favorite{
     width: 70%;
     padding: 2.5rem 0rem;
@@ -78,7 +80,7 @@
     gap: 5.5rem;
 }
 .coin_name{
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     align-items: center;
 
@@ -147,6 +149,9 @@
     .body_row{
         width: 100% !important;
     }
+    .star{
+        display: none !important;
+    }
     .table_body{
         width: 100% !important;
     }
@@ -201,11 +206,7 @@
     .coin_symbols{
         font-size: var( --mobile-font-header2);
     }
-    .star{
-        position: absolute !important;
-        right: 0.7rem !important;
-        font-size: 1.8rem !important;
-    }
+   
     .homemarket_button > button{
         width: 7rem;
         height: 2.9rem;
@@ -225,5 +226,60 @@
     .market_loading{
         top: 43%;
         left: 37%;
+    }
+}
+@media screen and (max-width: 242px) {
+    .coin_name > img{
+        display: none;
+    }
+    .to_add_favorite{
+        width: 50%;
+    }
+    .table_cell_Price{
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.1rem !important;
+    }
+    .table_cell_perfomance{
+        display: none !important;
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.3rem !important;
+    }
+    .table_cell_percentage{
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_track{
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_chart{
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.3rem !important;
+        display: none !important;
+    }
+    .table_cell_current_price{
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0rem !important;
+    }
+    .table_cell_coin_name_to_add_favorite{
+        width: 100%;
+        padding: 1rem 0rem;
+        gap: 0rem;
+    }
+}
+@media screen and (max-width: 281px) {
+    .coin_name > img{
+        width: 1.15rem !important;
+        height: 1.15rem !important;
+    }
+    .coin_name_and_symbol{
+        width: 100%;
+    }
+    .coin_names{
+        width:57%;
+        text-align: start;
+        
     }
 }

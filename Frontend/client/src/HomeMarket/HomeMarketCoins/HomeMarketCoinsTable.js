@@ -62,6 +62,7 @@ const isSearchIncorrect = Search(data)
             <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
             <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
             <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
+            <TableCell  className='table_cell_star_mobile' sx={{fontWeight: "bold"}}>favorite</TableCell>
               <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
@@ -76,22 +77,29 @@ const isSearchIncorrect = Search(data)
           : <TableBody className='table_body'>
           {Search(data)?.map((item)=>(
             <TableRow key={item.id} className="body_row">
-              <div className='to_add_favorite'>
+              <TableCell sx={{borderBottom: "0px"}}>              
+                <div className='to_add_favorite'>
                 <StarOutline className='star' />
-                <div className='coin_name'>
-                  <img src={item?.image} alt="" />
-                  <div className="coin_name_and_symbol">
-                    <p className='coin_names'>{item?.name}</p>
-                    <p className='coin_symbols'>{item?.symbol}</p>
+                  <div className='coin_name'>
+                    <img src={item?.image} alt="" />
+                    <div className="coin_name_and_symbol">
+                      <p className='coin_names'>{item?.name}</p>
+                     <p className='coin_symbols'>{item?.symbol}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </TableCell>
                 <TableCell  className='table_cell_current_price'>
                    ${item?.current_price.toFixed(2)}
                    {/* <p>35%</p> */}
                 </TableCell>
                 <TableCell  className='table_cell_chart'>chart</TableCell>
                 <TableCell  className='table_cell_percentage'>+35%</TableCell>
+
+                <TableCell  className='table_cell_star_mobile'>
+                    <StarOutline className='star_mobile' />
+                </TableCell>
+                
                 <TableCell align='right'  className='table_cell_track'>
                   <div className='homemarket_button'>
                     <button>Start tracking</button>

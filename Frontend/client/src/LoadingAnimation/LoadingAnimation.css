@@ -18,3 +18,9 @@
         height:35px;
     }
   }
+@media screen and (max-width: 281px) {
+  .custom-loader {
+    width:25px;
+    height:25px;
+}
+}
