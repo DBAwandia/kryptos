@@ -28,12 +28,12 @@ function HomeMarket() {
 
   
   return (
-    <div className={value > "500" ?"HomeMarkets":"HomeMarket"}>
+    <div className="HomeMarket">
 
       <div className='market_side_bar'>
         <Dehaze />
       </div>
-      <div className='market_sidebar'>
+      <div className='market_footer'>
         <MarketFooter/>
       </div>
       <div className='HomeMarket_container'>
@@ -72,9 +72,9 @@ function HomeMarket() {
             <div className='HomeMarketCoins'>
               <HomeMarketCoinsTable searchs={searchs} />
             </div>
-            <div className='footer'>
+            {/* <div className='footer'>
               <Footer />
-            </div>
+            </div> */}
       </div>
     </div>
   )

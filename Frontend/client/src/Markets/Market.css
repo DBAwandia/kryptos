@@ -100,7 +100,6 @@
 .market_coin_name > img{
     width: 4.5rem !important;
     height: 4.5rem !important;
-    text-align: center;
     object-fit: cover;
     border-radius: 50%;
 }

@@ -44,6 +44,7 @@ function HomeMarketCoinsTable({searchs}) {
   // return clearInterval(timer)
 },[URL])
 
+// const datas = data.splice(80,99)
 const Search = (data) =>{
   return data.filter((item)=>(
     Keys.some((key) => item[key].toLowerCase().includes(searchs))
@@ -62,7 +63,6 @@ const isSearchIncorrect = Search(data)
             <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
             <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
             <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
-            <TableCell  className='table_cell_star_mobile' sx={{fontWeight: "bold"}}>favorite</TableCell>
               <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
@@ -74,17 +74,17 @@ const isSearchIncorrect = Search(data)
         <div className='market_loading'>
             <LoadingAnimation/>
          </div>
-          : <TableBody className='table_body'>
+          : <TableBody>
           {Search(data)?.map((item)=>(
             <TableRow key={item.id} className="body_row">
-              <TableCell sx={{borderBottom: "0px"}}>              
+              <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
                 <StarOutline className='star' />
                   <div className='coin_name'>
                     <img src={item?.image} alt="" />
                     <div className="coin_name_and_symbol">
-                      <p className='coin_names'>{item?.name}</p>
-                     <p className='coin_symbols'>{item?.symbol}</p>
+                      <p className='coin_names'>{item?.symbol}</p>
+                     <p className='coin_symbols'>{item?.name}</p>
                     </div>
                   </div>
                 </div>
@@ -95,11 +95,7 @@ const isSearchIncorrect = Search(data)
                 </TableCell>
                 <TableCell  className='table_cell_chart'>chart</TableCell>
                 <TableCell  className='table_cell_percentage'>+35%</TableCell>
-
-                <TableCell  className='table_cell_star_mobile'>
-                    <StarOutline className='star_mobile' />
-                </TableCell>
-                
+              
                 <TableCell align='right'  className='table_cell_track'>
                   <div className='homemarket_button'>
                     <button>Start tracking</button>
