@@ -111,6 +111,9 @@ input::-webkit-input-placeholder{
     font-size: 3rem !important;
     color: lightgray !important;
 }
+.footer{
+    width: 100%;
+}
 @media screen and (max-width: 642px) {
     .market_footer{
         width: 100%;
@@ -121,6 +124,9 @@ input::-webkit-input-placeholder{
          left: 0;
         z-index: 99999999999999999;
         /* top: 6.83%; */
+    }
+    .footer{
+        display: none;
     }
     .HomeMarket{
         contain: paint;
@@ -186,5 +192,6 @@ input::-webkit-input-placeholder{
         color: rgb(192, 182, 182);
 
     }
+   
     
 }

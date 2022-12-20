@@ -44,6 +44,7 @@
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
     font-weight: 490 !important;
+    color: #2da966 !important;
 }
 .not_search_found{
     padding: 3px !important;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./HomeMarketCoinsTable.css"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,51 +11,42 @@ import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
 
 function HomeMarketCoinsTable({searchs}) {
-
-  const URL ="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C%2024h"
   const [data, setData] = useState([])
+
   const [ loading, setLoading ] = useState(false)
   const Keys = ["name", "symbol"]
 
   useEffect(()=>{
     // setInterval(()=>{
-      setLoading(true)
-      setTimeout(()=>{
-
+        const URL ="https://data.messari.io/api/v1/assets?fields=id,slug,symbol,image,metrics/market_data/price_usd"
+        setLoading(true)
         const fetchData =async (URL)=>{
           try{
-
-              const res = await axios.get(URL)
-                setData(res.data)
-              setLoading(false)
-
+            const res = await axios.get(URL)
+            setData(res.data)
+            setLoading(false)
+            
           }catch(err){
-              setLoading(false)
+            setLoading(false)
           }
+        }
+        fetchData(URL)
+        // },100)
+        
+      },[URL])
 
-    }
-
-   fetchData(URL)
-
-      },3500)
-      
-  // },1000)
-    
-  // return clearInterval(timer)
-},[URL])
-
-// const datas = data.splice(80,99)
-const Search = (data) =>{
-  return data.filter((item)=>(
-    Keys.some((key) => item[key].toLowerCase().includes(searchs))
-  ))
-}
-
-//check length
-const isSearchIncorrect = Search(data)
-
-  return (
-    <TableContainer className='HomeMarketCoins'>
+      console.log(data.data[0].metrics.market_data.price_usd, data)
+      // const Search = (data) =>{
+      //   return data.filter((item)=>(
+      //     Keys.some((key) => item[key].toLowerCase().includes(searchs))
+      //     ))
+      //   }
+        // console.log(data)
+        //check length
+        // const isSearchIncorrect = Search(data)
+        
+        return (
+          <TableContainer className='HomeMarketCoins'>
       <Table className='HomeMarketCoins_table'>
         <TableHead className='table_head'>
           <TableRow className='table_row'>
@@ -66,16 +57,16 @@ const isSearchIncorrect = Search(data)
               <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
-        {isSearchIncorrect.length === 0  && <div className='not_search_found'>
+        {/* {isSearchIncorrect.length === 0  && <div className='not_search_found'>
           <DoNotDisturbAlt className='not_found_icon'/>
           <p>There are no assets matching current filter</p>
-        </div>}
+        </div>} */}
         {loading ?
         <div className='market_loading'>
             <LoadingAnimation/>
          </div>
           : <TableBody>
-          {Search(data)?.map((item)=>(
+          {/* {data?.map((item)=>(
             <TableRow key={item.id} className="body_row">
               <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
@@ -89,9 +80,8 @@ const isSearchIncorrect = Search(data)
                   </div>
                 </div>
               </TableCell>
-                <TableCell  className='table_cell_current_price'>
+                <TableCell  className='table_cell_current_price' >
                    ${item?.current_price.toFixed(2)}
-                   {/* <p>35%</p> */}
                 </TableCell>
                 <TableCell  className='table_cell_chart'>chart</TableCell>
                 <TableCell  className='table_cell_percentage'>+35%</TableCell>
@@ -103,7 +93,7 @@ const isSearchIncorrect = Search(data)
                 </TableCell>
 
             </TableRow>
-          ))}
+          ))} */}
         </TableBody>}
       </Table>
     </TableContainer>

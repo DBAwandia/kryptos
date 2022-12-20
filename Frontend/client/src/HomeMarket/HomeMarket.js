@@ -72,9 +72,9 @@ function HomeMarket() {
             <div className='HomeMarketCoins'>
               <HomeMarketCoinsTable searchs={searchs} />
             </div>
-            {/* <div className='footer'>
+            <div className='footer'>
               <Footer />
-            </div> */}
+            </div>
       </div>
     </div>
   )
