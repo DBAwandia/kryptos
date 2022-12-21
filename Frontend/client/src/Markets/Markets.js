@@ -48,9 +48,9 @@ function Markets() {
       <Table className='MarketsCoins_table'>
         <TableHead className='markets_table_head'>
           <TableRow className='markets_table_row'>
+            <TableCell  className='markets_table_cell_perfomance' sx={{fontWeight: "bold"}}>Rank</TableCell>
             <TableCell className='markets_table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
             <TableCell   className='markets_table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell  className='markets_table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
             <TableCell  className='markets_table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
               <TableCell  className='markets_table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
@@ -68,6 +68,7 @@ function Markets() {
           : <TableBody>
           {datazz?.map((item)=>
             <TableRow  className="markets_body_row" >
+            <TableCell  className='markets_table_cell_chart'>{item?.rank}</TableCell>
               <TableCell className='markets_table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='markets_to_add_favorite'>
                 <StarOutline className='star' />
@@ -82,8 +83,11 @@ function Markets() {
                 <TableCell  className='markets_table_cell_current_price' >
                    ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
                 </TableCell>
-                <TableCell  className='markets_table_cell_chart'>chart</TableCell>
-                <TableCell  className='markets_table_cell_percentage'>+35%</TableCell>
+                <TableCell  className='table_cell_percentage'>
+                  <button className={Number(item?.changePercent24Hr) < 0 ? "table_cell_percentage_button_red" : "table_cell_percentage_button"}>
+                    {Number(item?.changePercent24Hr).toFixed(2)}%
+                  </button>
+                </TableCell>
                 <TableCell align='right'  className='markets_table_cell_track'>
                   <div className='Markets_button'>
                     <button>Start tracking</button>

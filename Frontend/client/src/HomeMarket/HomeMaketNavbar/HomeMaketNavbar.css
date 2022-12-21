@@ -1,0 +1,47 @@
+.HomeMaret_navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.HomeMarket_logo{
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+.HomeMarket_logo > h1{
+    font-size: var(--header-h1);
+    letter-spacing: var(--letter-spacing);
+}
+.HomeMarket_image{
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.HomeMarket_container_lists{
+    position: relative;
+}
+.HomeMarket_container_lists > ul{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 7rem;
+    margin-right: 25rem;
+
+
+}
+.market{
+    font-size: var(--header-h3);
+    color: var(--color);
+}
+.isActive{
+    background-color: rgba(10, 10, 10,0.08);
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    font-size: var(--header-h3);
+
+}
+/* .HomeMarket_container_lists > ul > li:hover{
+    color: #b2bcf5;
+} */

@@ -43,7 +43,7 @@
     padding: 3px !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
-    font-weight: 490 !important;
+    font-weight: bold !important;
     color: black !important;
 }
 .not_search_found{
@@ -142,7 +142,29 @@
 .homemarket_button > button:hover{
     background-color: #97a3e4;
 }
-
+.table_cell_percentage_button{
+    width: 9.5rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+    color: #2da966;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    background-color: #cbf1de;
+    border-radius: 5px;
+}
+.table_cell_percentage_button_red{
+    width: 9.5rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+    color: #ff4f4f;
+    font-weight: bold;
+    border: 0;
+    outline: 0;
+    background-color: #f1d9d9;
+    border-radius: 5px;
+    
+}
 @media screen and (max-width: 642px) {
     .table_cell_asset{
         font-size: 0.95rem !important;
@@ -172,7 +194,7 @@
         color: #ff4f4f;
         border: 0;
         outline: 0;
-        background-color: #eecfcf;
+        background-color: #f1d9d9;
         border-radius: 5px;
         
     }

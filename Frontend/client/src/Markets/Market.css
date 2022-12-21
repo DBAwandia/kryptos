@@ -22,7 +22,7 @@
     border-bottom:  0px !important;
 }
 .markets_table_cell_perfomance{
-    padding: 3px !important;
+    margin-left: 2rem !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
 }
@@ -37,7 +37,7 @@
     border-bottom:  0px !important;
 }
 .markets_table_cell_chart{
-    padding: 3px !important;
+    margin-left: 6rem !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
 }
@@ -45,8 +45,8 @@
     padding: 3px !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
-    font-weight: 490 !important;
-    color: #2da966 !important;
+    font-weight: bold !important;
+    color: black !important;
 }
 .internet_connection_error{
     padding: 3px !important;
@@ -138,6 +138,7 @@
 @media screen and (max-width: 642px) {
     .markets_table_cell_asset{
         font-size: 0.95rem !important;
+        padding-left: 2rem !important;
     }
     .markets_table_cell_Price{
         font-size: 0.95rem !important;

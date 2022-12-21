@@ -1,3 +1,7 @@
+a{
+    text-decoration: none !important;
+    color: black;
+}
 .MarketFooter{
     width: 100%;
     height: 5.8rem;
@@ -18,7 +22,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.MarketFooter_icons_and_names{
+.MarketFooter_icons_and_names > a{
     color: #7387ff;
     width: 100%;
     display: flex;
@@ -27,7 +31,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.MarketFooter_icons_and_name{
+.MarketFooter_icons_and_name > a{
     width: 100%;
     display: flex;
     align-items: center;
@@ -35,11 +39,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.MarketFooter_icons_and_name > p{
+.MarketFooter_icons_and_name > a > p{
     font-size: var(--mobile-page-list-font);
 }
-.MarketFooter_icons_and_names > p{
+.MarketFooter_icons_and_names > a > p{
     font-size: var(--mobile-page-list-font);
+
 }
 .footer_icon{
     font-size: 1.65rem !important;

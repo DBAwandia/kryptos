@@ -59,19 +59,19 @@ function HomeMarketCoinsTable({searchs}) {
         const isSearchIncorrect = Search(filteredData)
         let isSearchIncorrects =  isSearchIncorrect?.length
         
+        console.log(isSearchIncorrect)
     return (
     <TableContainer className='HomeMarketCoins'>
       <Table className='HomeMarketCoins_table'>
         <TableHead className='table_head'>
           <TableRow className='table_row'>
+            <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Rank</TableCell>
             <TableCell className='table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
             <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
             <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h%</TableCell>
               <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
-
 
         {isSearchIncorrects === 0  && <div className='not_search_found'>
           <DoNotDisturbAlt className='not_found_icon'/>
@@ -91,6 +91,7 @@ function HomeMarketCoinsTable({searchs}) {
           : <TableBody>
           {Search(filteredData)?.map((item)=>
             <TableRow  className="body_row" key={item.id}>
+              <TableCell  className='table_cell_chart'>{item?.rank}</TableCell>
               <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
                 <StarOutline className='star' />
@@ -105,7 +106,6 @@ function HomeMarketCoinsTable({searchs}) {
                 <TableCell  className='table_cell_current_price' >
                    ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
                 </TableCell>
-                <TableCell  className='table_cell_chart'>chart</TableCell>
                 <TableCell  className='table_cell_percentage'>
                   <button className={Number(item?.changePercent24Hr) < 0 ? "table_cell_percentage_button_red" : "table_cell_percentage_button"}>
                     {Number(item?.changePercent24Hr).toFixed(2)}%
