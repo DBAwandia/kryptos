@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Market.css"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,96 +7,90 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
-import { StarOutline } from "@mui/icons-material"
-import LoadingAnimation from "../LoadingAnimation/LoadingAnimation"
+import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 function Markets() {
-
-  const URL ="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C%2024h"
-  const [data, setData] = useState([])
-  const [price, setPrice] = useState([])
-
+  const [data, setData] = useState("")
   const [ loading, setLoading ] = useState(false)
+  const [ error, setError ] = useState(false)
 
+  let timer;
   useEffect(()=>{
-    // setInterval(()=>{
-      setLoading(true)
-      setTimeout(()=>{
-
+  setLoading(true)
+   setInterval(()=>{
+        const URL = "https://api.coincap.io/v2/assets"
         const fetchData =async (URL)=>{
           try{
-
-              const res = await axios.get(URL)
-                setData(res.data)
-
-                // setInterval(()=>{
-
-                //   setPrice(res.data[0].current_price)
-                // },1000)
-              setLoading(false)
-
+            const res = await axios.get(URL)
+            setData(res.data)
+            setLoading(false)
+            setError(false)
+            
           }catch(err){
-              setLoading(false)
+            setLoading(false)
+            setError(true)
           }
+        }
+        fetchData(URL)
+        },200)
+        return ()=>{clearInterval(timer)}
+        
+      },[URL])
 
-    }
+      //all data from API
+      const apiData  = [data]
 
-   fetchData(URL)
-
-      },3500)
-      
-  // },1000)
-    
-  // return clearInterval(timer)
-},[URL])
-
-const datas = data.splice(7,100)
-
-// console.log(price,data)
-  return (
-    <TableContainer className='HomeMarketCoinss'>
-      <h1>MARKETS</h1>
-      <Table className='HomeMarketCoins_table'>
-        <TableHead className='table_head'>
-          <TableRow className='table_row'>
-            <TableCell className='Market_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
-            <TableCell   className='Market_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell  className='Market_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
-            <TableCell  className='Market_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
-              <TableCell  className='Market_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
+      //all data which aint filtered
+      const datazz =  apiData[0]?.data
+        return (
+    <TableContainer className='MarketsCoins'>
+      <Table className='MarketsCoins_table'>
+        <TableHead className='markets_table_head'>
+          <TableRow className='markets_table_row'>
+            <TableCell className='markets_table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
+            <TableCell   className='markets_table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
+            <TableCell  className='markets_table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
+            <TableCell  className='markets_table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
+              <TableCell  className='markets_table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
+
+        {/* {error   && <div className='internet_connection_error'>
+          <DoNotDisturbAlt className='not_found_icon'/>
+          <p>Check your internet</p>
+        </div>} */}
+
         {loading ?
         <div className='market_loading'>
             <LoadingAnimation/>
          </div>
-          : <TableBody className='table_body'>
-          {data?.map((item)=>(
-            <TableRow key={item.id} className="body_row">
-              <div className='market_coin_name_to_add_favorite'>
-                <StarOutline className='stars' />
-                <div className='market_coin_name'>
-                  <img src={item?.image} alt="" />
-                  <div className="market_coin_name_and_symbol">
-                    <p className='market_coin_names'>{item?.name}</p>
-                    <p className='market_coin_symbols'>{item?.symbol}</p>
+          : <TableBody>
+          {datazz?.map((item)=>
+            <TableRow  className="markets_body_row" >
+              <TableCell className='markets_table_body'  sx={{borderBottom: "0px"}}>              
+                <div className='markets_to_add_favorite'>
+                <StarOutline className='star' />
+                  <div className='markets_coin_name'>
+                    <div className="markets_coin_name_and_symbol">
+                      <p className='markets_coin_names'>{item?.symbol}</p>
+                     <p className='markets_coin_symbols'>{item?.name}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-                <TableCell  className='Market_current_price'>
-                   ${item?.current_price.toFixed(2)}
-                   {/* <p>35%</p> */}
+              </TableCell>
+                <TableCell  className='markets_table_cell_current_price' >
+                   ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
                 </TableCell>
-                <TableCell  className='Market_chart'>chart</TableCell>
-                <TableCell  className='Market_percentage'>+35%</TableCell>
-                <TableCell align='right'  className='Market_track'>
-                  <div className='homemarket_button'>
+                <TableCell  className='markets_table_cell_chart'>chart</TableCell>
+                <TableCell  className='markets_table_cell_percentage'>+35%</TableCell>
+                <TableCell align='right'  className='markets_table_cell_track'>
+                  <div className='Markets_button'>
                     <button>Start tracking</button>
                   </div>
                 </TableCell>
-
             </TableRow>
-          ))}
+        )}
         </TableBody>}
       </Table>
     </TableContainer>

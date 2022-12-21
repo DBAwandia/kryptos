@@ -1,79 +1,64 @@
-/* Reapeted css for HomeMarketCoins */
-.HomeMarketCoinss{
-    width: 100%;
-    padding: 2rem 0.7rem;
-    text-align: center;
-    background-color: #f5f5f5;
+.MarketsCoins{
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: hidden !important;
 
 }
-.HomeMarketCoinss > h1{
-    font-size: var( --header-h1);
-    letter-spacing: var(--letter-spacing);
-    font-weight: bolder;
-    padding: 2rem 0px;
-}
-.HomeMarketCoins_table{
-    width: 100%;
-}
-.table_head{
-    width: 100%;
-    position: relative;
-}
-.table_row{
+.MarketsCoins_table{
     width: 100% !important;
+    overflow: hidden !important;
+
 }
-.Market_asset{
-    width: 55%;
+
+.markets_table_cell_asset{
     font-size: var(--header-h3) !important;
-    padding: 2rem 4rem !important;
     border-bottom:  0px !important;
     text-align: start !important;
+    padding: 3px !important;
 }
-.Market_Price{
+.markets_table_cell_Price{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 0rem !important;
     border-bottom:  0px !important;
 }
-.Market_perfomance{
+.markets_table_cell_perfomance{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 2rem !important;
     border-bottom:  0px !important;
 }
-.Market_percentage{
+.markets_table_cell_percentage{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 2rem !important;
     border-bottom:  0px !important;
 }
-.Market_track{
+.markets_table_cell_track{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 2rem !important;
     border-bottom:  0px !important;
 }
-.Market_chart{
+.markets_table_cell_chart{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 2rem !important;
     border-bottom:  0px !important;
 }
-.Market_current_price{
+.markets_table_cell_current_price{
+    padding: 3px !important;
     font-size: var(--header-h3) !important;
-    padding: 2rem 0rem !important;
     border-bottom:  0px !important;
+    font-weight: 490 !important;
+    color: #2da966 !important;
 }
-.not_search_found{
+.internet_connection_error{
+    padding: 3px !important;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
     font-size: var(  --page-list-font);
     letter-spacing: normal;
-    color: #B00020;
-    margin-left: 60%;
-    margin-top: 2rem;
-  
-}
-.not_found_icon{
-    font-size: var(  --page-list-font) !important;
-    color: #B00020 !important;
+    color: #cf5e73;
+    margin-left: 90%;
+    margin-top: 4rem;
 }
 .market_loading{
    position: absolute;
@@ -81,56 +66,60 @@
    top: 58%;
 }
 
-.market_coin_name_to_add_favorite{
+.markets_to_add_favorite{
     width: 40%;
-    padding: 2.5rem 5rem;
+    padding: 1.5rem 0rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 4.5rem;
 }
-.market_coin_name{
+.markets_coin_name{
     width: 40%;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    text-align: start;
 
 }
-.market_coin_name > img{
+.markets_coin_name > img{
     width: 4.5rem !important;
     height: 4.5rem !important;
+    text-align: center;
     object-fit: cover;
     border-radius: 50%;
 }
-.market_coin_name_and_symbol{
+.markets_coin_name_and_symbol{
+    width: 50%;
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: start;
+    gap: 0.15rem;
+
 }
-.market_coin_name_and_symbols{
+.markets_coin_name_and_symbols{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.market_coin_names{
+.markets_coin_names{
     font-size: var(--header-h3);
     font-weight: bold;
+    text-transform: uppercase;
 }
-.market_coin_symbols{
-    font-size: var(--header-h3);
+.markets_coin_symbols{
+    font-size: 1.5rem;
     font-weight: 450;
+    color: gray;
 }
-.stars{
+.star{
     font-size: 3.3rem !important;
     color: #5b5b5b !important;
     cursor: pointer;
 }
-.stars:hover{
+.star:hover{
     color: #ffad32 !important;
 }
-.homemarket_button > button{
+.Markets_button > button{
     width: 12rem;
     border: 0;
     height: 4rem;
@@ -142,161 +131,76 @@
     background-color: #7387ff;
     color: white;
 }
-.homemarket_button > button:hover{
+.Markets_button > button:hover{
     background-color: #97a3e4;
 }
+
 @media screen and (max-width: 642px) {
-    .HomeMarketCoins{
-        width: 87%;
-        padding: 0px 0.3rem;
+    .markets_table_cell_asset{
+        font-size: 0.95rem !important;
     }
-    .HomeMarketCoinss > h1{
-        font-size: var( --mobile-font-header1);
-        letter-spacing: normal;
-        font-weight: bolder;
+    .markets_table_cell_Price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
     }
-    .table_head{
-        width: 100% !important;
+    .markets_table_cell_current_price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
     }
-    .table_row{
-        width: 100% !important;
-        margin-left: 0rem !important;
+    .markets_to_add_favorite{
+        padding: 0;
+        gap: 1.5rem;
     }
-    .body_row{
-        width: 100% !important;
+    .markets_coin_name{
+        width: 50%;
     }
-    .table_body{
-        width: 100% !important;
+    .markets_coin_name > img{
+        width: 2rem !important;
+        height: 2rem !important;
     }
-    .Market_asset{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 1rem !important;
+    .markets_coin_name_and_symbol{
+        margin-left: 0.8rem;
     }
-    .Market_Price{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0.1rem !important;
-    }
-    .Market_perfomance{
-        display: none !important;
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0.3rem !important;
-    }
-    .Market_percentage{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_track{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_chart{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_current_price{
-        font-size: var( --mobile-font-header2) !important;
-        padding: 0.3rem 0rem !important;
-    }
-    .market_coin_name_to_add_favorite{
-        width: 100%;
-        padding: 1rem 0rem;
-        gap: 0rem;
-    }
-    .market_coin_name > img{
-        width: 2.1rem !important;
-        height: 2.1rem !important;
-       
-    }
-    .market_coin_name_and_symbol{
-        margin-left: 1.2rem;
-    }
-    .market_coin_names{
+    .markets_coin_names{
         font-size: var( --mobile-font-header2);
+        font-weight: bold;
     }
-    .market_coin_symbols{
-        font-size: var( --mobile-font-header2);
+    .markets_coin_symbols{
+        font-size: 0.78rem;
+        font-weight: 400;
     }
-    .stars{
-        position: absolute !important;
-        right: 0.7rem !important;
+    .star{
         font-size: 1.8rem !important;
     }
-    .homemarket_button > button{
-        width: 7rem;
-        height: 2.9rem;
-        font-size: 0.95rem;
-        border-radius: 6px;
-    }
-    .not_search_found{
-        width: 100%;
-        margin-left: 13%;
-        gap: 0;
-        font-size: var(--mobile-font);
-    }
-    .not_found_icon{
-        font-size: var( --mobile-font-header1) !important;
+    .markets_table_cell_perfomance{
         display: none !important;
     }
+    .markets_table_cell_percentage{
+        display: none !important;
+    }
+    .markets_table_cell_track{
+        display: none !important;
+    }
+    .markets_table_cell_chart{
+       display: none !important;
+    }
+    .internet_connection_error{
+        padding: 3px !important;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.95rem;
+        letter-spacing: normal;
+        color: #d47485;
+        margin-left: 40%;
+        margin-top: 2rem;
+    }
     .market_loading{
-        top: 43%;
-        left: 37%;
+        top: 22%;
+        left: 40%;
     }
 }
 @media screen and (max-width: 242px) {
-    .market_coin_name > img{
-        display: none;
-    }
-    .market_coin_name_to_add_favorite{
-        width: 50%;
-    }
-    .Market_Price{
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0.1rem !important;
-    }
-    .Market_perfomance{
-        display: none !important;
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0.3rem !important;
-    }
-    .Market_percentage{
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_track{
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_chart{
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0.3rem !important;
-        display: none !important;
-    }
-    .Market_current_price{
-        font-size: 0.8rem !important;
-        padding: 0.3rem 0rem !important;
-    }
-    .market_coin_name_to_add_favorite{
-        width: 100%;
-        padding: 1rem 0rem;
-        gap: 0rem;
-    }
-}
-@media screen and (max-width: 281px) {
-    .market_coin_name > img{
-        width: 1.15rem !important;
-        height: 1.15rem !important;
-    }
-    .market_coin_name_and_symbol{
-        width: 100%;
-    }
-    .market_coin_names{
-        width:57%;
-        text-align: start;
-        
-    }
+   
 }

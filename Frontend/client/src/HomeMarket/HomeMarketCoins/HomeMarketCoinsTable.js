@@ -11,68 +11,90 @@ import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
 
 function HomeMarketCoinsTable({searchs}) {
-  const [data, setData] = useState([])
-
+  const [data, setData] = useState("")
   const [ loading, setLoading ] = useState(false)
-  const Keys = ["name", "symbol"]
+  const [ error, setError ] = useState(false)
 
+  const Keys = ["name", "symbol","rank"]
+
+  let timer;
   useEffect(()=>{
-    // setInterval(()=>{
-        const URL ="https://data.messari.io/api/v1/assets?fields=id,slug,symbol,image,metrics/market_data/price_usd"
-        setLoading(true)
+    setLoading(true)
+   setInterval(()=>{
+        const URL = "https://api.coincap.io/v2/assets"
         const fetchData =async (URL)=>{
           try{
             const res = await axios.get(URL)
             setData(res.data)
             setLoading(false)
+            setError(false)
             
           }catch(err){
             setLoading(false)
+            setError(true)
           }
         }
         fetchData(URL)
-        // },100)
+        },200)
+        return ()=>{clearInterval(timer)}
         
       },[URL])
 
-      console.log(data.data[0].metrics.market_data.price_usd, data)
-      // const Search = (data) =>{
-      //   return data.filter((item)=>(
-      //     Keys.some((key) => item[key].toLowerCase().includes(searchs))
-      //     ))
-      //   }
-        // console.log(data)
-        //check length
-        // const isSearchIncorrect = Search(data)
+      //all data from API
+      const apiData  = [data]
+
+      //all data which aint filtered
+      const datazz =  apiData[0].data
+
+      let arrDataFromSETDATA = [data.data]
+      let filteredData = arrDataFromSETDATA[0]
+      const Search = (filteredData) =>{
+        return filteredData?.filter((item)=>(
+          Keys.some((key) => item[key].toLowerCase().includes(searchs))
+          ))
+        }
+
         
-        return (
-          <TableContainer className='HomeMarketCoins'>
+        // check length
+        const isSearchIncorrect = Search(filteredData)
+        let isSearchIncorrects =  isSearchIncorrect?.length
+        
+    return (
+    <TableContainer className='HomeMarketCoins'>
       <Table className='HomeMarketCoins_table'>
         <TableHead className='table_head'>
           <TableRow className='table_row'>
             <TableCell className='table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
             <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
             <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Perfomance</TableCell>
-            <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h %</TableCell>
+            <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h%</TableCell>
               <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
-        {/* {isSearchIncorrect.length === 0  && <div className='not_search_found'>
+
+
+        {isSearchIncorrects === 0  && <div className='not_search_found'>
           <DoNotDisturbAlt className='not_found_icon'/>
           <p>There are no assets matching current filter</p>
+        </div>}
+
+        {/* {error   && <div className='internet_connection_error'>
+          <DoNotDisturbAlt className='not_found_icon'/>
+          <p>Check your connection</p>
         </div>} */}
+
+
         {loading ?
         <div className='market_loading'>
             <LoadingAnimation/>
          </div>
           : <TableBody>
-          {/* {data?.map((item)=>(
-            <TableRow key={item.id} className="body_row">
+          {Search(filteredData)?.map((item)=>
+            <TableRow  className="body_row" key={item.id}>
               <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
                 <StarOutline className='star' />
                   <div className='coin_name'>
-                    <img src={item?.image} alt="" />
                     <div className="coin_name_and_symbol">
                       <p className='coin_names'>{item?.symbol}</p>
                      <p className='coin_symbols'>{item?.name}</p>
@@ -81,19 +103,21 @@ function HomeMarketCoinsTable({searchs}) {
                 </div>
               </TableCell>
                 <TableCell  className='table_cell_current_price' >
-                   ${item?.current_price.toFixed(2)}
+                   ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
                 </TableCell>
                 <TableCell  className='table_cell_chart'>chart</TableCell>
-                <TableCell  className='table_cell_percentage'>+35%</TableCell>
-              
+                <TableCell  className='table_cell_percentage'>
+                  <button className={Number(item?.changePercent24Hr) < 0 ? "table_cell_percentage_button_red" : "table_cell_percentage_button"}>
+                    {Number(item?.changePercent24Hr).toFixed(2)}%
+                  </button>
+                </TableCell>
                 <TableCell align='right'  className='table_cell_track'>
                   <div className='homemarket_button'>
                     <button>Start tracking</button>
                   </div>
                 </TableCell>
-
             </TableRow>
-          ))} */}
+        )}
         </TableBody>}
       </Table>
     </TableContainer>

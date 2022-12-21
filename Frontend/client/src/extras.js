@@ -35,3 +35,5 @@
 //   })
 
 // import { io } from "socket.io-client";
+        // const URL ="https://data.messari.io/api/v1/assets?fields=id,slug,symbol,image,metrics/market_data/price_usd"
+

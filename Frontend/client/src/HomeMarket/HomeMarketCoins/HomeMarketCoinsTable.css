@@ -44,7 +44,7 @@
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
     font-weight: 490 !important;
-    color: #2da966 !important;
+    color: black !important;
 }
 .not_search_found{
     padding: 3px !important;
@@ -59,6 +59,18 @@
     margin-top: 2rem;
   
 }
+.internet_connection_error{
+    padding: 3px !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(  --page-list-font);
+    letter-spacing: normal;
+    color: #da5971;
+    margin-left: 90%;
+    margin-top: 4rem;
+}
 .not_found_icon{
     font-size: var(  --page-list-font) !important;
     color: #B00020 !important;
@@ -66,7 +78,7 @@
 .market_loading{
    position: absolute;
    left: 50%;
-   top: 58%;
+   top: 25%;
 }
 
 .to_add_favorite{
@@ -83,14 +95,8 @@
     align-items: center;
 
 }
-.coin_name > img{
-    width: 4.5rem !important;
-    height: 4.5rem !important;
-    text-align: center;
-    object-fit: cover;
-    border-radius: 50%;
-}
 .coin_name_and_symbol{
+    width: 50%;
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
@@ -149,16 +155,37 @@
         font-size: 0.95rem !important;
         padding: 1rem !important;
     }
+    .table_cell_percentage_button{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #2da966;
+        border: 0;
+        outline: 0;
+        background-color: #cbf1de;
+        border-radius: 5px;
+    }
+    .table_cell_percentage_button_red{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #ff4f4f;
+        border: 0;
+        outline: 0;
+        background-color: #eecfcf;
+        border-radius: 5px;
+        
+    }
+    .table_cell_percentage{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
     .to_add_favorite{
         padding: 0;
-        gap: 1.5rem;
+        gap: 0rem;
     }
     .coin_name{
         width: 50%;
-    }
-    .coin_name > img{
-        width: 2rem !important;
-        height: 2rem !important;
     }
     .coin_name_and_symbol{
         margin-left: 0.8rem;
@@ -177,9 +204,6 @@
     .table_cell_perfomance{
         display: none !important;
     }
-    .table_cell_percentage{
-        display: none !important;
-    }
     .table_cell_track{
         display: none !important;
     }
@@ -188,6 +212,18 @@
     }
     .not_search_found{
         margin-left: 13%;
+    }
+    .internet_connection_error{
+        padding: 3px !important;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.95rem;
+        letter-spacing: normal;
+        color: #c56072;
+        margin-left: 40%;
+        margin-top: 2rem;
     }
     .not_found_icon{
         display: none !important;
