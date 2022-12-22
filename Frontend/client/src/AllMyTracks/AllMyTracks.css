@@ -1,0 +1,17 @@
+.AllMyTracks{
+    width: 100%;
+    background-color:  #ebe5e5;
+}
+.allmytrack_container_nav{
+    padding: var(--mobile-padding-main);
+    margin: 0rem 2rem;
+}
+.allmytrack_container_slider{
+    padding: var(--mobile-padding-main);
+    margin: 2rem 2rem;
+}
+@media screen and (max-width: 642px) {
+    .allmytrack_container_slider{
+        margin: 0px;
+    }
+}

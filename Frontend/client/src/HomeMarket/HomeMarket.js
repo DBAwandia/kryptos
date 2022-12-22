@@ -1,5 +1,5 @@
 import { Dehaze, Search } from '@mui/icons-material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./HomeMarket.css"
 import Footer from "../Footer/Footer"
 import HomeMarketCoinsTable from './HomeMarketCoins/HomeMarketCoinsTable'
@@ -10,6 +10,10 @@ import HomeMaketNavbar from './HomeMaketNavbar/HomeMaketNavbar'
 
 function HomeMarket() {
   const [searchs, setSearchs] = useState("")
+
+  //get from localstorage
+ 
+
   const navigate = useNavigate()
   const { 
     isScrolling,
@@ -42,7 +46,7 @@ function HomeMarket() {
               <p>Crypto Assets</p>
             </div>
             <div className='HomeMarket_coin_search_input'>
-              <input type="search" placeholder="Filter Crypto Assets" onChange={(e)=>setSearchs(e.target.value.toLowerCase())}/>
+              <input type="search" placeholder="Filter Crypto Assets" autoComplete='yes' onChange={(e)=>setSearchs(e.target.value.toLowerCase())}/>
               <Search className="search" />
             </div>
             <div className='HomeMarketCoins'>

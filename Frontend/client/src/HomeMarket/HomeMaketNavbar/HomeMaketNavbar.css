@@ -35,13 +35,34 @@
     font-size: var(--header-h3);
     color: var(--color);
 }
-.isActive{
+.isActivez{
     background-color: rgba(10, 10, 10,0.08);
     border-radius: 10px;
     padding: 1rem 3rem;
     font-size: var(--header-h3);
-
 }
 /* .HomeMarket_container_lists > ul > li:hover{
     color: #b2bcf5;
 } */
+
+@media screen and (max-width: 642px) {
+    .HomeMarket_logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+    .HomeMarket_logo > h1{
+        font-size: var(--mobile-font-header1);
+        letter-spacing: normal;
+    }
+    .HomeMarket_image{
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .HomeMarket_container_lists{
+        display: none;
+    }
+}

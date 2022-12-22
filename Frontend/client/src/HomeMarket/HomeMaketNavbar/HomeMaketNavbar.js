@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./HomeMaketNavbar.css"
 function HomeMaketNavbar() {
+  const [activez, setActivez] = useState("")
 
-  const [active, setActive] = useState("market")
+  //store the active to local storage for easy access in other components
+  useEffect(()=>{
+    JSON.parse(localStorage.setItem("activez",activez) || null)
+  },[activez])
 
   return (
     <div>
@@ -15,28 +19,28 @@ function HomeMaketNavbar() {
               <div className='HomeMarket_container_lists'>
                 <ul>
                   <Link to="/">
-                    <li className={active === "market"? "isActive":"market"}
+                    <li className={activez === "market"? "isActivez":"market"}
                         onClick={()=>{
-                          setActive("market")
+                          setActivez("market")
                         }}
                     >Market</li>
                   </Link>
 
-                  <Link to="/starttracking">
-                    <li className={active === "tracks"? "isActive":"market"}
+                  {/* <Link to="/starttracking"> */}
+                    <li className={activez === "tracks"? "isActivez":"market"}
                         onClick={()=>{
-                          setActive("tracks")
+                          setActivez("tracks")
                         }}
                     >Track</li>
-                  </Link>
+                  {/* </Link> */}
 
-                  <Link to="/allmytracks">
-                    <li className={active === "mytracks"? "isActive":"market"}
+                  {/* <Link to="/allmytracks"> */}
+                    <li className={activez === "mytracks"? "isActivez":"market"}
                         onClick={()=>{
-                          setActive("mytracks")
+                          setActivez("mytracks")
                         }}
                     >My tracks</li>
-                  </Link>
+                  {/* </Link> */}
                   
                 </ul>
               </div>

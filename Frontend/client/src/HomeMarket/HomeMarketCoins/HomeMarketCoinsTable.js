@@ -59,7 +59,7 @@ function HomeMarketCoinsTable({searchs}) {
         const isSearchIncorrect = Search(filteredData)
         let isSearchIncorrects =  isSearchIncorrect?.length
         
-        console.log(isSearchIncorrect)
+        // console.log(isSearchIncorrect)
     return (
     <TableContainer className='HomeMarketCoins'>
       <Table className='HomeMarketCoins_table'>

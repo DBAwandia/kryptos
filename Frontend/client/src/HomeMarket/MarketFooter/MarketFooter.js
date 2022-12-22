@@ -1,18 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GraphicEq, Home, NotificationAdd } from '@mui/icons-material'
 import "./MarketFooter.css"
 import {Link, useNavigate} from "react-router-dom"
 
 function MarketFooter() {
-  const [active, setActive] = useState("markets")
+  const [activez, setActivez] = useState("")
+
+  //store the active to local storage for easy access in other components || to persist
+  useEffect(()=>{
+    JSON.parse(localStorage.setItem("activez",activez) || null)
+  },[activez])
+
+
+  //get from localstorage
+    let getIsActiveState = localStorage.getItem("activez",JSON.stringify("activez"))
+    console.log(getIsActiveState)
+
+
   const navigate = useNavigate()
   return (
     <div className='MarketFooter'>
     <div className='MarketFooter_container'>
 
-        <div className={active === "markets"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
+        <div className={activez === "markets"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
           onClick={()=>{
-            setActive("markets")
+            setActivez("markets")
             navigate("/")
           }}
         >
@@ -22,9 +34,9 @@ function MarketFooter() {
       </Link>
         </div>
 
-          <div className={active === "track"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
+          <div className={activez === "track"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
             onClick={()=>{
-              setActive("track")
+              setActivez("track")
             }}>
         <Link to="/starttracking">
           <GraphicEq className='footer_icon'/>
@@ -32,9 +44,9 @@ function MarketFooter() {
         </Link>
         </div>
 
-        <div className={active === "mytracks"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
+        <div className={activez === "mytracks"? "MarketFooter_icons_and_names": "MarketFooter_icons_and_name"}
           onClick={()=>{
-            setActive("mytracks")
+            setActivez("mytracks")
           }}>
 
           <Link to="allmytracks">
