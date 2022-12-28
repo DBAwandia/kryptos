@@ -152,5 +152,143 @@ input::-webkit-input-placeholder{
 
     }
    
-    
+}
+@media screen and (max-width: 1007px) and (min-width: 642px) {
+    .market_footer{
+        width: 100%;
+        display: block;
+        position: fixed !important;
+         bottom: 0;
+         right: 0;
+         left: 0;
+        z-index: 99999999999999999;
+        /* top: 6.83%; */
+    }
+    .footer{
+        display: none;
+    }
+    .HomeMarket{
+        contain: paint;
+    }
+    .market_sidebar{
+        width: 100%;
+        display: block;
+        /* position: absolute; */
+        z-index: 99999999999999999;
+        /* top: 6.83%; */
+    }
+
+    .HomeMarket_container{
+        padding: var(--mobile-padding-main);
+        gap: 1.5rem;
+    }
+    .HomeMaret_navbar{
+        width: 100%;
+    }
+    .HomeMarket_logo{
+        gap: 1rem;
+    }
+    .HomeMarket_image{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .HomeMarket_container_lists{
+        display: none;
+    }
+    .HomeMarket_logo > h1{
+        font-size: var(--mobile-font-header1);
+        letter-spacing: normal;
+    }
+    .HomeMarket_header{
+        margin-left: 1rem;
+        font-size: var(--mobile-font-header2);
+        letter-spacing: normal;
+        
+    }
+    .HomeMarket_coin_search_input{
+        width: 100% !important;
+        position: sticky !important;
+        top: 0.1rem !important;
+        
+    }
+    .HomeMarket_coin_search_input > input{
+        width: 99%;
+        height: 4.3rem;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font);
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
+    input::-webkit-input-placeholder{
+        color: rgb(163, 160, 160);
+        letter-spacing: normal;
+    }
+    .search{
+        position: absolute !important;
+        left: 3% !important;
+        top: 26% !important;
+        font-size: 1.7rem !important;
+        color: rgb(192, 182, 182);
+
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .HomeMarket{
+        contain: paint;
+    }
+    .footer{
+        display: block;
+    }
+
+    .HomeMarket_container{
+        padding: var(--mobile-padding-main);
+        gap: 1.5rem;
+    }
+    .HomeMaret_navbar{
+        width: 100%;
+    }
+    .HomeMarket_logo{
+        gap: 1rem;
+    }
+    .HomeMarket_image{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .HomeMarket_logo > h1{
+        font-size: var(--mobile-font-header1);
+        letter-spacing: normal;
+    }
+    .HomeMarket_header{
+        margin-left: 1rem;
+        font-size: var(--mobile-font-header2);
+        letter-spacing: normal;
+        
+    }
+    .HomeMarket_coin_search_input{
+        width: 100% !important;
+        position: sticky !important;
+        top: 0.1rem !important;
+        gap: 1rem !important;
+        
+    }
+    .HomeMarket_coin_search_input > input{
+        width: 99%;
+        height: 4.3rem;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font);
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
+    input::-webkit-input-placeholder{
+        color: rgb(163, 160, 160);
+        letter-spacing: normal;
+    }
+    .search{
+        position: absolute !important;
+        left: 2% !important;
+        top: 27% !important;
+        font-size: 1.5rem !important;
+        color: rgb(192, 182, 182);
+
+    }
 }

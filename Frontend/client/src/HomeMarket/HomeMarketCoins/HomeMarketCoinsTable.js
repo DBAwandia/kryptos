@@ -68,8 +68,8 @@ function HomeMarketCoinsTable({searchs}) {
             <TableCell  className='table_cell_perfomance' sx={{fontWeight: "bold"}}>Rank</TableCell>
             <TableCell className='table_cell_asset' sx={{fontWeight: "bold"}}>Asset</TableCell>
             <TableCell   className='table_cell_Price' sx={{fontWeight: "bold"}}>Price</TableCell>
-            <TableCell  className='table_cell_percentage' sx={{fontWeight: "bold"}}>24h%</TableCell>
-              <TableCell  className='table_cell_track'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
+            <TableCell  className='market_table_cell_percentage' sx={{fontWeight: "bold"}}>24h%</TableCell>
+              <TableCell  className='table_cell_tracks'  align='right' sx={{fontWeight: "bold"}}>All tracks</TableCell>
           </TableRow>
         </TableHead>
 

@@ -19,12 +19,17 @@
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
 }
-.table_cell_perfomance{
+.market_table_cell_percentage{
     padding: 3px !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
 }
 .table_cell_percentage{
+    padding: 3px !important;
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+}
+.table_cell_tracks{
     padding: 3px !important;
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
@@ -223,7 +228,10 @@
     .star{
         font-size: 1.8rem !important;
     }
-    .table_cell_perfomance{
+    .market_table_cell_percentage{
+        display: none !important;
+    }
+    .table_cell_tracks{
         display: none !important;
     }
     .table_cell_track{
@@ -258,6 +266,238 @@
         left: 40%;
     }
 }
-@media screen and (max-width: 242px) {
-   
+@media screen and (max-width: 1007px) and (min-width: 642px) {
+    .table_cell_asset{
+        font-size: 0.95rem !important;
+    }
+    .table_cell_Price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .table_cell_perfomance{
+        font-size: 0.95rem !important;
+        display: none !important;
+    }
+    .table_cell_current_price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .table_cell_percentage_button{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #2da966;
+        border: 0;
+        outline: 0;
+        background-color: #cbf1de;
+        border-radius: 5px;
+    }
+    .table_cell_percentage_button_red{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #ff4f4f;
+        border: 0;
+        outline: 0;
+        background-color: #f1d9d9;
+        border-radius: 5px;
+        
+    }
+    .table_cell_percentage{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .to_add_favorite{
+        padding: 0;
+        gap: 0rem;
+    }
+    .coin_name{
+        width: 50%;
+    }
+    .coin_name_and_symbol{
+        margin-left: 0.8rem;
+    }
+    .coin_names{
+        font-size: var( --mobile-font-header2);
+        font-weight: bold;
+    }
+    .coin_symbols{
+        font-size: 0.78rem;
+        font-weight: 400;
+    }
+    .star{
+        font-size: 1.8rem !important;
+    }
+    .market_table_cell_percentage{
+        display: none !important;
+    }
+    .table_cell_tracks{
+        display: none !important;
+    }
+    .table_cell_track{
+        display: block !important;
+    }
+    .table_cell_chart{
+       display: none !important;
+    }
+    .not_search_found{
+        margin-left: 13%;
+    }
+    .internet_connection_error{
+        padding: 3px !important;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.95rem;
+        letter-spacing: normal;
+        color: #c56072;
+        margin-left: 40%;
+        margin-top: 2rem;
+    }
+    .not_found_icon{
+        display: none !important;
+    }
+    .not_search_found > p{
+        font-size: 0.95rem !important;
+    }
+    .market_loading{
+        top: 22%;
+        left: 40%;
+    }
+    .table_cell_percentage_button{
+        height: 3.5rem;
+        width: 7rem;
+        
+    }
+    .table_cell_percentage_button_red{
+        height: 3.5rem;
+        width: 7rem;
+    }
+    .homemarket_button > button{
+        border-radius: 5px;
+        height: 3.5rem;
+        font-size: 0.95rem;
+        width: 10rem;
+        margin-top: 0.5rem ;
+    }
+
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .table_cell_asset{
+        font-size: 0.95rem !important;
+    }
+    .table_cell_Price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .table_cell_perfomance{
+        font-size: 0.95rem !important;
+        display: block !important;
+        border-bottom:  0 !important;
+    }
+    .table_cell_current_price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .table_cell_percentage_button{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #2da966;
+        border: 0;
+        outline: 0;
+        background-color: #cbf1de;
+        border-radius: 5px;
+    }
+    .table_cell_percentage_button_red{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.88rem;
+        color: #ff4f4f;
+        border: 0;
+        outline: 0;
+        background-color: #f1d9d9;
+        border-radius: 5px;
+        
+    }
+    .table_cell_percentage{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .to_add_favorite{
+        padding: 0;
+        gap: 0rem;
+    }
+    .coin_name{
+        width: 50%;
+    }
+    .coin_name_and_symbol{
+        margin-left: 0.8rem;
+    }
+    .coin_names{
+        font-size: var( --mobile-font-header2);
+        font-weight: bold;
+    }
+    .coin_symbols{
+        font-size: 0.78rem;
+        font-weight: 400;
+    }
+    .star{
+        font-size: 1.8rem !important;
+    }
+    .market_table_cell_percentage{
+        display: none !important;
+    }
+    .table_cell_tracks{
+        display: none !important;
+    }
+    .table_cell_track{
+        display: block !important;
+    }
+    .table_cell_chart{
+       display: block !important;
+       font-size: 0.95rem !important;
+    }
+    .not_search_found{
+        margin-left: 13%;
+    }
+    .internet_connection_error{
+        padding: 3px !important;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.95rem;
+        letter-spacing: normal;
+        color: #c56072;
+        margin-left: 40%;
+        margin-top: 2rem;
+    }
+    .not_found_icon{
+        display: none !important;
+    }
+    .not_search_found > p{
+        font-size: 0.95rem !important;
+    }
+    .market_loading{
+        top: 22%;
+        left: 40%;
+    }
+    .table_cell_percentage_button{
+        height: 3.5rem;
+        width: 7rem;
+        
+    }
+    .table_cell_percentage_button_red{
+        height: 3.5rem;
+        width: 7rem;
+    }
+    .homemarket_button > button{
+        border-radius: 5px;
+        height: 3.5rem;
+        font-size: 0.95rem;
+        width: 10rem;
+        margin-top: 0.5rem ;
+    }
 }

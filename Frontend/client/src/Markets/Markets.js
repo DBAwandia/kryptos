@@ -88,7 +88,7 @@ function Markets() {
                     {Number(item?.changePercent24Hr).toFixed(2)}%
                   </button>
                 </TableCell>
-                <TableCell align='right'  className='markets_table_cell_track'>
+                <TableCell align='right'  className='table_cell_track'>
                   <div className='Markets_button'>
                     <button>Start tracking</button>
                   </div>

@@ -20,6 +20,7 @@
     border-radius: 50%;
 }
 .HomeMarket_container_lists{
+    width: 100%;
     position: relative;
 }
 .HomeMarket_container_lists > ul{
@@ -64,5 +65,53 @@
     }
     .HomeMarket_container_lists{
         display: none;
+    }
+}
+@media screen and (max-width: 1007px) and (min-width: 642px) {
+    .HomeMarket_logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+    .HomeMarket_logo > h1{
+        font-size: var(--mobile-font-header1);
+        letter-spacing: normal;
+    }
+    .HomeMarket_image{
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .HomeMarket_container_lists{
+        display: none;
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .HomeMarket_logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+    .HomeMarket_logo > h1{
+        font-size: var(--mobile-font-header1);
+        letter-spacing: normal;
+    }
+    .HomeMarket_image{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .HomeMarket_container_lists > ul{
+        width: 100%;
+        margin-right: 0rem;
+        gap: 5rem;
+    }
+    .market{
+        font-size: 1rem;
+    }
+    .isActivez{
+        font-size: 1rem;
     }
 }

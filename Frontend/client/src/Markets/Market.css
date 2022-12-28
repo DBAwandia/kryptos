@@ -167,7 +167,7 @@
         font-weight: bold;
     }
     .markets_coin_symbols{
-        font-size: 0.78rem;
+        font-size: 0.95rem;
         font-weight: 400;
     }
     .star{
@@ -179,7 +179,7 @@
     .markets_table_cell_percentage{
         display: none !important;
     }
-    .markets_table_cell_track{
+    .markets_table_cell_trackble_cell_track{
         display: none !important;
     }
     .markets_table_cell_chart{
@@ -201,7 +201,158 @@
         top: 22%;
         left: 40%;
     }
+    .markets_table_cell_track{
+        display: none !important;
+    }
 }
-@media screen and (max-width: 242px) {
-   
+@media screen and (max-width: 1007px) and (min-width: 642px) {
+    .markets_table_cell_asset{
+        font-size: 0.95rem !important;
+        padding-left: 2rem !important;
+    }
+    .markets_table_cell_Price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .markets_table_cell_current_price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .markets_to_add_favorite{
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+    .markets_coin_name{
+        width: 50%;
+    }
+    .markets_coin_name > img{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .markets_coin_name_and_symbol{
+        margin-left: 0.8rem;
+    }
+    .markets_coin_names{
+        font-size: var( --mobile-font-header2);
+        font-weight: bold;
+    }
+    .markets_coin_symbols{
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+    .star{
+        font-size: 1.3rem !important;
+    }
+    .markets_table_cell_perfomance{
+        display: none !important;
+    }
+    .markets_table_cell_percentage{
+        display: none !important;
+    }
+    .markets_table_cell_track{
+        display: none !important;
+    }
+    .table_cell_track{
+        display: block !important;
+        font-size: 0.95rem;
+        font-weight: bold;
+    }
+    .markets_table_cell_chart{
+       display: none !important;
+    }
+   .table_cell_percentage_button_red{
+    height: 3.5rem !important;
+    font-size: 0.95rem !important;
+   }
+   .table_cell_percentage_button{
+    height: 3.5rem !important;
+    font-size: 0.95rem !important;
+   }
+   .Markets_button > button{
+    height: 3.5rem !important;
+    border-radius: 4px;
+    margin-top: 0.85rem !important;
+    font-size: 0.95rem !important;
+}
+    .market_loading{
+        top: 22%;
+        left: 40%;
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .markets_table_cell_asset{
+        font-size: 0.95rem !important;
+        padding-left: 2rem !important;
+    }
+    .markets_table_cell_Price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .markets_table_cell_current_price{
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+    .markets_to_add_favorite{
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+    .markets_coin_name{
+        width: 50%;
+    }
+    .markets_coin_name > img{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .markets_coin_name_and_symbol{
+        margin-left: 0.8rem;
+    }
+    .markets_coin_names{
+        font-size: var( --mobile-font-header2);
+        font-weight: bold;
+    }
+    .markets_coin_symbols{
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+    .star{
+        font-size: 1.3rem !important;
+    }
+    .markets_table_cell_perfomance{
+        display: block !important;
+        font-size: 0.95rem !important;
+    }
+    .markets_table_cell_percentage{
+        display: none !important;
+    }
+    .markets_table_cell_track{
+        display: none !important;
+    }
+    .table_cell_track{
+        display: block !important;
+        font-size: 0.95rem;
+        font-weight: bold;
+    }
+    .markets_table_cell_chart{
+       display: block !important;
+    }
+   .table_cell_percentage_button_red{
+    height: 3.5rem !important;
+    font-size: 0.95rem !important;
+   }
+   .table_cell_percentage_button{
+    height: 3.5rem !important;
+    font-size: 0.95rem !important;
+   }
+   .Markets_button > button{
+    height: 3.5rem !important;
+    border-radius: 4px;
+    margin-top: 0rem !important;
+    font-size: 0.95rem !important;
+}
+    .market_loading{
+        top: 22%;
+        left: 40%;
+    }
 }

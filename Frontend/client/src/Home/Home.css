@@ -51,3 +51,14 @@
     display: none;
    }
 }
+@media screen  and (min-width: 642px) and (max-width: 1007px){
+    .hero_home_section{
+        margin-bottom: 20px;
+    }
+    .reason_home_section{
+        margin-top: 5px;
+    }
+    .footer_home_section{
+        margin-top: 18rem;
+    }
+}

@@ -30,11 +30,11 @@ function Home() {
         </div>
 
         <div className='reason_home_section'>
-          <Reasons/>
+          {/* <Reasons/> */}
         </div>
 
         <div className='footer_home_section'>
-          <Footer/>
+          {/* <Footer/> */}
         </div>
 
       </div>
