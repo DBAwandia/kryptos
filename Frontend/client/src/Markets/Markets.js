@@ -45,6 +45,7 @@ function Markets() {
       const datazz =  apiData[0]?.data
         return (
     <TableContainer className='MarketsCoins'>
+      <h1>Markets</h1>
       <Table className='MarketsCoins_table'>
         <TableHead className='markets_table_head'>
           <TableRow className='markets_table_row'>

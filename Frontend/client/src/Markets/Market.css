@@ -2,7 +2,12 @@
     width: 100% !important;
     height: 100vh !important;
     overflow: hidden !important;
+    text-align: center !important;
 
+}
+.MarketsCoins > h1{
+    margin: 2rem 0rem !important;
+    font-size: var(--header-h3);
 }
 .MarketsCoins_table{
     width: 100% !important;
@@ -136,6 +141,10 @@
 }
 
 @media screen and (max-width: 642px) {
+    .MarketsCoins > h1{
+        margin: 2rem 0rem !important;
+        font-size: var(--mobile-font-header1);
+    }
     .markets_table_cell_asset{
         font-size: 0.95rem !important;
         padding-left: 2rem !important;
@@ -206,6 +215,10 @@
     }
 }
 @media screen and (max-width: 1007px) and (min-width: 642px) {
+    .MarketsCoins > h1{
+        margin: 2rem 0rem !important;
+        font-size: var(--mobile-font-header1);
+    }
     .markets_table_cell_asset{
         font-size: 0.95rem !important;
         padding-left: 2rem !important;
@@ -281,6 +294,10 @@
     }
 }
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .MarketsCoins > h1{
+        margin: 2rem 0rem !important;
+        font-size: var(--mobile-font-header1);
+    }
     .markets_table_cell_asset{
         font-size: 0.95rem !important;
         padding-left: 2rem !important;

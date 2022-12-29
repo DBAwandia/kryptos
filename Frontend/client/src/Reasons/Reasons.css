@@ -90,7 +90,7 @@
         font-size: var(--mobile-font-header2);
     }
     .reasons_container > p{
-        width: 90%;
+        width: 70%;
         line-height:normal;
         font-size: var(--mobile-font);
     }
@@ -105,5 +105,85 @@
     }
     .reasons_containers{
         grid-template-columns:   1fr;
+    }
+}
+@media screen and (min-width: 643px) and (max-width: 1007px) {
+    .reasons{
+        padding: var(--mobile-padding-main);
+        gap: 2rem;
+    }
+    .reasons_header{
+        font-size: var( --mobile-font-header1);
+        letter-spacing: normal;
+        font-weight: bolder;
+    }
+    .reasons_description{
+        font-size: var(  --mobile-font);
+        text-align:justify;
+        padding: var(--description-padding);
+        line-height: var(--mobile-line-height);
+        letter-spacing: normal;
+    }
+    .reasons_containers{
+        padding: 15px 5px;
+        gap: 2.5rem;
+        grid-template-columns:  1fr 1fr;
+    }
+    .reasons_container{
+        padding: 0;
+        gap: 1rem;
+    }
+    .lazyload_image{
+        width: 12rem;
+        height: 8.5rem;
+    }
+    .reasons_container > h2{
+        letter-spacing: normal;
+        font-size: var(--mobile-font-header2);
+    }
+    .reasons_container > p{
+        width: 50%;
+        line-height:normal;
+        font-size: var(--mobile-font);
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .reasons{
+        padding: var(--mobile-padding-main);
+        gap: 2rem;
+    }
+    .reasons_header{
+        font-size: var( --mobile-font-header1);
+        letter-spacing: normal;
+        font-weight: bolder;
+    }
+    .reasons_description{
+        font-size: var(  --mobile-font);
+        text-align:justify;
+        padding: var(--description-padding);
+        line-height: var(--mobile-line-height);
+        letter-spacing: normal;
+    }
+    .reasons_containers{
+        padding: 15px 5px;
+        gap: 0.5rem;
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+    }
+    .reasons_container{
+        padding: 0;
+        gap: 1rem;
+    }
+    .lazyload_image{
+        width: 8rem;
+        height: 8rem;
+    }
+    .reasons_container > h2{
+        letter-spacing: normal;
+        font-size: var(--mobile-font-header2);
+    }
+    .reasons_container > p{
+        width: 70%;
+        line-height:normal;
+        font-size: var(--mobile-font);
     }
 }

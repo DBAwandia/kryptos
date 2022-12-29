@@ -18,9 +18,7 @@ function Home() {
       </div>}
 
       <div className='hero_and_navbar'>
-
           <Navbar setOpenSidebar={setOpenSidebar}/>
-
         <div className='hero_home_section'>
           <Herosection/>
         </div>
@@ -30,11 +28,11 @@ function Home() {
         </div>
 
         <div className='reason_home_section'>
-          {/* <Reasons/> */}
+          <Reasons/>
         </div>
 
         <div className='footer_home_section'>
-          {/* <Footer/> */}
+          <Footer/>
         </div>
 
       </div>

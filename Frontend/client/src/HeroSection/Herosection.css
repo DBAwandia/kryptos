@@ -5,17 +5,20 @@ a{
     width: 100%;
     background-color: #f8f8f6;
     position: relative;
+   
 }
 
 .video_container{
     width: 100%;
     height: 100%;
     position: relative;
+
 }
 .video_mp4{
     width: 100%;
     object-fit: cover;
     z-index: 99999;
+    width: 100%;
     position: absolute;
 }
 .hero_container{
@@ -60,6 +63,10 @@ a{
         width: 100%;
         height: 100%;
         background-color: white;
+    }
+    .video_container{
+        width: 100%;
+        overflow: hidden;
     }
     .video_mp4{
         height: 100%;

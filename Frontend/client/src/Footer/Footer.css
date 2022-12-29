@@ -49,7 +49,63 @@
         letter-spacing: normal;
     }
     .socials{
-        gap: 3rem;
+        gap: 4.5rem;
+    }
+    .social_icon{
+        font-size: 1.7rem !important;
+    }
+}
+@media screen and (min-width: 643px) and (max-width: 1007px) {
+    .Footer{
+        border-radius: 10% 10% 0px  0px;
+    }
+    .Footer_container{
+        padding: var(--mobile-padding-main);
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .Footer_container > p{
+        font-size: 1.1rem;
+        letter-spacing: normal;
+    }
+    .Footer_container > h2{
+        font-size: 1.1rem;
+        letter-spacing: normal;
+    }
+    .socials{
+        gap: 8rem;
+        justify-content: space-between;
+
+    }
+    .social_icon{
+        font-size: 1.7rem !important;
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .Footer{
+        border-radius: 10% 10% 0px  0px;
+    }
+    .Footer_container{
+        padding: var(--mobile-padding-main);
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .Footer_container > p{
+        font-size: 1.1rem;
+        letter-spacing: normal;
+    }
+    .Footer_container > h2{
+        font-size: 1.1rem;
+        letter-spacing: normal;
+    }
+    .socials{
+        gap: 10rem;
+        justify-content: space-between;
+
     }
     .social_icon{
         font-size: 1.7rem !important;
