@@ -142,11 +142,11 @@
     }
     .markets_table_cell_Price{
         font-size: 0.95rem !important;
-        padding: 1rem !important;
+        padding: 0.3rem !important;
     }
     .markets_table_cell_current_price{
         font-size: 0.95rem !important;
-        padding: 1rem !important;
+        padding: 0rem !important;
     }
     .markets_to_add_favorite{
         padding: 0;
@@ -212,11 +212,11 @@
     }
     .markets_table_cell_Price{
         font-size: 0.95rem !important;
-        padding: 1rem !important;
+        padding: 0.3rem !important;
     }
     .markets_table_cell_current_price{
         font-size: 0.95rem !important;
-        padding: 1rem !important;
+        padding: 0.3rem !important;
     }
     .markets_to_add_favorite{
         padding: 0;

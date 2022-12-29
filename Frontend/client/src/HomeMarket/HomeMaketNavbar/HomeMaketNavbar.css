@@ -2,7 +2,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 15rem;
+    justify-content: space-between !important;
 }
 .HomeMarket_logo{
     display: flex;

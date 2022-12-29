@@ -180,7 +180,7 @@
     }
     .table_cell_current_price{
         font-size: 0.95rem !important;
-        padding: 1rem !important;
+        padding: 0.3rem !important;
     }
     .table_cell_percentage_button{
         width: 4rem;
@@ -202,6 +202,9 @@
         background-color: #f1d9d9;
         border-radius: 5px;
         
+    }
+    .table_cell_perfomance{
+        display: none !important;
     }
     .table_cell_percentage{
         font-size: 0.95rem !important;
