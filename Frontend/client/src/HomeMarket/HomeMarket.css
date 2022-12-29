@@ -72,6 +72,7 @@ input::-webkit-input-placeholder{
 }
 .footer{
     width: 100%;
+    padding: 0;
 }
 @media screen and (max-width: 642px) {
     .market_footer{
@@ -158,6 +159,14 @@ input::-webkit-input-placeholder{
         width: 100%;
         display: block;
         position: fixed !important;
+         bottom: 0;
+         right: 0;
+         padding: 0 !important;
+         width: 100%;
+         padding: 0;
+         margin: 0;
+         position: fixed;
+         left: 0;
          bottom: 0;
          right: 0;
          left: 0;

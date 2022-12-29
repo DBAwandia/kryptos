@@ -55,7 +55,7 @@
 }
 .notification{
     font-size: 3.3rem !important;
-    color: #f5c173 !important;
+    color: #cac8c6 !important;
     cursor: pointer;
 }
 .btc_name{
@@ -151,7 +151,8 @@
     }
     .notification{
         font-size: 1.3rem !important;
-        color: #f5c173 !important;
+        color: #cac8c6 !important;
+
     }
     .btc_name{
         font-size: var( --mobile-font) !important;
@@ -217,7 +218,8 @@
     }
     .notification{
         font-size: 1.3rem !important;
-        color: #f5c173 !important;
+        color: #cac8c6 !important;
+
     }
     .btc_name{
         font-size: var( --mobile-font) !important;
@@ -282,7 +284,8 @@
     }
     .notification{
         font-size: 1.3rem !important;
-        color: #f5c173 !important;
+        color: #cac8c6 !important;
+
     }
     .btc_name{
         font-size: var( --mobile-font) !important;

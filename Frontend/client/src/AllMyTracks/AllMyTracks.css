@@ -1,6 +1,7 @@
 .AllMyTracks{
     width: 100%;
     background-color:  #ebe5e5;
+    position: relative;
 }
 .allmytrack_container_nav{
     padding: var(--mobile-padding-main);
@@ -15,10 +16,19 @@
     margin: 2rem 10rem;
 }
 .allmytrack_container_footer{
+    display: none;
+    width: 100%;
     padding: 0;
     margin: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 @media screen and (max-width: 642px) {
+    .allmytrack_container_footer{
+        display: block;
+    }
     .allmytrack_container_slider{
         margin: 0px;
     }
@@ -27,6 +37,9 @@
     }
 }
 @media screen and (max-width: 1007px) and (min-width: 642px) {
+    .allmytrack_container_footer{
+        display: block;
+    }
     .allmytrack_container_slider{
         margin: 0px;
     }
@@ -35,6 +48,9 @@
     }
 }
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .allmytrack_container_footer{
+        display: none;
+    }
     .allmytrack_container_slider{
         margin: 0px;
     }

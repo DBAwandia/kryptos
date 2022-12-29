@@ -4,6 +4,7 @@ import "./AllMyTracks.css"
 import MarketSliderNews from './MarketSlider/MarketSliderNews'
 import MarketTrackDetails from './MarketTrackDetails/MarketTrackDetails'
 import Footer from "../Footer/Footer"
+import MarketFooter from "../HomeMarket/MarketFooter/MarketFooter"
 
 function AllMyTracks() {
   return (
@@ -18,7 +19,7 @@ function AllMyTracks() {
         <MarketTrackDetails/>
       </div>
       <div className='allmytrack_container_footer'>
-        <Footer/>
+        <MarketFooter/>
       </div>
     </div>
   )

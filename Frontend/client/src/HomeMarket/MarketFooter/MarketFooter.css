@@ -4,9 +4,9 @@ a{
 }
 .MarketFooter{
     width: 100%;
-    height: 5.8rem;
+    height: 3.8rem;
     background: rgba(252, 252, 252, 0.38);
-    border-radius: 26px 26px 0px 0px;
+    /* border-radius: 26px 26px 0px 0px; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.8px);
     -webkit-backdrop-filter: blur(9.8px);
@@ -20,7 +20,7 @@ a{
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1rem 1.8rem;
+    padding: 1.4rem 1.5rem;
     justify-content: space-between;
 }
 .MarketFooter_icons_and_names > a{
@@ -36,19 +36,21 @@ a{
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.3rem;
     flex-direction: column;
     justify-content: space-between;
 }
 .MarketFooter_icons_and_name > a > p{
     font-size: var(--mobile-page-list-font);
+    letter-spacing: normal;
 }
 .MarketFooter_icons_and_names > a > p{
     font-size: var(--mobile-page-list-font);
+    letter-spacing: normal;
 
 }
 .footer_icon{
-    font-size: 1.65rem !important;
+    font-size: 1.55rem !important;
 }
 @media screen and (max-width: 1007px) and (min-width: 642px) {
     a{
@@ -57,9 +59,9 @@ a{
     }
     .MarketFooter{
         width: 100%;
-        height: 5.8rem;
+        height: 3.8rem;
         background: rgba(252, 252, 252, 0.38);
-        border-radius: 26px 26px 0px 0px;
+        /* border-radius: 26px 26px 0px 0px; */
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(9.8px);
         -webkit-backdrop-filter: blur(9.8px);

@@ -71,7 +71,7 @@ a{
 }
 @media screen and (max-width: 642px) {
     .slider{
-        height: 40vh !important;
+        height: 26vh !important;
     }
     .MarketSliderNews{
         padding: 0;
@@ -86,17 +86,18 @@ a{
         bottom: 1%;
     }
     .news_description > u{
-        font-size: var(  --mobile-font-header2);
+        font-size: 0.85rem;
         text-underline-offset: 5px !important;
         padding: 2px 5px;
         text-transform: uppercase;
     }
     .news_description > a > p{
-        width: 100%;
-        font-size: var( --mobile-page-list-font);
+        width: 50%;
+        font-size: 0.8rem;
         line-height: normal;
         padding: 2px 5px;
         box-shadow: 0;
+        display: none;
         -webkit-box-shadow: 0;
         -moz-box-shadow: 0;
     }
@@ -111,12 +112,12 @@ a{
         box-shadow: 0;
         -webkit-box-shadow: 0;
         -moz-box-shadow: 0;
-        border-radius: 15px 15px 0px 0px !important;
+        border-radius: 1px 1px 0px 0px !important;
     }
 }
 @media screen and (max-width: 1007px) and (min-width: 642px) {
     .slider{
-        height: 40vh !important;
+        height: 28vh !important;
     }
     .MarketSliderNews{
         padding: 0;
@@ -131,14 +132,14 @@ a{
         bottom: 1%;
     }
     .news_description > u{
-        font-size: var(  --mobile-font-header2);
+        font-size: 0.85rem;
         text-underline-offset: 5px !important;
         padding: 2px 5px;
         text-transform: uppercase;
     }
     .news_description > a > p{
-        width: 70%;
-        font-size: var( --mobile-page-list-font);
+        width:50%;
+        font-size: 0.8rem;
         line-height: normal;
         padding: 2px 5px;
         box-shadow: 0;
@@ -156,7 +157,7 @@ a{
         box-shadow: 0;
         -webkit-box-shadow: 0;
         -moz-box-shadow: 0;
-        border-radius: 15px 15px 0px 0px !important;
+        border-radius: 5px 5px 0px 0px !important;
     }
 }
 
@@ -177,14 +178,14 @@ a{
         bottom: 1%;
     }
     .news_description > u{
-        font-size: var(  --mobile-font-header2);
+        font-size: 0.85rem;
         text-underline-offset: 5px !important;
         padding: 2px 5px;
         text-transform: uppercase;
     }
     .news_description > a > p{
-        width: 70%;
-        font-size: var( --mobile-page-list-font);
+        width:50%;
+        font-size: 0.8rem;
         line-height: normal;
         padding: 2px 5px;
         box-shadow: 0;
