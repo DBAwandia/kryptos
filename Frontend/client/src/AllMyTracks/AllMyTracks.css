@@ -10,8 +10,35 @@
     padding: var(--mobile-padding-main);
     margin: 2rem 2rem;
 }
+.allmytrack_container_tracks{
+    padding: var(--mobile-padding-main);
+    margin: 2rem 10rem;
+}
+.allmytrack_container_footer{
+    padding: 0;
+    margin: 0;
+}
 @media screen and (max-width: 642px) {
     .allmytrack_container_slider{
         margin: 0px;
+    }
+    .allmytrack_container_tracks{
+        margin: 0rem;
+    }
+}
+@media screen and (max-width: 1007px) and (min-width: 642px) {
+    .allmytrack_container_slider{
+        margin: 0px;
+    }
+    .allmytrack_container_tracks{
+        margin: 0rem;
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .allmytrack_container_slider{
+        margin: 0px;
+    }
+    .allmytrack_container_tracks{
+        margin: 0rem;
     }
 }

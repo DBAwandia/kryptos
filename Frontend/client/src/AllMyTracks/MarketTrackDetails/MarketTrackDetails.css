@@ -1,0 +1,322 @@
+.MarketTrackDetails{
+    width: 100% !important;
+    height: 50vh !important;
+}
+.Market_Track_Details{
+    width: 100%;
+}
+.Trackings{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #aca4a4 !important;
+}
+.Coin{
+    width: 20% !important;
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #aca4a4 !important;
+
+}
+.Entry{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #aca4a4 !important;
+
+}
+.Leverage{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #aca4a4 !important;
+
+}
+.Markets{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #aca4a4 !important;
+
+}
+.Change{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px 3px !important;
+    color: #aca4a4 !important;
+
+}
+.notification{
+    font-size: 3.3rem !important;
+    color: #f5c173 !important;
+    cursor: pointer;
+}
+.btc_name{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    font-weight: bold !important;
+    padding: 3rem 1rem !important;
+}
+.btc_entry{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    font-weight: 550 !important;
+    padding: 3rem 1rem !important;
+}
+.mobile_leverage{
+    display: none ;
+}
+.btc_leverage{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    padding: 3rem 1rem !important;
+}
+.live_market_price_loss, .live_market_price_profit{
+    display: none;
+}
+.btc_price_profit{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    font-weight: bold !important;
+    padding: 3rem 1rem !important;
+    color: #2da966 !important;
+}
+.btc_price_loss{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    font-weight: bold !important;
+    padding: 3rem 1rem !important;
+    color: #ff4f4f !important;
+}
+.btc_change_profit{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #2da966 !important;
+    padding: 3rem 1rem !important;
+}
+.btc_change_loss{
+    font-size: var(--header-h3) !important;
+    border-bottom:  0px !important;
+    text-align: start !important;
+    padding: 3px !important;
+    color: #ff4f4f !important;
+    padding: 3rem 1rem !important;
+}
+@media screen and (max-width: 642px) {
+    .Trackings{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Coin{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Entry{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Leverage{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+        display: none !important;
+
+    }
+    .Markets{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Change{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+        display: none !important;
+    }
+    .notification{
+        font-size: 1.3rem !important;
+        color: #f5c173 !important;
+    }
+    .btc_name{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .btc_entry{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .mobile_leverage{
+        display: block ;
+        font-weight: 400 !important;
+    }
+    .btc_leverage{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: none !important;
+    }
+    .live_market_price{
+        font-weight: normal;
+    }
+    .live_market_price_loss, .live_market_price_profit{
+        display: block;
+    }
+    .btc_price_profit, .btc_price_loss{
+        font-size: var( --mobile-font) !important;
+        padding: 1rem 0.5rem !important;
+        gap: 0px !important;
+    }
+    .btc_change_profit, .btc_change_loss{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: none !important;
+    }
+   
+}
+@media screen and (min-width: 643px) and (max-width: 1007px) {
+    .Trackings{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Coin{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Entry{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Leverage{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+        display: none !important;
+
+    }
+    .Markets{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Change{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .notification{
+        font-size: 1.3rem !important;
+        color: #f5c173 !important;
+    }
+    .btc_name{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .btc_entry{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .mobile_leverage{
+        display: block ;
+        font-weight: 400 !important;
+    }
+    .btc_leverage{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: none !important;
+    }
+    .live_market_price{
+        font-weight: normal;
+    }
+    .live_market_price_loss, .live_market_price_profit{
+        display: none;
+    }
+    .btc_price_profit, .btc_price_loss{
+        font-size: var( --mobile-font) !important;
+        padding: 1rem 0.5rem !important;
+        gap: 0px !important;
+    }
+    .btc_change_profit, .btc_change_loss{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: block !important;
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .Trackings{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Coin{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Entry{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Leverage{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+        display: none !important;
+
+    }
+    .Markets{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .Change{
+        font-size: var( --mobile-font) !important;
+        font-weight: normal !important;
+    }
+    .notification{
+        font-size: 1.3rem !important;
+        color: #f5c173 !important;
+    }
+    .btc_name{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .btc_entry{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+    }
+    .mobile_leverage{
+        display: block ;
+        font-weight: 400 !important;
+    }
+    .btc_leverage{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: none !important;
+    }
+    .live_market_price{
+        font-weight: normal;
+    }
+    .live_market_price_loss, .live_market_price_profit{
+        display: none;
+    }
+    .btc_price_profit, .btc_price_loss{
+        font-size: var( --mobile-font) !important;
+        padding: 1rem 0.5rem !important;
+        gap: 0px !important;
+    }
+    .btc_change_profit, .btc_change_loss{
+        font-size: var( --mobile-font) !important;
+         padding: 1rem 0.5rem !important;
+         display: block !important;
+    }
+}
+
+

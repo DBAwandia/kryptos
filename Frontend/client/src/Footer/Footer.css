@@ -32,6 +32,7 @@
 @media screen and (max-width: 642px) {
     .Footer{
         border-radius: 10% 10% 0px  0px;
+        height: 22vh;
     }
     .Footer_container{
         padding: var(--mobile-padding-main);
@@ -58,6 +59,7 @@
 @media screen and (min-width: 643px) and (max-width: 1007px) {
     .Footer{
         border-radius: 10% 10% 0px  0px;
+        height: 20vh;
     }
     .Footer_container{
         padding: var(--mobile-padding-main);
@@ -86,6 +88,7 @@
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
     .Footer{
         border-radius: 10% 10% 0px  0px;
+        height: 21vh;
     }
     .Footer_container{
         padding: var(--mobile-padding-main);
