@@ -1,0 +1,387 @@
+.CompletePrice_names{
+    width: 100%;
+    padding: var(  --padding-main);
+    background: #fcf8f8;
+    height: 100vh;
+}
+.CompletePrice_name{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.CompletePrice_name_n_price{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(  --header-h3);
+}
+.CompletePrice_name_n_price_btcname{
+    font-weight: bolder;
+    color: #000000;
+    font-size: 2.8rem;
+}
+.CompletePrice_name_n_price_btcleverage{
+    font-weight: bold;
+    color: #f5b555;
+    background-color: #f7eee1;
+    padding: 3px 17px;
+    border-radius: 8px;
+}
+.CompletePrice_name_n_price_btcpercentage{
+    color: #ff4f4f;
+    font-weight: normal;
+}
+.CompletePrice_buy_n_sell{
+    width: 100%;
+    background-color: #f0eded;
+    height: 6.5vh;
+    border-radius: 16px;
+    
+}
+.CompletePrice_buy_n_sell > button{
+    width: 50%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: var(  --header-h3);
+    border-radius: 16px;
+}
+.long{
+    background-color: #2da966;
+    color: #ffffff;
+}
+.short{
+    background-color: #ff4f4f;
+    color: #ffffff;
+}
+.choose_limit_market{
+    width: 100%;
+    background-color: #f0eded;
+    height: 5vh;
+    padding: 10px 2rem;
+    border-radius: 5px;
+    font-size: var(  --header-h3);
+    font-weight: bold;
+    color: #5b5b5b;
+    border: 0;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+    
+}
+.Limit, .Market{
+    font-size: var(  --header-h3) !important;
+}
+.CompletePrice_input_limit_amount{
+    width: 100%;
+    height: 6.5vh;
+    margin-top: 4rem;
+    display: block;
+}
+.CompletePrice_input_limit_amount_hide{
+    display: none;
+}
+.CompletePrice_input_limit_amount > input{
+    width: 100%;
+    height: 100%;
+    font-size: var(  --header-h3) !important;
+    padding-left: 2.7rem;
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+    background-color: #f0eded;
+    
+}
+.CompletePrice_input_amount{
+    width: 100%;
+    height: 6.5vh;
+    margin-top: 2.5rem;
+}
+.CompletePrice_input_amount > input{
+    width: 100%;
+    height: 100%;
+    font-size: var(  --header-h3) !important;
+    padding-left: 2.5rem;
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+    background-color: #f0eded;
+    
+}
+.CompletePrice_button_long_short{
+    margin-top: 5rem;
+    width: 100%;
+    height: 6.5rem;
+    border-radius: 8px;
+    font-size: var(  --header-h3);
+}
+.buy_long{
+    background-color: #2da966;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    font-size: var(  --header-h3);
+    font-weight: bolder;
+    cursor: pointer;
+    
+
+}
+.sell_short{
+    background-color: #ff4f4f;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    font-size: var(  --header-h3);
+    font-weight: bolder;
+    cursor: pointer;
+    
+}
+
+.track_order_footer{
+    margin-top: 2rem;
+    text-decoration: underline;
+    color: #fad59d;
+    cursor: pointer;
+}
+.track_order_footer > p{
+    font-size: 2rem;
+}
+@media screen and (max-width: 642px) {
+    .CompletePrice_names{
+        padding: 1rem 0.3rem;
+    }
+    .CompletePrice_name{
+        gap: 1.4rem;
+    }
+    .CompletePrice_name_n_price{
+        font-size: var(--mobile-page-list-font);
+    }
+    .CompletePrice_name_n_price_btcname{
+        font-size: 1.3rem;
+    }
+    .CompletePrice_name_n_price_btcleverage{
+        padding: 1.5px 12px;
+        border-radius: 2px;
+    }
+    .CompletePrice_buy_n_sell{
+        border-radius: 8px;
+        height: 6vh;
+    }
+    .CompletePrice_buy_n_sell > button{
+        font-size: var(--mobile-page-list-font);
+        border-radius: 8px;
+    }
+    .choose_limit_market{
+        font-size: var(--mobile-page-list-font);
+        padding: 12px 1rem;
+        gap: 1rem;
+        border-radius: 2px;
+        height: 2.9rem;
+    }
+    .Limit, .Market{
+        font-size: var( --mobile-page-list-font) !important;
+        border-radius: 4px !important;
+    }
+    .CompletePrice_input_limit_amount{
+        height: 6.5vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_limit_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 2px;
+    }
+    .CompletePrice_input_amount{
+        height: 6.5vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 2px;
+    }
+    .CompletePrice_button_long_short{
+        border-radius: 2px;
+        height: 3rem;
+        font-size: var( --mobile-page-list-font);
+    }
+    .buy_long{
+        border-radius: 2px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .sell_short{
+        border-radius: 2px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .track_order_footer > p{
+        font-size: var(--mobile-page-list-font);
+    }
+}
+@media screen and (min-width: 643px) and (max-width: 1007px) {
+    .CompletePrice_names{
+        padding: 1rem 2.5rem;
+    }
+    .CompletePrice_name{
+        gap: 2.4rem;
+    }
+    .CompletePrice_name_n_price{
+        font-size: var(--mobile-page-list-font);
+    }
+    .CompletePrice_name_n_price_btcname{
+        font-size: 1.4rem;
+    }
+    .CompletePrice_name_n_price_btcleverage{
+        padding: 2px 15px;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_buy_n_sell{
+        border-radius: 8px;
+        height: 5vh;
+        font-size: var(--mobile-page-list-font);
+
+    }
+    .CompletePrice_buy_n_sell > button{
+        font-size: var(--mobile-page-list-font);
+        border-radius: 8px;
+    }
+    .choose_limit_market{
+        font-size: var(--mobile-page-list-font);
+        padding: 17px 1rem;
+        gap: 1rem;
+        height: 3.5rem;
+    }
+    .Limit, .Market{
+        font-size: var( --mobile-page-list-font) !important;
+        border-radius: 4px !important;
+    }
+    .CompletePrice_input_limit_amount{
+        height: 5.9vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_limit_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_input_amount{
+        height: 5.9vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_button_long_short{
+        border-radius: 1.5px;
+        height: 4.2rem;
+        font-size: var( --mobile-page-list-font);
+    }
+    .buy_long{
+        border-radius: 1.5px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .sell_short{
+        border-radius: 1.5px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .track_order_footer{
+        width: 100%;
+    }
+    .track_order_footer > p{
+        font-size: var(--mobile-page-list-font);
+    }
+}
+@media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .CompletePrice_names{
+        padding: 1rem 2.5rem;
+    }
+    .CompletePrice_name{
+        gap: 1rem;
+    }
+    .CompletePrice_name_n_price{
+        font-size: var(--mobile-page-list-font);
+    }
+    .CompletePrice_name_n_price_btcname{
+        font-size: 1.4rem;
+    }
+    .CompletePrice_name_n_price_btcleverage{
+        padding: 2px 15px;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_buy_n_sell{
+        border-radius: 8px;
+        height: 5vh;
+        font-size: var(--mobile-page-list-font);
+
+    }
+    .CompletePrice_buy_n_sell > button{
+        font-size: var(--mobile-page-list-font);
+        border-radius: 8px;
+    }
+    .choose_limit_market{
+        font-size: var(--mobile-page-list-font);
+        padding: 4px 1rem;
+        gap: 1rem;
+        height: 2rem;
+    }
+    .Limit, .Market{
+        font-size: var( --mobile-page-list-font) !important;
+        border-radius: 4px !important;
+    }
+    .CompletePrice_input_limit_amount{
+        height: 5.7vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_limit_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_input_amount{
+        height: 5.7vh;
+        margin-top: 2rem;
+    }
+    .CompletePrice_input_amount > input{
+        font-size: var(--mobile-page-list-font) !important;
+        padding-left: 1.3rem;
+        border-radius: 1.5px;
+    }
+    .CompletePrice_button_long_short{
+        border-radius: 1.5px;
+        height: 3rem;
+        font-size: var( --mobile-page-list-font);
+    }
+    .buy_long{
+        border-radius: 1.5px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .sell_short{
+        border-radius: 1.5px;
+        font-size: var( --mobile-page-list-font);
+    
+    }
+    .track_order_footer{
+        width: 100%;
+    }
+    .track_order_footer > p{
+        font-size: var(--mobile-page-list-font);
+    }
+}

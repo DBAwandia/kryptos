@@ -1,0 +1,14 @@
+.StartTracking{
+    width: 100%;
+}
+.pc_naviagation{
+    padding: var(--mobile-padding-main);
+}
+.pc_naviagation_asset_name{
+    padding: var(--mobile-padding-main);
+}
+.starttracking_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

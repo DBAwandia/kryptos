@@ -53,10 +53,13 @@
     color: #aca4a4 !important;
 
 }
-.notification{
-    font-size: 3.3rem !important;
-    color: #cac8c6 !important;
-    cursor: pointer;
+.notification_sell{
+    font-size: 1.4rem !important;
+    color: #ff4f4f !important;
+}
+.notification_buy{
+    font-size: 1.4rem !important;
+    color: #2da966 !important;
 }
 .btc_name{
     font-size: var(--header-h3) !important;
@@ -123,43 +126,46 @@
 }
 @media screen and (max-width: 642px) {
     .Trackings{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Coin{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
         display: none !important;
 
     }
     .Markets{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Change{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
         display: none !important;
     }
-    .notification{
-        font-size: 1.3rem !important;
-        color: #cac8c6 !important;
-
+    .notification_sell{
+        font-size: 0.85rem !important;
+        color: #ff4f4f !important;
+    }
+    .notification_buy{
+        font-size: 0.85rem !important;
+        color: #2da966 !important;
     }
     .btc_name{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .btc_entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .mobile_leverage{
@@ -167,7 +173,7 @@
         font-weight: 400 !important;
     }
     .btc_leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: none !important;
     }
@@ -178,12 +184,12 @@
         display: block;
     }
     .btc_price_profit, .btc_price_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         padding: 1rem 0.5rem !important;
         gap: 0px !important;
     }
     .btc_change_profit, .btc_change_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: none !important;
     }
@@ -191,42 +197,45 @@
 }
 @media screen and (min-width: 643px) and (max-width: 1007px) {
     .Trackings{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Coin{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
         display: none !important;
 
     }
     .Markets{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Change{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
-    .notification{
-        font-size: 1.3rem !important;
-        color: #cac8c6 !important;
-
+    .notification_sell{
+        font-size: 0.85rem !important;
+        color: #ff4f4f !important;
+    }
+    .notification_buy{
+        font-size: 0.85rem !important;
+        color: #2da966 !important;
     }
     .btc_name{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .btc_entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .mobile_leverage{
@@ -234,7 +243,7 @@
         font-weight: 400 !important;
     }
     .btc_leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: none !important;
     }
@@ -245,54 +254,57 @@
         display: none;
     }
     .btc_price_profit, .btc_price_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         padding: 1rem 0.5rem !important;
         gap: 0px !important;
     }
     .btc_change_profit, .btc_change_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: block !important;
     }
 }
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
     .Trackings{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Coin{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
         display: none !important;
 
     }
     .Markets{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
     .Change{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         font-weight: normal !important;
     }
-    .notification{
-        font-size: 1.3rem !important;
-        color: #cac8c6 !important;
-
+    .notification_sell{
+        font-size: 0.85rem !important;
+        color: #ff4f4f !important;
+    }
+    .notification_buy{
+        font-size: 0.85rem !important;
+        color: #2da966 !important;
     }
     .btc_name{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .btc_entry{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
     }
     .mobile_leverage{
@@ -300,7 +312,7 @@
         font-weight: 400 !important;
     }
     .btc_leverage{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: none !important;
     }
@@ -311,12 +323,12 @@
         display: none;
     }
     .btc_price_profit, .btc_price_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
         padding: 1rem 0.5rem !important;
         gap: 0px !important;
     }
     .btc_change_profit, .btc_change_loss{
-        font-size: var( --mobile-font) !important;
+        font-size: 0.93rem !important;
          padding: 1rem 0.5rem !important;
          display: block !important;
     }

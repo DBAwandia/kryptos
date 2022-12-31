@@ -11,6 +11,7 @@ import axios from 'axios';
 import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
 const datas = [
     {
+        trackings: "Buy",
         name: "BTC",
         entry: 16467,
         leverage: "20x",
@@ -18,6 +19,7 @@ const datas = [
         change: -20
     },
     {
+        trackings: "Sell",
         name: "Eth",
         entry: 467,
         leverage: "20x",
@@ -25,6 +27,7 @@ const datas = [
         change: 20
     },
     {
+        trackings: "Buy",
         name: "Eth",
         entry: 467.334,
         leverage: "20x",
@@ -33,6 +36,7 @@ const datas = [
     }
     ,
     {
+        trackings: "Sell",
         name: "Eth",
         entry: 467.56,
         leverage: "20x",
@@ -41,6 +45,7 @@ const datas = [
     }
     ,
     {
+        trackings: "Buy",
         name: "Eth",
         entry: 467.78886,
         leverage: "20x",
@@ -48,6 +53,7 @@ const datas = [
         change: -20
     },
     {
+        trackings: "Buy",
         name: "Eth",
         entry: 467.334,
         leverage: "20x",
@@ -56,6 +62,7 @@ const datas = [
     }
     ,
     {
+        trackings: "Buy",
         name: "Eth",
         entry: 467.56,
         leverage: "20x",
@@ -64,6 +71,7 @@ const datas = [
     }
     ,
     {
+        trackings: "Buy",
         name: "Eth",
         entry: 467.78886,
         leverage: "20x",
@@ -97,8 +105,8 @@ function MarketTrackDetails() {
           : <TableBody>
           {datas?.map((item,i)=>
             <TableRow key={i}>
-              <TableCell sx={{borderBottom: "0px"}}>              
-                <NotificationsActive className='notification' />
+              <TableCell sx={{borderBottom: "0px"}} className={item?.trackings === "Buy" ? "notification_buy":"notification_sell"}>
+                {item?.trackings}              
               </TableCell>
                 <TableCell  className='btc_name' >
                     {item?.name}
