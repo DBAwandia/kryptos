@@ -1,18 +1,45 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
-function CompletePrice() {
+function CompletePrice({coinName}) {
     const [changeDetails, setChangeDetails] = useState("Limit")
     const [long , setLong] = useState("Long")
     const [short , setShort] = useState("")
     const [select,setSelect] = useState("Limit")
+    const [data, setData]= useState([])
 
+    const URL = `https://api.coincap.io/v2/assets/${coinName}`
+    useEffect(()=>{
+
+      setInterval(()=>{
+
+        const fetchData = async(URL) =>{
+          const response = await axios.get(URL)
+          setData(response.data.data)
+        }
+        fetchData(URL)
+
+      },100)
+
+    },[coinName,URL])
+
+    const datas = [data]
+    console.log(data)
   return (
-    <div className='CompletePrice_names'>
+    <div>
+    {datas?.map((item)=>{
+
+    return <div className='CompletePrice_names' key={item?.id}>
        <div className='CompletePrice_name'>
         <div className='CompletePrice_name_n_price'>
-          <p className='CompletePrice_name_n_price_btcname'>BTC/USDT</p>
+          <p className='CompletePrice_name_n_price_btcname'>{item?.symbol}/USDT</p>
           <span className='CompletePrice_name_n_price_btcleverage'>5X</span>
-          <p className='CompletePrice_name_n_price_btcpercentage'>-26%</p>
+          <p className={
+            item?.changePercent24Hr < 0 ? "CompletePrice_name_n_price_btc_change_red":"CompletePrice_name_n_price_btc_change_green"
+          }
+          >
+            ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
+          </p>
         </div>
 
         <div className='CompletePrice_buy_n_sell'>
@@ -46,7 +73,9 @@ function CompletePrice() {
        </select>
 
        <div className={select ==="Limit" ? "CompletePrice_input_limit_amount" : "CompletePrice_input_limit_amount_hide"}>
-          <input type="number" placeholder="Enter Limit price" />
+          <input 
+          type="number" 
+          placeholder={`Enter Limit price  (${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(6) : Number(item?.priceUsd).toFixed(4)})`} />
        </div>
 
        <div className='CompletePrice_input_amount'>
@@ -62,6 +91,9 @@ function CompletePrice() {
       <div className='track_order_footer'>
         <p>Track my orders</p>
       </div>
+    </div>
+  
+  })}
     </div>
   )
 }

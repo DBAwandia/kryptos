@@ -6,7 +6,6 @@ import Register from './Pages/Register/Register'
 import HomeMarket from './HomeMarket/HomeMarket'
 import StartTracking from './StartTracking/StartTracking'
 import AllMyTracks from './AllMyTracks/AllMyTracks'
-import CompletePrice from './StartTracking/Completeprice/CompletePrice'
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
       <Router>
         <Routes>
             <Route path='/' element={<HomeMarket/>} />
-            <Route path='/starttracking' element={<CompletePrice/>} />
+            <Route path='/starttracking' element={<StartTracking/>} />
             <Route path='/allmytracks' element={<AllMyTracks/>} />
             <Route path='/notuser' element={<Home/>} />
             <Route path='/login' element={<Login/>} />

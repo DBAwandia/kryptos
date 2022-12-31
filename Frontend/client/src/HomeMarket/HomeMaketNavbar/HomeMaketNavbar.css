@@ -52,15 +52,15 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 0.9rem;
+        gap: 0.4rem;
     }
     .HomeMarket_logo > h1{
         font-size: var(--mobile-font-header1);
         letter-spacing: normal;
     }
     .HomeMarket_image{
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -73,15 +73,15 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 0.9rem;
+        gap: 0.4rem;
     }
     .HomeMarket_logo > h1{
         font-size: var(--mobile-font-header1);
         letter-spacing: normal;
     }
     .HomeMarket_image{
-        width: 2rem;
-        height: 2rem;
+        width: 1.6rem;
+        height: 1.6rem;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -94,7 +94,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 0.9rem;
+        gap: 0.4rem;
     }
     .HomeMarket_logo > h1{
         font-size: var(--mobile-font-header1);

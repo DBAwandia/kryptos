@@ -29,8 +29,12 @@
     padding: 3px 17px;
     border-radius: 8px;
 }
-.CompletePrice_name_n_price_btcpercentage{
+.CompletePrice_name_n_price_btc_change_red{
     color: #ff4f4f;
+    font-weight: normal;
+}
+.CompletePrice_name_n_price_btc_change_green{
+    color: #2da966;
     font-weight: normal;
 }
 .CompletePrice_buy_n_sell{
@@ -160,7 +164,7 @@
 }
 @media screen and (max-width: 642px) {
     .CompletePrice_names{
-        padding: 1rem 0.3rem;
+        padding: 1rem 0.8rem;
     }
     .CompletePrice_name{
         gap: 1.4rem;
@@ -169,15 +173,17 @@
         font-size: var(--mobile-page-list-font);
     }
     .CompletePrice_name_n_price_btcname{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .CompletePrice_name_n_price_btcleverage{
-        padding: 1.5px 12px;
+        padding: 1.3px 10px;
         border-radius: 2px;
+        font-size: 0.8rem;
+
     }
     .CompletePrice_buy_n_sell{
         border-radius: 8px;
-        height: 6vh;
+        height: 5.3vh;
     }
     .CompletePrice_buy_n_sell > button{
         font-size: var(--mobile-page-list-font);
@@ -242,11 +248,12 @@
         font-size: var(--mobile-page-list-font);
     }
     .CompletePrice_name_n_price_btcname{
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
     .CompletePrice_name_n_price_btcleverage{
-        padding: 2px 15px;
+        padding: 1.8px 12px;
         border-radius: 1.5px;
+        font-size: 0.8rem;
     }
     .CompletePrice_buy_n_sell{
         border-radius: 8px;
@@ -365,7 +372,7 @@
     }
     .CompletePrice_button_long_short{
         border-radius: 1.5px;
-        height: 3rem;
+        height: 5rem;
         font-size: var( --mobile-page-list-font);
     }
     .buy_long{

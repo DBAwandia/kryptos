@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import  {useNavigate} from "react-router-dom"
 import axios from 'axios';
 import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
@@ -14,7 +15,8 @@ function HomeMarketCoinsTable({searchs}) {
   const [data, setData] = useState("")
   const [ loading, setLoading ] = useState(false)
   const [ error, setError ] = useState(false)
-
+  const [coinID , setCoinID ] = useState("bitcoin")
+  const navigate = useNavigate()
   const Keys = ["name", "symbol","rank"]
 
   let timer;
@@ -45,7 +47,6 @@ function HomeMarketCoinsTable({searchs}) {
 
       //all data which aint filtered
       const datazz =  apiData[0].data
-
       let arrDataFromSETDATA = [data.data]
       let filteredData = arrDataFromSETDATA[0]
       const Search = (filteredData) =>{
@@ -53,13 +54,14 @@ function HomeMarketCoinsTable({searchs}) {
           Keys.some((key) => item[key].toLowerCase().includes(searchs))
           ))
         }
-
         
         // check length
         const isSearchIncorrect = Search(filteredData)
         let isSearchIncorrects =  isSearchIncorrect?.length
-        
-        // console.log(isSearchIncorrect)
+
+        //save to localStorage so that you can fetch by coinID anywhere
+        JSON.parse(localStorage.setItem("coinID" , coinID) || null)
+
     return (
     <TableContainer className='HomeMarketCoins'>
       <Table className='HomeMarketCoins_table'>
@@ -90,11 +92,21 @@ function HomeMarketCoinsTable({searchs}) {
          </div>
           : <TableBody>
           {Search(filteredData)?.map((item)=>
-            <TableRow  className="body_row" key={item.id}>
+            <TableRow  className="body_row"   key={item.id}    onClick={
+
+              ()=>{
+                setCoinID(item?.id)
+                setTimeout(()=>{
+                navigate("/starttracking" , {state: item?.id})
+                },500)
+              }
+              }
+
+              >
               <TableCell  className='table_cell_chart'>{item?.rank}</TableCell>
               <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
-                <StarOutline className='star' />
+                <StarOutline className='star'  />
                   <div className='coin_name'>
                     <div className="coin_name_and_symbol">
                       <p className='coin_names'>{item?.symbol}</p>

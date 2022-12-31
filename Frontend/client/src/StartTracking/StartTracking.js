@@ -4,7 +4,15 @@ import MarketFooter from '../HomeMarket/MarketFooter/MarketFooter'
 import "./StartTracking.css"
 import Chart from "./Chart/Chart"
 import CompletePrice from './Completeprice/CompletePrice'
+import { useLocation } from 'react-router-dom'
 function StartTracking() {
+
+  const location = useLocation()
+  const coinName = location.state
+
+  //fetch from localStorage and display if user didnt click
+  const user = localStorage.getItem("coinID")
+
   return (
     <div className='StartTracking'>
       <div className='pc_naviagation'>
@@ -17,13 +25,13 @@ function StartTracking() {
       </div>
 
       <div className='StartTracking'>
-        <CompletePrice/>
+        <CompletePrice coinName={coinName}/>
       </div>
     </div>
 
-      {/* <div className='mobile_naviagation'>
+      <div className='mobile_naviagation'>
         <MarketFooter />
-      </div> */}
+      </div>
     </div>
   )
 }
