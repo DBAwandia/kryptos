@@ -14,8 +14,8 @@
 
   @media screen and (max-width: 642px) {
     .custom-loader {
-        width:35px;
-        height:35px;
+        width:31px;
+        height:31px;
     }
   }
 @media screen and (max-width: 281px) {

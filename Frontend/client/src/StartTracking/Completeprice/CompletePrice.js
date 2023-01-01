@@ -3,8 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
 import { Offline } from "react-detect-offline";
-import ProgressBar from "@ramonak/react-progress-bar";
-
+import {Link} from "react-router-dom"
 
 
 function CompletePrice({coinName}) {
@@ -60,14 +59,21 @@ function CompletePrice({coinName}) {
     return <div className='CompletePrice_names' key={item?.id}>
        <div className='CompletePrice_name'>
         <div className='CompletePrice_name_n_price'>
-          <p className='CompletePrice_name_n_price_btcname'>{item?.symbol}/USDT</p>
+          <p className='CompletePrice_name_n_price_btcname'>
+            <Link to="/">
+              {item?.symbol}/USDT
+            </Link>
+          </p>
           <span className='CompletePrice_name_n_price_btcleverage'>5X</span>
           <p className={
             item?.changePercent24Hr < 0 ? "CompletePrice_name_n_price_btc_change_red":"CompletePrice_name_n_price_btc_change_green"
-          }
+              }
           >
-            ${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}
+            <b>${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}</b>
+            <b className={Number(item?.priceUsd) < 1 ? "CompletePrice_name_n_price_btc_change_24h_display_none" :"CompletePrice_name_n_price_btc_change_24h"}> {Number(item?.changePercent24Hr) < 0 ? Number(item?.priceUsd*item?.changePercent24Hr/100).toFixed(2): "+" + Number(item?.priceUsd*item?.changePercent24Hr/100).toFixed(2)}$ </b>
+
           </p>
+          
         </div>
 
         <div className='CompletePrice_buy_n_sell'>
@@ -121,7 +127,7 @@ function CompletePrice({coinName}) {
       </div>
       
       <div className='CompletePrice_button_long_short'>
-        <button className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? "Sell/Short BTC" : "Buy/Long BTC"}</button>
+        <button className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol}` : `Buy/Long ${item?.symbol}`}</button>
       </div>
 
       <div className='track_order_footer'>

@@ -1,3 +1,6 @@
+a{
+    text-decoration: none !important;
+}
 .container{
     width: 100%;
     height: 100vh;
@@ -66,7 +69,7 @@
     padding: var(  --padding-main);
     background: #fcf8f8;
     height: 100vh;
-    border: 1.4px solid rgba(218, 214, 214,0.55);
+    border: 1.4px solid rgba(218, 214, 214,0.4);
 
 }
 
@@ -88,6 +91,7 @@
     font-weight: bolder;
     color: #000000;
     font-size: 2.8rem;
+    cursor: pointer;
 }
 .CompletePrice_name_n_price_btcleverage{
     font-weight: bold;
@@ -99,11 +103,24 @@
 .CompletePrice_name_n_price_btc_change_red{
     color: #ff4f4f;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
 }
 .CompletePrice_name_n_price_btc_change_green{
     color: #2da966;
     font-weight: bold;
-
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.CompletePrice_name_n_price_btc_change_24h{
+    font-weight: 400;
+    font-size: 2rem;
+}
+.CompletePrice_name_n_price_btc_change_24h_display_none{
+    display: none !important;
 }
 .CompletePrice_buy_n_sell{
     width: 100%;
@@ -253,6 +270,10 @@
         border-radius: 8px;
         height: 5.3vh;
     }
+    .CompletePrice_name_n_price_btc_change_24h{
+        font-weight: 420;
+        font-size: 0.75rem;
+    }
     .CompletePrice_buy_n_sell > button{
         font-size: var(--mobile-page-list-font);
         border-radius: 8px;
@@ -341,6 +362,10 @@
         padding: 1.8px 12px;
         border-radius: 1.5px;
         font-size: 0.8rem;
+    }
+    .CompletePrice_name_n_price_btc_change_24h{
+        font-weight: 420;
+        font-size: 0.75rem;
     }
     .CompletePrice_buy_n_sell{
         border-radius: 8px;
@@ -443,6 +468,10 @@
         height: 5vh;
         font-size: var(--mobile-page-list-font);
 
+    }
+    .CompletePrice_name_n_price_btc_change_24h{
+        font-weight: 420;
+        font-size: 0.75rem;
     }
     .CompletePrice_buy_n_sell > button{
         font-size: var(--mobile-page-list-font);
