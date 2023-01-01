@@ -1,9 +1,76 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.loading_coin_animate{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0,0.955);
+    z-index: 99999999999999;
+
+}
+.loading_coin_error{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0,0.97);
+    z-index: 99999999999999;
+}
+.loading_coin_error > h1{
+    justify-content: center;
+    text-align: center;
+    margin: 5rem 2.5rem;
+    color: #f54343;
+    font-size: 0.95rem;
+
+}
+/* progress bar css */
+.progress_bar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.progress_description{
+    font-size:2rem !important;
+    color: #f3ac41;
+}
+.progress_select{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background-color: #f0eded;
+    height: 5vh;
+    padding: 10px 2rem;
+    border-radius: 5px;
+    font-size: var(  --header-h3);
+    font-weight: bold;
+    color: #5b5b5b;
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+}
+
 .CompletePrice_names{
     width: 100%;
     padding: var(  --padding-main);
     background: #fcf8f8;
     height: 100vh;
+    border: 1.4px solid rgba(218, 214, 214,0.55);
+
 }
+
+
 .CompletePrice_name{
     width: 100%;
     display: flex;
@@ -31,15 +98,16 @@
 }
 .CompletePrice_name_n_price_btc_change_red{
     color: #ff4f4f;
-    font-weight: normal;
+    font-weight: bold;
 }
 .CompletePrice_name_n_price_btc_change_green{
     color: #2da966;
-    font-weight: normal;
+    font-weight: bold;
+
 }
 .CompletePrice_buy_n_sell{
     width: 100%;
-    background-color: #f0eded;
+    background-color: #ebeaea;
     height: 6.5vh;
     border-radius: 16px;
     
@@ -99,7 +167,7 @@
     border-radius: 8px;
     border: 0;
     outline: 0;
-    background-color: #f0eded;
+    background-color: #ebeaea;
     
 }
 .CompletePrice_input_amount{
@@ -115,7 +183,7 @@
     border-radius: 8px;
     border: 0;
     outline: 0;
-    background-color: #f0eded;
+    background-color: #ebeaea;
     
 }
 .CompletePrice_button_long_short{
@@ -167,13 +235,13 @@
         padding: 1rem 0.8rem;
     }
     .CompletePrice_name{
-        gap: 1.4rem;
+        gap: 1.2rem;
     }
     .CompletePrice_name_n_price{
         font-size: var(--mobile-page-list-font);
     }
     .CompletePrice_name_n_price_btcname{
-        font-size: 1.1rem;
+        font-size: 1.02rem;
     }
     .CompletePrice_name_n_price_btcleverage{
         padding: 1.3px 10px;
@@ -191,11 +259,29 @@
     }
     .choose_limit_market{
         font-size: var(--mobile-page-list-font);
-        padding: 12px 1rem;
-        gap: 1rem;
+        padding: 5px 1rem;
+        gap: 0.8rem;
         border-radius: 2px;
-        height: 2.9rem;
+        height: 1.8rem;
     }
+    /* progress bar css */
+.progress_bar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.progress_description{
+    font-size: var( --mobile-page-list-font) !important;
+    color: #f3ac41;
+}
+.progress_select{
+    font-size: var(--mobile-page-list-font);
+    padding: 5px 1rem;
+    gap: 0.8rem;
+    border-radius: 2px;
+    height: 1.8rem;
+}
     .Limit, .Market{
         font-size: var( --mobile-page-list-font) !important;
         border-radius: 4px !important;
@@ -211,7 +297,7 @@
     }
     .CompletePrice_input_amount{
         height: 6.5vh;
-        margin-top: 2rem;
+        margin-top: 1.6rem;
     }
     .CompletePrice_input_amount > input{
         font-size: var(--mobile-page-list-font) !important;
@@ -219,6 +305,7 @@
         border-radius: 2px;
     }
     .CompletePrice_button_long_short{
+        margin-top: 3rem;
         border-radius: 2px;
         height: 3rem;
         font-size: var( --mobile-page-list-font);
@@ -267,9 +354,27 @@
     }
     .choose_limit_market{
         font-size: var(--mobile-page-list-font);
-        padding: 17px 1rem;
-        gap: 1rem;
-        height: 3.5rem;
+        padding: 5px 1rem;
+        gap: 0.8rem;
+        border-radius: 2px;
+        height: 1.8rem;
+    }
+    .progress_bar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    .progress_description{
+        font-size: var( --mobile-page-list-font) !important;
+        color: #f3ac41;
+    }
+    .progress_select{
+        font-size: var(--mobile-page-list-font);
+        padding: 5px 1rem;
+        gap: 0.8rem;
+        border-radius: 2px;
+        height: 1.8rem;
     }
     .Limit, .Market{
         font-size: var( --mobile-page-list-font) !important;
@@ -277,7 +382,7 @@
     }
     .CompletePrice_input_limit_amount{
         height: 5.9vh;
-        margin-top: 2rem;
+        margin-top: 1.6rem;
     }
     .CompletePrice_input_limit_amount > input{
         font-size: var(--mobile-page-list-font) !important;
@@ -286,7 +391,7 @@
     }
     .CompletePrice_input_amount{
         height: 5.9vh;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
     .CompletePrice_input_amount > input{
         font-size: var(--mobile-page-list-font) !important;
@@ -294,6 +399,7 @@
         border-radius: 1.5px;
     }
     .CompletePrice_button_long_short{
+        margin-top: 2.9rem;
         border-radius: 1.5px;
         height: 4.2rem;
         font-size: var( --mobile-page-list-font);
@@ -320,13 +426,13 @@
         padding: 1rem 2.5rem;
     }
     .CompletePrice_name{
-        gap: 1rem;
+        gap: 0.8rem;
     }
     .CompletePrice_name_n_price{
         font-size: var(--mobile-page-list-font);
     }
     .CompletePrice_name_n_price_btcname{
-        font-size: 1.4rem;
+        font-size: 1.24rem;
     }
     .CompletePrice_name_n_price_btcleverage{
         padding: 2px 15px;
@@ -344,9 +450,30 @@
     }
     .choose_limit_market{
         font-size: var(--mobile-page-list-font);
+        padding: 5px 1rem;
+        gap: 0.8rem;
+        border-radius: 2px;
+        height: 1.8rem;font-size: var(--mobile-page-list-font);
         padding: 4px 1rem;
-        gap: 1rem;
+        gap: 0.8rem;
         height: 2rem;
+    }
+    .progress_bar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .progress_description{
+        font-size: var( --mobile-page-list-font) !important;
+        color: #f3ac41;
+    }
+    .progress_select{
+        font-size: var(--mobile-page-list-font);
+        padding: 5px 1rem;
+        gap: 0.8rem;
+        border-radius: 2px;
+        height: 1.8rem;
     }
     .Limit, .Market{
         font-size: var( --mobile-page-list-font) !important;
@@ -354,7 +481,7 @@
     }
     .CompletePrice_input_limit_amount{
         height: 5.7vh;
-        margin-top: 2rem;
+        margin-top: 1.6rem;
     }
     .CompletePrice_input_limit_amount > input{
         font-size: var(--mobile-page-list-font) !important;
@@ -371,6 +498,7 @@
         border-radius: 1.5px;
     }
     .CompletePrice_button_long_short{
+        margin-top: 3rem;
         border-radius: 1.5px;
         height: 5rem;
         font-size: var( --mobile-page-list-font);

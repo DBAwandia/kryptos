@@ -11,27 +11,8 @@ import HomeMaketNavbar from './HomeMaketNavbar/HomeMaketNavbar'
 function HomeMarket() {
   const [searchs, setSearchs] = useState("")
 
-  //get from localstorage
- 
-
-  const navigate = useNavigate()
-  const { 
-    isScrolling,
-    isScrollingX,
-    isScrollingY,
-    isScrollingUp, 
-    isScrollingDown,
-    isScrollingLeft,
-    isScrollingRight,
-    scrollDirection,
-  } = useScrollDirection()
-
-
-
-  
   return (
     <div className="HomeMarket">
-
       <div className='market_side_bar'>
         <Dehaze />
       </div>

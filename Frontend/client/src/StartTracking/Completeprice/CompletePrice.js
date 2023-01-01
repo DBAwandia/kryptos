@@ -1,21 +1,40 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
+import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
+import { Offline } from "react-detect-offline";
+import ProgressBar from "@ramonak/react-progress-bar";
+
+
+
 function CompletePrice({coinName}) {
     const [changeDetails, setChangeDetails] = useState("Limit")
     const [long , setLong] = useState("Long")
     const [short , setShort] = useState("")
     const [select,setSelect] = useState("Limit")
     const [data, setData]= useState([])
+    const [loading , setLoading] = useState(false)
+    const [error, setError] = useState(false)
 
-    const URL = `https://api.coincap.io/v2/assets/${coinName}`
+
+    //fetch from localStorage and display if user didnt click
+    const user = localStorage.getItem("coinID")
+
+    const URL = `https://api.coincap.io/v2/assets/${user}`
     useEffect(()=>{
-
+      setLoading(true)
+      setError(false)
       setInterval(()=>{
 
         const fetchData = async(URL) =>{
-          const response = await axios.get(URL)
-          setData(response.data.data)
+          try{
+            const response = await axios.get(URL)
+            setData(response.data.data)
+            setError(false)
+            setLoading(false)
+          }catch(err){
+            setLoading(false)
+          }
         }
         fetchData(URL)
 
@@ -24,9 +43,18 @@ function CompletePrice({coinName}) {
     },[coinName,URL])
 
     const datas = [data]
-    console.log(data)
   return (
-    <div>
+    <div className='container'>
+      {loading && <div className='loading_coin_animate'>
+        <LoadingAnimation />
+      </div>}
+
+      <Offline>
+        <div className='loading_coin_error'>
+          <h1>Please check your internet connection</h1>
+        </div>
+      </Offline>
+      
     {datas?.map((item)=>{
 
     return <div className='CompletePrice_names' key={item?.id}>
@@ -52,7 +80,7 @@ function CompletePrice({coinName}) {
             setShort("Short")
             }}>Short</button>
         </div>
-
+        
        <select class="choose_limit_market" onChange={(e)=>setSelect(e.target.value)}>
 
           <option className='Limit'>
@@ -71,7 +99,15 @@ function CompletePrice({coinName}) {
         </option>
 
        </select>
-
+       <div className='progress_bar'>
+          <p className='progress_description'>Choose %profit for notification</p>
+          <select className='progress_select'>
+            <option>25%</option>
+            <option>50%</option>
+            <option>75%</option>
+            <option>100%</option>
+          </select>
+        </div>
        <div className={select ==="Limit" ? "CompletePrice_input_limit_amount" : "CompletePrice_input_limit_amount_hide"}>
           <input 
           type="number" 
@@ -80,7 +116,7 @@ function CompletePrice({coinName}) {
 
        <div className='CompletePrice_input_amount'>
           <input type="number" placeholder="Enter amount ( USDT ) " />
-       </div>
+       </div>   
 
       </div>
       

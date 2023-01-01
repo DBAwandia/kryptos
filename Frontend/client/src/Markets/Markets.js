@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import { Offline } from 'react-detect-offline';
 
 function Markets() {
   const [data, setData] = useState("")
@@ -46,6 +47,11 @@ function Markets() {
         return (
     <TableContainer className='MarketsCoins'>
       <h1>Markets</h1>
+        <Offline>
+        <div className='loading_coin_errors'>
+          <h1>Please check your internet connection</h1>
+        </div>
+      </Offline>
       <Table className='MarketsCoins_table'>
         <TableHead className='markets_table_head'>
           <TableRow className='markets_table_row'>

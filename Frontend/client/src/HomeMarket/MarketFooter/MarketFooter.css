@@ -42,11 +42,11 @@ a{
     justify-content: space-between;
 }
 .MarketFooter_icons_and_name > a > p{
-    font-size: var(--mobile-page-list-font);
+    font-size: 0.83rem;
     letter-spacing: normal;
 }
 .MarketFooter_icons_and_names > a > p{
-    font-size: var(--mobile-page-list-font);
+    font-size: 0.83rem;
     letter-spacing: normal;
 
 }
@@ -97,13 +97,13 @@ a{
         justify-content: space-between;
     }
     .MarketFooter_icons_and_name > a > p{
-        font-size: var(--mobile-page-list-font);
+        font-size: 0.83rem;
     }
     .MarketFooter_icons_and_names > a > p{
-        font-size: var(--mobile-page-list-font);
+        font-size: 0.83rem;
     
     }
     .footer_icon{
-        font-size: 1.65rem !important;
+        font-size: 1.3rem !important;
     }
 }

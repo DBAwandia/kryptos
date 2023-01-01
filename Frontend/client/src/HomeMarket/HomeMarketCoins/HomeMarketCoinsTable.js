@@ -10,6 +10,7 @@ import  {useNavigate} from "react-router-dom"
 import axios from 'axios';
 import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
+import { Offline } from 'react-detect-offline';
 
 function HomeMarketCoinsTable({searchs}) {
   const [data, setData] = useState("")
@@ -80,11 +81,12 @@ function HomeMarketCoinsTable({searchs}) {
           <p>There are no assets matching current filter</p>
         </div>}
 
-        {/* {error   && <div className='internet_connection_error'>
-          <DoNotDisturbAlt className='not_found_icon'/>
-          <p>Check your connection</p>
-        </div>} */}
-
+        <Offline>
+          <div className='internet_connection_error'>
+            <DoNotDisturbAlt className='not_found_icon'/>
+            <p>Check your connection</p>
+          </div>
+        </Offline>
 
         {loading ?
         <div className='market_loading'>

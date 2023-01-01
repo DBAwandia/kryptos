@@ -10,9 +10,7 @@ function StartTracking() {
   const location = useLocation()
   const coinName = location.state
 
-  //fetch from localStorage and display if user didnt click
-  const user = localStorage.getItem("coinID")
-
+  
   return (
     <div className='StartTracking'>
       <div className='pc_naviagation'>
