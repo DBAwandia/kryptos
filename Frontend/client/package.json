@@ -18,6 +18,7 @@
     "react-lazy-load-image-component": "^1.5.6",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "react-use-scroll-direction": "^0.1.0",
     "socket.io-client": "^4.5.4",
     "swiper": "^8.4.5",

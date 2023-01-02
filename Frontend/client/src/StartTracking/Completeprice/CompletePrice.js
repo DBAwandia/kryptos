@@ -3,14 +3,19 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
 import { Offline } from "react-detect-offline";
-import {Link} from "react-router-dom"
-
+import {Link, useNavigate} from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CompletePrice({coinName}) {
     const [changeDetails, setChangeDetails] = useState("Limit")
     const [long , setLong] = useState("Long")
     const [short , setShort] = useState("")
     const [select,setSelect] = useState("Limit")
+    const [selectPercentage, setSelectPercentage] = useState("")
+    const [limitAmount, setLimitAmount] = useState("")
+    const [market, setMarket] = useState("")
+    const[amount, setAmount] = useState("")
     const [data, setData]= useState([])
     const [loading , setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -42,11 +47,33 @@ function CompletePrice({coinName}) {
     },[coinName,URL])
 
     const datas = [data]
+    const markets = datas?.map(item => item?.priceUsd)
+
+    let details = {short,long,markets,amount,selectPercentage,select,limitAmount}
+    const navigate = useNavigate()
+    //pass props of 5X ,price ,Percentage target,buy/sell to /allmytracks
+    const handleClick = ()=>{
+      // navigate("/allmytracks" , {state: details})
+      toast.success('Successfull!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    }
+
   return (
     <div className='container'>
       {loading && <div className='loading_coin_animate'>
         <LoadingAnimation />
       </div>}
+      
+      {/* show success or fail notification */}
+        <ToastContainer />
 
       <Offline>
         <div className='loading_coin_error'>
@@ -69,7 +96,7 @@ function CompletePrice({coinName}) {
             item?.changePercent24Hr < 0 ? "CompletePrice_name_n_price_btc_change_red":"CompletePrice_name_n_price_btc_change_green"
               }
           >
-            <b>${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}</b>
+            <b >${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(5) : Number(item?.priceUsd).toFixed(2)}</b>
             <b className={Number(item?.priceUsd) < 1 ? "CompletePrice_name_n_price_btc_change_24h_display_none" :"CompletePrice_name_n_price_btc_change_24h"}> {Number(item?.changePercent24Hr) < 0 ? Number(item?.priceUsd*item?.changePercent24Hr/100).toFixed(2): "+" + Number(item?.priceUsd*item?.changePercent24Hr/100).toFixed(2)}$ </b>
 
           </p>
@@ -87,7 +114,7 @@ function CompletePrice({coinName}) {
             }}>Short</button>
         </div>
         
-       <select class="choose_limit_market" onChange={(e)=>setSelect(e.target.value)}>
+       <select class="choose_limit_market" onChange={(e)=>setSelect(e.target.value)} >
 
           <option className='Limit'>
             <p onClick={()=>{
@@ -96,7 +123,7 @@ function CompletePrice({coinName}) {
               Limit
             </p>
           </option>
-        <option className='Market'>
+        <option className='Market' value={()=>setMarket(item?.priceUsd)}>
           <p onClick={()=>{
               setChangeDetails("Market")
             }}>
@@ -107,7 +134,7 @@ function CompletePrice({coinName}) {
        </select>
        <div className='progress_bar'>
           <p className='progress_description'>Choose %profit for notification</p>
-          <select className='progress_select'>
+          <select className='progress_select' onChange={(e)=>setSelectPercentage(e.target.value)} required>
             <option>25%</option>
             <option>50%</option>
             <option>75%</option>
@@ -117,22 +144,28 @@ function CompletePrice({coinName}) {
        <div className={select ==="Limit" ? "CompletePrice_input_limit_amount" : "CompletePrice_input_limit_amount_hide"}>
           <input 
           type="number" 
+          onChange={(e)=>setLimitAmount(e.target.value)}
           placeholder={`Enter Limit price  (${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(6) : Number(item?.priceUsd).toFixed(4)})`} />
        </div>
 
        <div className='CompletePrice_input_amount'>
-          <input type="number" placeholder="Enter amount ( USDT ) " />
+          <input type="number" placeholder="Enter amount ( USDT ) " onChange={(e)=>setAmount(e.target.value)} required />
        </div>   
 
       </div>
       
       <div className='CompletePrice_button_long_short'>
-        <button className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol}` : `Buy/Long ${item?.symbol}`}</button>
+        <button onClick={()=>
+        handleClick(
+        )} className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol}` : `Buy/Long ${item?.symbol}`}</button>
       </div>
 
-      <div className='track_order_footer'>
-        <p>Track my orders</p>
-      </div>
+
+      <Link to="/allmytracks">
+          <div className='track_order_footer'>
+            <p>Track my orders</p>
+          </div>
+      </Link>
     </div>
   
   })}

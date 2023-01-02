@@ -5,8 +5,11 @@ import MarketSliderNews from './MarketSlider/MarketSliderNews'
 import MarketTrackDetails from './MarketTrackDetails/MarketTrackDetails'
 import Footer from "../Footer/Footer"
 import MarketFooter from "../HomeMarket/MarketFooter/MarketFooter"
+import {useLocation} from "react-router-dom"
 
 function AllMyTracks() {
+  const location = useLocation()
+  console.log(location)
   return (
     <div className='AllMyTracks'>
       <div className='allmytrack_container_nav'>
