@@ -22,6 +22,8 @@ export const verifyBothUserAndAdmin =  (req,res,next) =>{
     verifyToken(req,res,next, ()=>{
         console.log(req)
         if(req.user._id === req.params.id || req.user.isAdmin){
+
+            
             next()
         }else{
             res.status(402).json({msg: "Error"})

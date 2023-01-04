@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser"
 
 //import routes
 import userRouter from "./Routes/Users.js"
+import orderRouter from "./Routes/Orders.js" 
+
 
 const app = express()
 app.use(cookieParser())
@@ -24,6 +26,8 @@ db.once("open", ()=>console.log("Mongodb connected"))
 
 //user the routers
 app.use("/api/Users", userRouter)
+app.use("/api/Orders", orderRouter)
+
 
 app.listen(`${PORT}`, () => {
   console.log('listening on 5000');

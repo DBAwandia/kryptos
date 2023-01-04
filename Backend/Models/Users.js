@@ -1,6 +1,14 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+    accountType:{
+        type: String,
+        enum: [ "unbanned", "banned" ],
+        default: "unbanned"
+    },
+    orderID:{
+        type: [String]
+    },
     username: {
         type: String,
         unique: true
@@ -16,7 +24,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-})
+},{timestamps: true})
 
 const Users = mongoose.model("users" , userSchema)
 export default Users
