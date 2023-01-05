@@ -10,7 +10,8 @@ import HomeMaketNavbar from './HomeMaketNavbar/HomeMaketNavbar'
 
 function HomeMarket() {
   const [searchs, setSearchs] = useState("")
-
+  let user = localStorage.getItem("users")
+  console.log(user)
   return (
     <div className="HomeMarket">
       <div className='market_side_bar'>

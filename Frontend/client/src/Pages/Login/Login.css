@@ -24,7 +24,7 @@ a{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    gap: 4rem;
+    gap: 2rem !important;
     left: 32%;
     top: 5%;
     padding: var(--padding-main);
@@ -87,7 +87,7 @@ a{
     outline: 0;
     border-radius: 15px;
 }
-.login_input > p{
+.forget_password{
     text-align: start;
     margin: 2rem 1.9rem;
     font-size: var(  --page-list-font);
@@ -95,7 +95,7 @@ a{
     color: lightgrey;
 
 }
-.login_input > p:hover{
+.forget_password:hover{
     color: lightblue;
 }
 .login_button{
@@ -141,7 +141,8 @@ a{
         left: 0;
         border-radius: 0;
         gap: 1rem;
-        padding: var( --mobile-padding-main);
+        padding: 1rem 1rem;
+
     }
     .login_logo{
         gap: 0.5rem;
@@ -153,8 +154,8 @@ a{
     .login_logo > h1{
         font-size: var(--mobile-font-header2);
     }
-    .close{
-        font-size: 1.7rem !important;
+    .closex{
+        font-size: 1.4rem !important;
         margin-right: -0.02rem !important;
     }
     .login_description{
@@ -171,7 +172,7 @@ a{
         padding-left: 2rem;
 
     }
-    .login_input > p{
+    .forget_password{
         width: 100%;
         margin: 2rem 0.5rem;
         color: lightgrey;
@@ -181,6 +182,8 @@ a{
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
+        margin-top: 1.5rem !important;
+
     }
     .logins{
         width: 98%;
@@ -282,13 +285,13 @@ a{
         font-size: var(--mobile-page-list-font);
         padding-left: 2rem;
     }
-    .login_input > p{
+    .forget_password{
         width: 100%;
         margin: 2rem 0.5rem;
         color: lightgrey;
         font-size: var(--mobile-page-list-font);
     }
-    .login_input > p:hover{
+    .forget_password:hover{
         color: lightblue;
     }
     .login_button{
@@ -366,13 +369,13 @@ a{
         font-size: var(--mobile-page-list-font);
         padding-left: 2rem;
     }
-    .login_input > p{
+    .forget_password{
         width: 100%;
         margin: 2rem 0.5rem;
         color: lightgrey;
         font-size: var(--mobile-page-list-font);
     }
-    .login_input > p:hover{
+    .forget_password:hover{
         color: lightblue;
     }
     .login_button{

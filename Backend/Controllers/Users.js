@@ -17,8 +17,9 @@ export const registerUser = async (req,res)=>{
         //lets check old user to avoid multiplr registration with same number
         const oldUser = await Users.findOne({$or: [{email: email}, {username: username}]})
         if(oldUser){
-            res.status(400).json({msg: "already exists"})
-        }else{
+            res.status(400).json({msg: "Username or email already exists"})
+        }
+        else{
             const saveDetails = await savedUsers.save()
             res.status(200).json(saveDetails)
         }
@@ -36,7 +37,7 @@ export const loginUser = async (req,res)=>{
         const user = await Users.findOne({$or: [ {email: email } , {username: username } ]})
         if(!user){
 
-            res.status(401).json({msg: "please register"})
+            res.status(401).json({msg: "User not found / register"})
 
         }else if( user.accountType === "banned" ){
 
@@ -47,7 +48,7 @@ export const loginUser = async (req,res)=>{
             const userpassword = user.password
             const hashedPassword = CryptoJS.DES.decrypt(userpassword, process.env.PASS_WORD);
             const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8)
-            originalPassword !== req.body.password && res.status(403).json({msg: "password error"})
+            originalPassword !== req.body.password && res.status(403).json({msg: "Wrong password"})
        
             const { orderID,password,email,_id,__v, isAdmin,...others} = user._doc
 

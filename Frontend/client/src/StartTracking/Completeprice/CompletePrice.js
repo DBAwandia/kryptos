@@ -113,6 +113,16 @@ function CompletePrice({coinName}) {
             setShort("Short")
             }}>Short</button>
         </div>
+
+        <div className='progress_bar'>
+          <p className='progress_description'>Choose %profit for notification</p>
+          <select className='progress_select' onChange={(e)=>setSelectPercentage(e.target.value)} required>
+            <option>25%</option>
+            <option>50%</option>
+            <option>75%</option>
+            <option>100%</option>
+          </select>
+        </div>
         
        <select class="choose_limit_market" onChange={(e)=>setSelect(e.target.value)} >
 
@@ -132,15 +142,7 @@ function CompletePrice({coinName}) {
         </option>
 
        </select>
-       <div className='progress_bar'>
-          <p className='progress_description'>Choose %profit for notification</p>
-          <select className='progress_select' onChange={(e)=>setSelectPercentage(e.target.value)} required>
-            <option>25%</option>
-            <option>50%</option>
-            <option>75%</option>
-            <option>100%</option>
-          </select>
-        </div>
+   
        <div className={select ==="Limit" ? "CompletePrice_input_limit_amount" : "CompletePrice_input_limit_amount_hide"}>
           <input 
           type="number" 

@@ -103,6 +103,8 @@ a{
     align-items: center;
     justify-content: space-evenly;
     gap: 2rem;
+    margin-top: 1.55rem !important;
+
 
 }
 
@@ -118,6 +120,18 @@ a{
     background-color: #7387ff;
     color: purple;
 }
+.registers_disabled{
+    background-color: #e9eaf3;
+    color: #2946eb;
+    width: var( --button-width);
+    border: 0;
+    height: var(--button-height);
+    font-size: var(--page-list-font);
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+}
 .cancelss{
     width: var( --button-width) !important;
     border: 0;
@@ -127,7 +141,7 @@ a{
     text-align: center;
     border-radius: var(--button-radius);
     cursor: pointer;
-    background-color: #f0f2f5;
+    background-color: #e5ecf7;
     color: black;
 }
 @media screen and (max-width: 642px) {
@@ -137,8 +151,8 @@ a{
         top: 0;
         left: 0;
         border-radius: 0;
-        gap: 1rem;
-        padding: var( --mobile-padding-main);
+        gap: 1.1rem;
+        padding: 1rem 1rem;
     }
     .register_logo{
         gap: 0.5rem;
@@ -183,6 +197,12 @@ a{
         width: 100%;
     }
     .registers{
+        width: 98%;
+        border-radius: 5px;
+        height: 3.6rem;
+        font-size: var(--mobile-page-list-font);
+    }
+    .registers_disabled{
         width: 98%;
         border-radius: 5px;
         height: 3.6rem;
@@ -244,6 +264,8 @@ a{
         left: 5%;
         top: 5%;
         padding: 8px;
+        padding: 1rem 1rem;
+
     }
     .register_header{
         width: 100%;
@@ -300,6 +322,11 @@ a{
     }
     
     .registers{
+        border-radius: 5px !important;
+        height: 3.6rem;
+        font-size: var(--mobile-page-list-font);
+    }
+    .registers_disabled{
         border-radius: 5px !important;
         height: 3.6rem;
         font-size: var(--mobile-page-list-font);
@@ -384,6 +411,11 @@ a{
     }
     
     .registers{
+        border-radius: 5px !important;
+        height: 3.6rem;
+        font-size: var(--mobile-page-list-font);
+    }
+    .registers_disabled{
         border-radius: 5px !important;
         height: 3.6rem;
         font-size: var(--mobile-page-list-font);

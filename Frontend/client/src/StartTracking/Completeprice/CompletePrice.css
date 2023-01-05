@@ -239,7 +239,7 @@ a{
 }
 
 .track_order_footer{
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     text-decoration: underline;
     color: #fad59d;
     cursor: pointer;
@@ -293,7 +293,7 @@ a{
     gap: 0.2rem;
 }
 .progress_description{
-    font-size: var( --mobile-page-list-font) !important;
+    font-size: 0.75rem !important;
     color: #f3ac41;
 }
 .progress_select{
@@ -309,21 +309,23 @@ a{
     }
     .CompletePrice_input_limit_amount{
         height: 6.5vh;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
     .CompletePrice_input_limit_amount > input{
+        width: 99%;
+        height: 3.6rem;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 2px;
+        padding-left: 1rem;
     }
     .CompletePrice_input_amount{
         height: 6.5vh;
-        margin-top: 1.6rem;
+        margin-top: 1.2rem;
     }
     .CompletePrice_input_amount > input{
+        width: 99%;
+        height: 3.6rem;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 2px;
+        padding-left: 1rem;
     }
     .CompletePrice_button_long_short{
         margin-top: 3rem;
@@ -332,13 +334,17 @@ a{
         font-size: var( --mobile-page-list-font);
     }
     .buy_long{
-        border-radius: 2px;
-        font-size: var( --mobile-page-list-font);
+        width: 98% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
     
     }
     .sell_short{
-        border-radius: 2px;
-        font-size: var( --mobile-page-list-font);
+        width: 98% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
     
     }
     .track_order_footer > p{
@@ -410,18 +416,20 @@ a{
         margin-top: 1.6rem;
     }
     .CompletePrice_input_limit_amount > input{
+        width: 99%;
+        height: 3.6rem;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 1.5px;
+        padding-left: 1rem;
     }
     .CompletePrice_input_amount{
         height: 5.9vh;
         margin-top: 1.5rem;
     }
     .CompletePrice_input_amount > input{
+        width: 99%;
+        height: 3.6rem;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 1.5px;
+        padding-left: 1rem;
     }
     .CompletePrice_button_long_short{
         margin-top: 2.9rem;
@@ -430,13 +438,17 @@ a{
         font-size: var( --mobile-page-list-font);
     }
     .buy_long{
-        border-radius: 1.5px;
-        font-size: var( --mobile-page-list-font);
+         width: 99% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
     
     }
     .sell_short{
-        border-radius: 1.5px;
-        font-size: var( --mobile-page-list-font);
+         width: 99% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
     
     }
     .track_order_footer{
@@ -513,18 +525,20 @@ a{
         margin-top: 1.6rem;
     }
     .CompletePrice_input_limit_amount > input{
+         width: 99% !important;
+        height: 3.6rem !important;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 1.5px;
+    
     }
     .CompletePrice_input_amount{
         height: 5.7vh;
         margin-top: 2rem;
     }
     .CompletePrice_input_amount > input{
+         width: 99% !important;
+        height: 3.6rem !important;
         font-size: var(--mobile-page-list-font) !important;
-        padding-left: 1.3rem;
-        border-radius: 1.5px;
+    
     }
     .CompletePrice_button_long_short{
         margin-top: 3rem;
@@ -533,13 +547,19 @@ a{
         font-size: var( --mobile-page-list-font);
     }
     .buy_long{
-        border-radius: 1.5px;
-        font-size: var( --mobile-page-list-font);
+         width: 99% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
+    
     
     }
     .sell_short{
-        border-radius: 1.5px;
-        font-size: var( --mobile-page-list-font);
+         width: 99% !important;
+        height: 3.6rem !important;
+        border-radius: 5px;
+        font-size: var(--mobile-page-list-font) !important;
+    
     
     }
     .track_order_footer{

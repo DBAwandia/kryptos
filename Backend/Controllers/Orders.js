@@ -95,7 +95,7 @@ export const trackAllOrdersNumber = async ( req , res ) =>{
 // admin fetch all orders
 export const fetchAllOrders = async ( req , res ) =>{
     try{
-        const allOrders = await Orders.find()
+        const allOrders = await Orders.find().sort({_id: -1})
         res.status(200).json(allOrders)
     }catch(err){
         res.status(500).json(err)

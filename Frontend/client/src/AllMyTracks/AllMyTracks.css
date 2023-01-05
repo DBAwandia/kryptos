@@ -1,11 +1,12 @@
 .AllMyTracks{
     width: 100%;
-    background-color:  #ebe5e5;
+    height: 100vh;
+    background-color:  #fcf7f7;
     position: relative;
 }
 .allmytrack_container_nav{
     padding: var(--mobile-padding-main);
-    margin: 0rem 2rem;
+    margin: 0rem 0.6rem;
 }
 .allmytrack_container_slider{
     padding: var(--mobile-padding-main);
