@@ -1,6 +1,5 @@
 .HomeMarketCoins{
     width: 100% !important;
-    height: 100vh !important;
     contain: paint;
 
 }
@@ -124,7 +123,22 @@
     font-weight: 450;
     color: gray;
 }
+.btc_star{
+    color: #fab246 !important;
+    display: block !important;
+    font-size: 3.3rem !important;
+
+}
+.not_btc_start{
+    display: none !important;
+}
+.stars{
+    color: #fab246 !important;
+    font-size: 3.3rem !important;
+    
+}
 .star{
+    display: none !important;
     font-size: 3.3rem !important;
     color: #5b5b5b !important;
     cursor: pointer;
@@ -228,6 +242,12 @@
         font-size: 0.78rem;
         font-weight: 400;
     }
+    .btc_star{
+        font-size: 1.8rem !important;
+    }
+    .stars{
+        font-size: 1.8rem !important;
+    }
     .star{
         font-size: 1.8rem !important;
     }
@@ -327,6 +347,12 @@
     .coin_symbols{
         font-size: 0.78rem;
         font-weight: 400;
+    }
+    .btc_star{
+        font-size: 1.8rem !important;
+    }
+    .stars{
+        font-size: 1.8rem !important;
     }
     .star{
         font-size: 1.8rem !important;
@@ -445,6 +471,12 @@
     .coin_symbols{
         font-size: 0.78rem;
         font-weight: 400;
+    }
+    .btc_star{
+        font-size: 1.8rem !important;
+    }
+    .stars{
+        font-size: 1.8rem !important;
     }
     .star{
         font-size: 1.8rem !important;

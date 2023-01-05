@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import  {useNavigate} from "react-router-dom"
 import axios from 'axios';
-import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
+import {DoNotDisturbAlt, StarOutline, Whatshot} from "@mui/icons-material"
 import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
 import { Offline } from 'react-detect-offline';
 
@@ -108,7 +108,8 @@ function HomeMarketCoinsTable({searchs}) {
               <TableCell  className='table_cell_chart'>{item?.rank}</TableCell>
               <TableCell className='table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='to_add_favorite'>
-                <StarOutline className='star'  />
+                <StarOutline className={item?.name === "Bitcoin" ? "star" : "stars"}  />
+                <Whatshot className={item?.name === "Bitcoin" ? "btc_star" : "not_btc_start"} />
                   <div className='coin_name'>
                     <div className="coin_name_and_symbol">
                       <p className='coin_names'>{item?.symbol}</p>

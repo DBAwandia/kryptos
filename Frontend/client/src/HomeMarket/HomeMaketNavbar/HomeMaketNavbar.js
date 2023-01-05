@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import "./HomeMaketNavbar.css"
 function HomeMaketNavbar() {
-  const [activez, setActivez] = useState("")
-
-  //store the active to local storage for easy access in other components
-  useEffect(()=>{
-    JSON.parse(localStorage.setItem("activez",activez) || null)
-  },[activez])
 
   return (
     <div>
@@ -18,29 +12,35 @@ function HomeMaketNavbar() {
               </div>
               <div className='HomeMarket_container_lists'>
                 <ul>
-                  <Link to="/">
-                    <li className={activez === "market"? "isActivez":"market"}
-                        onClick={()=>{
-                          setActivez("market")
-                        }}
-                    >Market</li>
-                  </Link>
+                  <NavLink 
+                    to="/"
+                    className={ ({isActive}) =>
+                    isActive ? "isActivez":"market"}
+                  >
+                    <li>
+                      Market
+                    </li>
+                  </NavLink>
 
-                  {/* <Link to="/starttracking"> */}
-                    <li className={activez === "tracks"? "isActivez":"market"}
-                        onClick={()=>{
-                          setActivez("tracks")
-                        }}
-                    >Track</li>
-                  {/* </Link> */}
+                  <NavLink 
+                    to="/starttracking"
+                    className={ ({isActive}) =>
+                    isActive ? "isActivez":"market"}
+                  >
+                    <li>
+                    Track
+                    </li>
+                  </NavLink>
 
-                  {/* <Link to="/allmytracks"> */}
-                    <li className={activez === "mytracks"? "isActivez":"market"}
-                        onClick={()=>{
-                          setActivez("mytracks")
-                        }}
-                    >My tracks</li>
-                  {/* </Link> */}
+                  <NavLink 
+                    to="/allmytracks"
+                    className={ ({isActive}) =>
+                    isActive ? "isActivez":"market"}
+                  >
+                    <li>
+                      My tracks
+                    </li>
+                  </NavLink>
                   
                 </ul>
               </div>
