@@ -52,9 +52,10 @@ export const editOrder = async (req , res) =>{
 
 //get all individual orders
 export const getAllIndividualOrders = async ( req , res ) =>{
-     try{
-        const getUser = await Users.findOne({username: req.body.username})
+    const QUERY = req.query.QUERY
 
+     try{
+        const getUser = await Users.findOne({username: QUERY})
         //get all orderID
         const allOdersID = getUser.orderID
 

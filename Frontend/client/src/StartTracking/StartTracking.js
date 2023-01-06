@@ -18,11 +18,7 @@ function StartTracking() {
       </div>
 
     <div className='starttracking_container'>
-      <div className='StartTracking'>
-        <Chart/>
-      </div>
-
-      <div className='StartTracking'>
+      <div className='StartTrackings'>
         <CompletePrice coinName={coinName}/>
       </div>
     </div>

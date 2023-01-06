@@ -6,18 +6,20 @@ import { Offline } from "react-detect-offline";
 import {Link, useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {axiosInstance} from "../../BaseURL/BaseUrl"
 
 function CompletePrice({coinName}) {
     const [changeDetails, setChangeDetails] = useState("Limit")
     const [long , setLong] = useState("Long")
     const [short , setShort] = useState("")
     const [select,setSelect] = useState("Limit")
-    const [selectPercentage, setSelectPercentage] = useState("")
+    const [selectPercentage, setSelectPercentage] = useState("25%")
     const [limitAmount, setLimitAmount] = useState("")
     const [market, setMarket] = useState("")
     const[amount, setAmount] = useState("")
     const [data, setData]= useState([])
     const [loading , setLoading] = useState(false)
+    const [loadings , setLoadings] = useState(false)
     const [error, setError] = useState(false)
 
 
@@ -48,24 +50,45 @@ function CompletePrice({coinName}) {
 
     const datas = [data]
     const markets = datas?.map(item => item?.priceUsd)
-
+ 
     let details = {short,long,markets,amount,selectPercentage,select,limitAmount}
+    console.log(details)
     const navigate = useNavigate()
     //pass props of 5X ,price ,Percentage target,buy/sell to /allmytracks
-    const handleClick = ()=>{
-      // navigate("/allmytracks" , {state: details})
-      toast.success('Successfull!', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
+    const handleClick = async()=>{
+      setLoadings(true)
+      try{
+        const res = await axiosInstance.post("/Orders/longORshort", 
+          {
+            username: "wadda",
+            short: short,
+            long: long,
+            markets: select,
+            selectPercentage: selectPercentage,
+            amount: amount,
+            limitAmount: limitAmount
+          }
+        )
+        console.log(res)
+        setLoadings(false)
+        toast.success('Successfull!!...redirecting', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+          setTimeout(()=>{
+            navigate("/allmytracks")
+          },2000)
+      }catch(err){
+        setLoadings(false)
+        toast.error("Please retry")
+      }
     }
-
   return (
     <div className='container'>
       {loading && <div className='loading_coin_animate'>
@@ -157,6 +180,7 @@ function CompletePrice({coinName}) {
       </div>
       
       <div className='CompletePrice_button_long_short'>
+        {loadings && <p>Loading...</p>}
         <button onClick={()=>
         handleClick(
         )} className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol}` : `Buy/Long ${item?.symbol}`}</button>

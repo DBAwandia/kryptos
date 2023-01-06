@@ -15,7 +15,7 @@ function Sidebar({setOpenSidebar}) {
       <div className='sidebar_open'>
         <div className='logos'>
           <div className='sidebar_header'>
-              <img className='logo_image' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_8OX4mN_kRTm-CvXz0uIM0QeXL7CD8OGmcQ&usqp=CAU' alt='' />
+              <img className='logo_image' loading='lazy' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_8OX4mN_kRTm-CvXz0uIM0QeXL7CD8OGmcQ&usqp=CAU' alt='' />
               <h1 className='krypto'>Krypto</h1>
           </div>
           <div className='close'

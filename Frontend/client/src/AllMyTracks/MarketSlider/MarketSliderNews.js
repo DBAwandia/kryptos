@@ -54,7 +54,7 @@ function MarketSliderNews() {
                             <p>{item.description}</p>
                         </a>
                     </div>
-                    <img src={item.image} alt="" />
+                        <img  loading='lazy' className='lazy_images' src={item?.image} alt="" />
                 </div>
         </SwiperSlide>
             )}

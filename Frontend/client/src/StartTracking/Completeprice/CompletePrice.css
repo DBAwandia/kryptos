@@ -15,7 +15,7 @@ a{
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0,0.955);
-    z-index: 99999999999999;
+    z-index: 999999;
 
 }
 .loading_coin_error{
@@ -69,8 +69,10 @@ a{
     padding: var(  --padding-main);
     background: #fcf8f8;
     height: 100vh;
-    border: 1.4px solid rgba(218, 214, 214,0.4);
-
+    border: 0.3px solid rgba(218, 214, 214,0.2);
+    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
 }
 
 
@@ -357,7 +359,9 @@ a{
     }
     .CompletePrice_name{
         gap: 2.4rem;
+        border: 0px !important;
     }
+   
     .CompletePrice_name_n_price{
         font-size: var(--mobile-page-list-font);
     }
@@ -464,6 +468,7 @@ a{
     }
     .CompletePrice_name{
         gap: 0.8rem;
+        border: 0px !important;
     }
     .CompletePrice_name_n_price{
         font-size: var(--mobile-page-list-font);

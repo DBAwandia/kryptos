@@ -14,7 +14,7 @@ const orderSchema = new mongoose.Schema({
         type: String
     },
     amount:{
-        type: String
+        type: Number
     },
     selectPercentage:{
         type: String
@@ -23,7 +23,7 @@ const orderSchema = new mongoose.Schema({
         type: String
     },
     limitAmount:{
-        type: String
+        type: Number
     }
 },{timestamps: true})
 

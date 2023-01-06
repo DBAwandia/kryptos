@@ -7,8 +7,9 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import axios from 'axios';
 import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
+import { axiosInstance } from "../../BaseURL/BaseUrl"
+
 const datas = [
     {
         trackings: "Buy",
@@ -17,73 +18,29 @@ const datas = [
         leverage: "20x",
         market_price: 15879,
         change: -20
-    },
-    {
-        trackings: "Sell",
-        name: "Eth",
-        entry: 467,
-        leverage: "20x",
-        market_price: 879,
-        change: 20
-    },
-    {
-        trackings: "Buy",
-        name: "Eth",
-        entry: 467.334,
-        leverage: "20x",
-        market_price: 879.998989,
-        change: 20
-    }
-    ,
-    {
-        trackings: "Sell",
-        name: "Eth",
-        entry: 467.56,
-        leverage: "20x",
-        market_price: 879.98,
-        change: 20
-    }
-    ,
-    {
-        trackings: "Buy",
-        name: "Eth",
-        entry: 467.78886,
-        leverage: "20x",
-        market_price: 379,
-        change: -20
-    },
-    {
-        trackings: "Buy",
-        name: "Eth",
-        entry: 467.334,
-        leverage: "20x",
-        market_price: 879.998989,
-        change: 20
-    }
-    ,
-    {
-        trackings: "Buy",
-        name: "Eth",
-        entry: 467.56,
-        leverage: "20x",
-        market_price: 879.98,
-        change: 20
-    }
-    ,
-    {
-        trackings: "Buy",
-        name: "Eth",
-        entry: 467.78886,
-        leverage: "20x",
-        market_price: 379,
-        change: -20
     }
 ]
 
 
 function MarketTrackDetails() {
-    const [data, setData] = useState("")
+    const [data, setData] = useState([])
     const [ loading, setLoading ] = useState(false)
+
+    const wad = "wadda"
+
+    const URL = `/Orders/individualorderdetails?QUERY=${wad}`
+    useEffect(()=>{
+        const fetchData = async(URL) =>{
+            try{
+                const res = await axiosInstance.get(URL)
+                console.log(res)
+            }catch(err){
+
+            }
+            fetchData(URL)
+        }
+    },[URL])
+
   
   return (
        <TableContainer className='MarketTrackDetails'>

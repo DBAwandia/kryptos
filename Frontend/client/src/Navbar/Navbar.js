@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import "./Navbar.css"
 import { Dehaze, KeyboardArrowDownOutlined} from "@mui/icons-material"
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 function Navbar({setOpenSidebar}) {
   const [ open ,setOpen] = useState(false)
   return (
@@ -14,7 +17,7 @@ function Navbar({setOpenSidebar}) {
         <Dehaze className='dehaze'/>
       </div>
       <div className='logo'>
-        <img className='logo_image' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_8OX4mN_kRTm-CvXz0uIM0QeXL7CD8OGmcQ&usqp=CAU' alt='' />
+        <LazyLoadImage className='logo_image' effect="blur" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_8OX4mN_kRTm-CvXz0uIM0QeXL7CD8OGmcQ&usqp=CAU' alt='' />
         <h1 className='krypto'>Krypto</h1>
       </div>
 
