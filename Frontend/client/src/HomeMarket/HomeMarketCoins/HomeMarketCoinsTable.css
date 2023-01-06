@@ -6,7 +6,13 @@
 .HomeMarketCoins_table{
     width: 100% !important;
 }
-
+.body_row:hover {
+    background-color: #ece7e7;
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+    padding: 0rem 0.3rem;
+    cursor: pointer;
+  }
 .table_cell_asset{
     font-size: var(--header-h3) !important;
     border-bottom:  0px !important;
@@ -243,7 +249,7 @@
         font-weight: 400;
     }
     .btc_star{
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
     .stars{
         font-size: 1.8rem !important;
@@ -306,8 +312,8 @@
         padding: 1rem !important;
     }
     .table_cell_percentage_button{
-        width: 4rem;
-        height: 2rem;
+        width: 4rem !important;
+        height: 2rem !important;
         font-size: 0.88rem;
         color: #2da966;
         border: 0;
@@ -316,8 +322,8 @@
         border-radius: 5px;
     }
     .table_cell_percentage_button_red{
-        width: 4rem;
-        height: 2rem;
+        width: 4rem !important;
+        height: 2rem !important;
         font-size: 0.88rem;
         color: #ff4f4f;
         border: 0;
@@ -349,7 +355,7 @@
         font-weight: 400;
     }
     .btc_star{
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
     .stars{
         font-size: 1.8rem !important;
@@ -404,11 +410,11 @@
         width: 7rem;
     }
     .homemarket_button > button{
-        border-radius: 5px;
-        height: 3.5rem;
-        font-size: 0.95rem;
-        width: 10rem;
-        margin-top: 0.5rem ;
+        border-radius: 5px !important;
+        height: 3.1rem !important;
+        font-size: 0.9rem;
+        width: 6.8rem !important;
+        margin-top: 0.6rem ;
     }
 
 }
@@ -430,8 +436,8 @@
         padding: 1rem !important;
     }
     .table_cell_percentage_button{
-        width: 4rem;
-        height: 2rem;
+        width: 4rem !important;
+        height: 2rem !important;
         font-size: 0.88rem;
         color: #2da966;
         border: 0;
@@ -440,8 +446,8 @@
         border-radius: 5px;
     }
     .table_cell_percentage_button_red{
-        width: 4rem;
-        height: 2rem;
+        width: 4rem !important;
+        height: 2rem !important;
         font-size: 0.88rem;
         color: #ff4f4f;
         border: 0;
@@ -473,7 +479,7 @@
         font-weight: 400;
     }
     .btc_star{
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
     .stars{
         font-size: 1.8rem !important;
@@ -529,10 +535,10 @@
         width: 7rem;
     }
     .homemarket_button > button{
-        border-radius: 5px;
-        height: 3.5rem;
-        font-size: 0.95rem;
-        width: 10rem;
-        margin-top: 0.5rem ;
+        border-radius: 5px !important;
+        height: 3.1rem !important;
+        font-size: 0.9rem;
+        width: 6.8rem !important;
+        margin-top: 0.6rem ;
     }
 }

@@ -13,9 +13,10 @@ function Home() {
   return (
     <div className='Home'>
 
-      {openSidebar &&<div className='show_side_bar'>
-        <Sidebar setOpenSidebar={setOpenSidebar}/>
-      </div>}
+    <div className='home_container'>
+        {openSidebar &&<div className='show_side_bar'>
+           <Sidebar setOpenSidebar={setOpenSidebar}/>
+        </div>}
 
       <div className='hero_and_navbar'>
           <Navbar setOpenSidebar={setOpenSidebar}/>
@@ -35,6 +36,7 @@ function Home() {
           <Footer/>
         </div>
 
+      </div>
       </div>
     </div>
   )

@@ -7,15 +7,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
-import {DoNotDisturbAlt, StarOutline} from "@mui/icons-material"
+import { StarOutline } from "@mui/icons-material"
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 import { Offline } from 'react-detect-offline';
+import { useNavigate } from "react-router-dom";
 
 function Markets() {
   const [data, setData] = useState("")
   const [ loading, setLoading ] = useState(false)
   const [ error, setError ] = useState(false)
-
+  const navigate = useNavigate()
   let timer;
   useEffect(()=>{
   setLoading(true)
@@ -74,7 +75,11 @@ function Markets() {
          </div>
           : <TableBody>
           {datazz?.map((item)=>
-            <TableRow  className="markets_body_row" >
+            <TableRow  className="markets_body_row" 
+              onClick={()=>{
+                navigate("/login")
+              }}
+            >
             <TableCell  className='markets_table_cell_chart'>{item?.rank}</TableCell>
               <TableCell className='markets_table_body'  sx={{borderBottom: "0px"}}>              
                 <div className='markets_to_add_favorite'>

@@ -35,6 +35,23 @@ a{
     text-align: center;
     gap: 2.8rem;
 }
+.Homemarket_show_change{
+    display: flex;
+    align-items: center;
+}
+.Homemarket_show_change_balance{
+    width: 100%;
+    /* overflow: scroll; */
+    padding: var(--padding-main);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.8rem;
+}
+.homemarket_price_tag{
+    display: none;
+    
+}
 .homemarket_nav{
     width: 100%;
 }
@@ -115,6 +132,30 @@ input::-webkit-input-placeholder{
         padding: var(--mobile-padding-main);
         gap: 1.3rem;
     }
+    .Homemarket_show_change{
+        width: 100%;
+    }
+    .homemarket_price_tag{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .homemarket_price_tag > p{
+        font-size: 0.9rem;
+        color: #acacac;
+        font-weight: 400;
+        text-decoration:double;
+    }
+    .homemarket_price_tag > span{
+        font-size: 0.95rem;
+        font-weight: bold;
+        color: #2da966;
+    }
+    .Homemarket_show_change_balance{
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+    }
     .HomeMaret_navbar{
         width: 100%;
     }
@@ -191,6 +232,10 @@ input::-webkit-input-placeholder{
     .HomeMarket{
         contain: paint;
     }
+    .Homemarket_show_change_balance{
+        padding: 0;
+        gap: 1rem;
+    }
     .market_sidebar{
         width: 100%;
         display: block;
@@ -202,6 +247,22 @@ input::-webkit-input-placeholder{
     .HomeMarket_container{
         padding: var(--mobile-padding-main);
         gap: 1rem;
+    }
+    .Homemarket_show_change{
+        width: 100%;
+    }
+    .homemarket_price_tag{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .homemarket_price_tag > p{
+        font-size: 0.9rem;
+        color: #acacac;
+    }
+    .homemarket_price_tag > span{
+        font-size: 0.96rem;
+        color: #2da966;
     }
     .HomeMaret_navbar{
         width: 100%;
@@ -264,6 +325,17 @@ input::-webkit-input-placeholder{
     .HomeMarket_container{
         padding: var(--mobile-padding-main);
         gap: 1.5rem;
+    }
+    .Homemarket_show_change_balance{
+        padding: 0;
+        gap: 1rem;
+    }
+    .Homemarket_show_change{
+        width: 100%;
+    }
+    .homemarket_price_tag{
+        display: none;
+        
     }
     .HomeMaret_navbar{
         width: 100%;

@@ -1,11 +1,9 @@
-import { Dehaze, Search } from '@mui/icons-material'
+import { Dehaze, PowerSettingsNew, Search } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import "./HomeMarket.css"
 import Footer from "../Footer/Footer"
 import HomeMarketCoinsTable from './HomeMarketCoins/HomeMarketCoinsTable'
 import MarketFooter from './MarketFooter/MarketFooter'
-import { useScrollDirection } from 'react-use-scroll-direction'
-import { Link, useNavigate } from 'react-router-dom'
 import HomeMaketNavbar from './HomeMaketNavbar/HomeMaketNavbar'
 
 function HomeMarket() {
@@ -27,13 +25,21 @@ function HomeMarket() {
 
       <div className='HomeMarket_container'>
 
-          <div className='homemarket_nav'>
-              <HomeMaketNavbar />
+         <div className='Homemarket_show_change'>
+          <div className='Homemarket_show_change_balance'>
+              <div className='homemarket_nav'>
+                  <HomeMaketNavbar />
+              </div>
+              <div className='HomeMarket_header'>
+                  <p>Crypto Assets</p>
+              </div>
           </div>
 
-          <div className='HomeMarket_header'>
-              <p>Crypto Assets</p>
-            </div>
+          <div className='homemarket_price_tag'>
+            <p>Change:</p>
+            <span>+20%</span>
+          </div>
+         </div>
 
             <div className='HomeMarket_coin_search_input'>
               <input type="search" placeholder="Filter Crypto Assets" autoComplete='yes' onChange={(e)=>setSearchs(e.target.value.toLowerCase())}/>

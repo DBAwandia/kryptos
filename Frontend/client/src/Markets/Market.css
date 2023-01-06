@@ -9,6 +9,13 @@
     background-color: rgba(0, 0, 0,0.945);
     z-index: 999999999999999999;
 }
+.markets_body_row:hover{
+        background-color: #faf8f8;
+        width: 100%;
+        transition: all 0.1s ease-in-out;
+        padding: 0rem 0.3rem;
+        cursor: pointer;
+      }
 .loading_coin_errors > h1{
     justify-content: center;
     text-align: center;
@@ -86,8 +93,8 @@
 }
 .market_loading{
    position: absolute;
-   left: 50%;
-   top: 58%;
+   left: 50% !important;
+   top: 58% !important;
 }
 
 .markets_to_add_favorite{
@@ -137,7 +144,7 @@
 }
 .star{
     font-size: 3.3rem !important;
-    color: #5b5b5b !important;
+    color: #ffad32 !important;
     cursor: pointer;
 }
 .star:hover{
@@ -226,8 +233,8 @@
         margin-top: 2rem;
     }
     .market_loading{
-        top: 22%;
-        left: 40%;
+        top: 40% !important;
+        left: 40% !important;
     }
     .markets_table_cell_track{
         display: none !important;
@@ -302,14 +309,15 @@
     font-size: 0.95rem !important;
    }
    .Markets_button > button{
-    height: 3.5rem !important;
-    border-radius: 4px;
-    margin-top: 0.85rem !important;
-    font-size: 0.95rem !important;
+    border-radius: 5px !important;
+    height: 3.1rem !important;
+    font-size: 0.9rem;
+    width: 6.8rem !important;
+    margin-top: 0.6rem ;
 }
     .market_loading{
-        top: 22%;
-        left: 40%;
+        top: 40% !important;
+        left: 40% !important;
     }
 }
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
@@ -382,13 +390,14 @@
     font-size: 0.95rem !important;
    }
    .Markets_button > button{
-    height: 3.5rem !important;
-    border-radius: 4px;
-    margin-top: 0rem !important;
-    font-size: 0.95rem !important;
+    border-radius: 5px !important;
+        height: 3.1rem !important;
+        font-size: 0.9rem;
+        width: 6.8rem !important;
+        margin-top: 0.6rem ;
 }
     .market_loading{
-        top: 22%;
-        left: 40%;
+        top: 40% !important;
+        left: 40% !important;
     }
 }
