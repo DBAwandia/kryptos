@@ -4,6 +4,15 @@ const orderSchema = new mongoose.Schema({
     ordersID:{
         type: [String]
     },
+    name:{
+        type: String
+    },
+    btcname:{
+        type: String
+    },
+    entry:{
+        type: Number
+    },
     short:{
         type: String
     },

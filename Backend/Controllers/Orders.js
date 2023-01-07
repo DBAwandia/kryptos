@@ -6,6 +6,8 @@ import Users from "../Models/Users.js"
 export const longOrshort = async (req,res) =>{
     const { 
         short,long,
+        name,entry,
+        btcname,
         markets,amount,
         selectPercentage,
         select,limitAmount } = req.body
@@ -22,7 +24,7 @@ export const longOrshort = async (req,res) =>{
     }
     let lists = generatedID()
 
-    const savedDetails = Orders({ordersID: lists, short,long,markets,amount,selectPercentage,select,limitAmount})
+    const savedDetails = Orders({ordersID: lists,name,entry,btcname, short,long,markets,amount,selectPercentage,select,limitAmount})
     try{
         const saveDetails = await savedDetails.save()
         const username = req.body.username
@@ -57,7 +59,7 @@ export const getAllIndividualOrders = async ( req , res ) =>{
      try{
         const getUser = await Users.findOne({username: QUERY})
         //get all orderID
-        const allOdersID = getUser.orderID
+        const allOdersID = getUser.orderID.reverse()
 
         //get allorderDetails
         const allorderDetails = await Promise.all(allOdersID.map((item) =>{

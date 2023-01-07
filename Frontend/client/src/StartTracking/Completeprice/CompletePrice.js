@@ -8,7 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {axiosInstance} from "../../BaseURL/BaseUrl"
 
-function CompletePrice({coinName}) {
+
+function CompletePrice({coinName,setLoading}) {
     const [changeDetails, setChangeDetails] = useState("Limit")
     const [long , setLong] = useState("Long")
     const [short , setShort] = useState("")
@@ -18,10 +19,19 @@ function CompletePrice({coinName}) {
     const [market, setMarket] = useState("")
     const[amount, setAmount] = useState("")
     const [data, setData]= useState([])
-    const [loading , setLoading] = useState(false)
     const [loadings , setLoadings] = useState(false)
     const [error, setError] = useState(false)
+    const [ disable , setDisable ] = useState(false)
 
+
+    //validate form
+    useEffect(()=>{
+      if(amount.length < 1 || "" ){
+        setDisable(true)
+      }else{
+        setDisable(false)
+      }
+    },[amount ,disable])
 
     //fetch from localStorage and display if user didnt click
     const user = localStorage.getItem("coinID")
@@ -49,27 +59,38 @@ function CompletePrice({coinName}) {
     },[coinName,URL])
 
     const datas = [data]
-    const markets = datas?.map(item => item?.priceUsd)
+
+    //name or sumbol
+    const symbol = data && datas?.map(item => item?.symbol)
+    const symbols =symbol[0]
+
+    //coinname
+    const coinname = data && datas?.map(item => item?.name)
+    let coinnames = coinname[0]
+
+    //price usd
+    const entryPrice = data && datas?.map(item => item?.priceUsd)
+    const entry = Number(entryPrice[0]) < 1 ? Number(entryPrice[0]).toFixed(5) : Number(entryPrice[0]).toFixed(2)
  
-    let details = {short,long,markets,amount,selectPercentage,select,limitAmount}
-    console.log(details)
     const navigate = useNavigate()
     //pass props of 5X ,price ,Percentage target,buy/sell to /allmytracks
     const handleClick = async()=>{
       setLoadings(true)
       try{
-        const res = await axiosInstance.post("/Orders/longORshort", 
+        await axiosInstance.post("/Orders/longORshort", 
           {
             username: "wadda",
+            btcname: coinnames,
+            name: symbols,
             short: short,
             long: long,
             markets: select,
             selectPercentage: selectPercentage,
+            entry: entry,
             amount: amount,
             limitAmount: limitAmount
           }
         )
-        console.log(res)
         setLoadings(false)
         toast.success('Successfull!!...redirecting', {
           position: "top-center",
@@ -83,7 +104,7 @@ function CompletePrice({coinName}) {
           });
           setTimeout(()=>{
             navigate("/allmytracks")
-          },2000)
+          },2500)
       }catch(err){
         setLoadings(false)
         toast.error("Please retry")
@@ -91,9 +112,6 @@ function CompletePrice({coinName}) {
     }
   return (
     <div className='container'>
-      {loading && <div className='loading_coin_animate'>
-        <LoadingAnimation />
-      </div>}
       
       {/* show success or fail notification */}
         <ToastContainer />
@@ -169,23 +187,27 @@ function CompletePrice({coinName}) {
        <div className={select ==="Limit" ? "CompletePrice_input_limit_amount" : "CompletePrice_input_limit_amount_hide"}>
           <input 
           type="number" 
+          min="1"
           onChange={(e)=>setLimitAmount(e.target.value)}
-          placeholder={`Enter Limit price  (${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(6) : Number(item?.priceUsd).toFixed(4)})`} />
+          placeholder={`Enter Limit price  (${Number(item?.priceUsd) < 1  ? Number(item?.priceUsd).toFixed(6) : Number(item?.priceUsd).toFixed(4)})`} 
+          required
+          />
        </div>
 
        <div className='CompletePrice_input_amount'>
-          <input type="number" placeholder="Enter amount ( USDT ) " onChange={(e)=>setAmount(e.target.value)} required />
+          <input type="number"  min="1" placeholder="Enter amount ( USDT ) " onChange={(e)=>setAmount(e.target.value)} required />
        </div>   
 
       </div>
       
       <div className='CompletePrice_button_long_short'>
-        {loadings && <p>Loading...</p>}
-        <button onClick={()=>
+        {loadings && <p className='loadingz'>Loading...</p>}
+        <button 
+        disabled={disable}
+        onClick={()=>
         handleClick(
-        )} className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol}` : `Buy/Long ${item?.symbol}`}</button>
+        )} className={long === "Long" ? "buy_long" : "sell_short"}>{!long ? `Sell/Short ${item?.symbol} `  : `Buy/Long ${item?.symbol}`}</button>
       </div>
-
 
       <Link to="/allmytracks">
           <div className='track_order_footer'>

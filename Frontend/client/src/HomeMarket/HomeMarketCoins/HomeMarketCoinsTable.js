@@ -48,7 +48,9 @@ function HomeMarketCoinsTable({searchs}) {
 
       //all data which aint filtered
       const datazz =  apiData[0].data
+
       let arrDataFromSETDATA = [data.data]
+
       let filteredData = arrDataFromSETDATA[0]
       const Search = (filteredData) =>{
         return filteredData?.filter((item)=>(
