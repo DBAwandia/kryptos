@@ -40,7 +40,7 @@ function MarketTrackDetails() {
 
     //from database coinname
     const userCoinName = data?.map((item) => item?.btcname)
-    console.log(Object.values(userCoinName))
+    // console.log(Object.values(userCoinName))
 
     //fetch data from market || coincap API fetch
     const URLS = `https://api.coincap.io/v2/assets/${userCoinName}`

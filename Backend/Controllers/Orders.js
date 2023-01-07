@@ -1,7 +1,6 @@
 import Orders from "../Models/Orders.js"
 import Users from "../Models/Users.js"
 
-
 //open orders
 export const longOrshort = async (req,res) =>{
     const { 
