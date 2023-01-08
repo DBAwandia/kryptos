@@ -1,21 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./MarketTrackDetails.css"
-import {NotificationsActive} from "@mui/icons-material"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
 import { axiosInstance } from "../../BaseURL/BaseUrl"
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 
-function MarketTrackDetails() {
+function MarketTrackDetails({setLoading}) {
     const [data, setData] = useState([])
-    const [ loading, setLoading ] = useState(false)
     const location = useLocation()
     const [datas, setDatas]= useState([])
     const [loadings , setLoadings] = useState(false)
@@ -81,11 +78,7 @@ function MarketTrackDetails() {
             <TableCell  className='Change' sx={{fontWeight: "bold"}}>%Change</TableCell>
           </TableRow>
         </TableHead>
-        {loading ?
-        <div className='market_loadings'>
-            <LoadingAnimation/>
-         </div>
-          : <TableBody>
+         <TableBody>
           {/* {data?.map((item,i)=>
             <TableRow key={i}>
               <TableCell sx={{borderBottom: "0px"}} className={item?.long === "Long" ? "notification_buy":"notification_sell"}>
@@ -120,7 +113,7 @@ function MarketTrackDetails() {
                 </TableCell>
             </TableRow>
         )} */}
-        </TableBody>}
+        </TableBody>
       </Table>
     </TableContainer>
   )
