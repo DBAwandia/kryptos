@@ -60,7 +60,6 @@ function MarketSliderNews() {
 
     },[URL])
 
-    console.log(data)
   return (
     <div className='MarketSliderNews'>
          <Swiper

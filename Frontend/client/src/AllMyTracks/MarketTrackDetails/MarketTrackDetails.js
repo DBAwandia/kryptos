@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./MarketTrackDetails.css"
 import {NotificationsActive} from "@mui/icons-material"
 import Table from '@mui/material/Table';
@@ -39,11 +39,11 @@ function MarketTrackDetails() {
     },[URL])
 
     //from database coinname
-    const userCoinName = data?.map((item) => item?.btcname)
-    // console.log(Object.values(userCoinName))
+    const userCoinName = data?.map((item ) => item?.btcname)
+    let userCoinNames = userCoinName
 
     //fetch data from market || coincap API fetch
-    const URLS = `https://api.coincap.io/v2/assets/${userCoinName}`
+    const URLS = `https://api.coincap.io/v2/assets/`
     useEffect(()=>{
       setLoading(true)
       setError(false)
@@ -65,7 +65,7 @@ function MarketTrackDetails() {
 
     },[URL])
 
-    const market_price = datas?.map((item, i) => item?.priceUSD )
+    // const market_price = datas?.map((item, i) => item )
     // console.log(market_price)
   
   return (
@@ -82,11 +82,11 @@ function MarketTrackDetails() {
           </TableRow>
         </TableHead>
         {loading ?
-        <div className='market_loading'>
+        <div className='market_loadings'>
             <LoadingAnimation/>
          </div>
           : <TableBody>
-          {data?.map((item,i)=>
+          {/* {data?.map((item,i)=>
             <TableRow key={i}>
               <TableCell sx={{borderBottom: "0px"}} className={item?.long === "Long" ? "notification_buy":"notification_sell"}>
                 { item?.long }
@@ -119,7 +119,7 @@ function MarketTrackDetails() {
                     {item?.change}%
                 </TableCell>
             </TableRow>
-        )}
+        )} */}
         </TableBody>}
       </Table>
     </TableContainer>
