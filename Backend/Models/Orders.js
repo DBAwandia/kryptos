@@ -7,9 +7,6 @@ const orderSchema = new mongoose.Schema({
     name:{
         type: String
     },
-    btcname:{
-        type: String
-    },
     entry:{
         type: Number
     },

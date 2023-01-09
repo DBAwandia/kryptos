@@ -1,7 +1,7 @@
 .AllMyTracks{
     width: 100%;
     height: 100vh;
-    background-color:  #fcf7f7;
+    background-color:  #fcfbfb;
     position: relative;
 }
 .allmytrack_container_nav{
@@ -13,8 +13,26 @@
     margin: 2rem 2rem;
 }
 .allmytrack_container_tracks{
+    width: 100%;
     padding: var(--mobile-padding-main);
     margin: 2rem 10rem;
+}
+.No_data{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 4rem;
+    flex-direction: column;
+    margin-top: 8rem;
+}
+.history_icon{
+    font-size: 5rem !important;
+    color: rgb(207, 204, 204);
+}
+.No_data > p{
+    font-size: 5rem !important;
+    color: rgb(185, 182, 182);
 }
 .allmytrack_container_footer{
     display: none;
@@ -36,6 +54,19 @@
     .allmytrack_container_tracks{
         margin: 0rem;
     }
+    .No_data{
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+    .history_icon{
+        font-size: 3.4rem !important;
+        color: rgb(207, 204, 204);
+    }
+    .No_data > p{
+        font-size: 0.95rem !important;
+        font-weight: 490;
+        color: rgb(185, 182, 182);
+    }  
 }
 @media screen and (max-width: 1007px) and (min-width: 642px) {
     .allmytrack_container_footer{
@@ -47,6 +78,19 @@
     .allmytrack_container_tracks{
         margin: 0rem;
     }
+    .No_data{
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+    .history_icon{
+        font-size: 3.4rem !important;
+        color: rgb(207, 204, 204);
+    }
+    .No_data > p{
+        font-size: 0.95rem !important;
+        font-weight: 490;
+        color: rgb(185, 182, 182);
+    }
 }
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
     .allmytrack_container_footer{
@@ -57,5 +101,18 @@
     }
     .allmytrack_container_tracks{
         margin: 0rem;
+    }
+    .No_data{
+        gap: 2rem;
+        margin-top: 6rem;
+    }
+    .history_icon{
+        font-size: 3.4rem !important;
+        color: rgb(207, 204, 204);
+    }
+    .No_data > p{
+        font-size: 0.95rem !important;
+        font-weight: 490;
+        color: rgb(185, 182, 182);
     }
 }

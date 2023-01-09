@@ -2,6 +2,7 @@ import Users from "../Models/Users.js"
 import CryptoJS from "crypto-js"
 import jwt  from "jsonwebtoken"
 import cookieParser from "cookie-parser"
+import axios from "axios"
 
 
 //register
@@ -60,6 +61,22 @@ export const loginUser = async (req,res)=>{
             res.cookie("access_token",token,{httpOnly: true}).status(200).json({details: {...others}, isAdmin})
         }
         
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
+//get coin name
+export const getCoinName = async ( req, res ) =>{
+    const QUERY =req.query.QUERY
+    try{
+        const user = await Users.findOne({username: QUERY})
+        const coinname = user.btcname.reverse()
+        if(coinname){
+        }
+        const coinames = await axios.get(`https://api.coincap.io/v2/assets/${coinname}`)
+             let coinName = coinames.data.data.id
+             res.status(200).json(coinName)
     }catch(err){
         res.status(500).json(err)
     }

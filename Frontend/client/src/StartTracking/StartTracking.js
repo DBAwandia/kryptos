@@ -6,6 +6,8 @@ import Chart from "./Chart/Chart"
 import CompletePrice from './Completeprice/CompletePrice'
 import { useLocation } from 'react-router-dom'
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation'
+import { Offline } from "react-detect-offline";
+
 function StartTracking() {
 
   const location = useLocation()
@@ -25,6 +27,13 @@ function StartTracking() {
       {loading && <div className='start_tracking_loading'>
         <LoadingAnimation />
       </div>}
+
+      <Offline>
+        <div className='loading_coin_error'>
+          <h1>Please check your internet connection</h1>
+        </div>
+      </Offline>
+
       <div className='StartTrackings'>
         <CompletePrice setLoading={setLoading} coinName={coinName}/>
       </div>

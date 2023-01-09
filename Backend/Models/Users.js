@@ -9,6 +9,9 @@ const userSchema = new mongoose.Schema({
     orderID:{
         type: [String]
     },
+     btcname:{
+        type: [String]
+     },
     username: {
         type: String,
         unique: true

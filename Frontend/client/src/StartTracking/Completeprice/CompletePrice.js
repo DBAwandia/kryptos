@@ -1,8 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
-import LoadingAnimation from "../../LoadingAnimation/LoadingAnimation"
-import { Offline } from "react-detect-offline";
 import {Link, useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +15,7 @@ function CompletePrice({coinName,setLoading}) {
     const [selectPercentage, setSelectPercentage] = useState("25%")
     const [limitAmount, setLimitAmount] = useState("")
     const [market, setMarket] = useState("")
-    const[amount, setAmount] = useState("")
+    const [amount, setAmount] = useState("")
     const [data, setData]= useState([])
     const [loadings , setLoadings] = useState(false)
     const [error, setError] = useState(false)
@@ -65,8 +63,9 @@ function CompletePrice({coinName,setLoading}) {
     const symbols =symbol[0]
 
     //coinname
-    const coinname = data && datas?.map(item => item?.name)
+    const coinname = data && datas?.map(item => item?.id)
     let coinnames = coinname[0]
+    console.log(coinnames)
 
     //price usd
     const entryPrice = data && datas?.map(item => item?.priceUsd)
@@ -107,7 +106,7 @@ function CompletePrice({coinName,setLoading}) {
           },2500)
       }catch(err){
         setLoadings(false)
-        toast.error("Please retry")
+        toast.error(err.response.data.msg)
       }
     }
   return (
@@ -116,11 +115,7 @@ function CompletePrice({coinName,setLoading}) {
       {/* show success or fail notification */}
         <ToastContainer />
 
-      <Offline>
-        <div className='loading_coin_error'>
-          <h1>Please check your internet connection</h1>
-        </div>
-      </Offline>
+     
       
     {datas?.map((item)=>{
 

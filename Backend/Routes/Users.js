@@ -1,6 +1,6 @@
 import express from "express"
 import { verifyBothUserAndAdmin, verifyOnlyAdmin } from "../Authentication/VerifyToken.js"
-import { banUser, getAllUsers, loginUser, registerUser, unBanUser, userWeeklyStats } from "../Controllers/Users.js"
+import { banUser, getAllUsers, getCoinName, loginUser, registerUser, unBanUser, userWeeklyStats } from "../Controllers/Users.js"
 const router = express.Router()
 
 //register user
@@ -14,6 +14,9 @@ router.get("/getusers" , getAllUsers)
 
 //get Monthly users
 router.get("/stats" , userWeeklyStats)
+
+//get coin name
+router.get("/coinname" , getCoinName)
 
 //ban a user
 router.put("/banuser" , banUser)

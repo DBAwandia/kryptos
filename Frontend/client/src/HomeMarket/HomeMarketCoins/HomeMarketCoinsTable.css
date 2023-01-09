@@ -258,7 +258,10 @@
         font-size: 1.8rem !important;
     }
     .market_table_cell_percentage{
-        display: none !important;
+        display: block !important;
+        font-size: 0.88rem !important;
+        margin-top: 0.9rem !important;
+        margin-left: 0.8rem !important;
     }
     .table_cell_tracks{
         display: none !important;
@@ -364,7 +367,10 @@
         font-size: 1.8rem !important;
     }
     .market_table_cell_percentage{
-        display: none !important;
+        display: block !important;
+        font-size: 0.88rem !important;
+        margin-top: 0.9rem !important;
+        margin-left: 0.8rem !important;
     }
     .table_cell_tracks{
         display: none !important;
@@ -488,7 +494,10 @@
         font-size: 1.8rem !important;
     }
     .market_table_cell_percentage{
-        display: none !important;
+        display: block !important;
+        font-size: 0.88rem !important;
+        margin-top: 0.9rem !important;
+        margin-left: 0.8rem !important;
     }
     .table_cell_tracks{
         display: none !important;

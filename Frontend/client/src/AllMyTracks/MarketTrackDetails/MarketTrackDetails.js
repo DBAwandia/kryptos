@@ -7,21 +7,21 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { axiosInstance } from "../../BaseURL/BaseUrl"
-import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 
 function MarketTrackDetails({setLoading}) {
     const [data, setData] = useState([])
-    const location = useLocation()
+    const [btcdata, setBtcData] = useState(null)
     const [datas, setDatas]= useState([])
     const [loadings , setLoadings] = useState(false)
     const [error, setError] = useState(false)
+    const image ="https://img.freepik.com/premium-vector/eror-404-page-concept-with-character-boy-holding-magnifying-glass-vector-illustration_651415-175.jpg?w=740"
 
-    const wad = "wadda"
+    const username = "wadda"
 
-    //database fetch
-    const URL = `/Orders/individualorderdetails?QUERY=${wad}`
+    //database fetch ( long, short, limit )
+    const URL = `/Orders/individualorderdetails?QUERY=${username}`
     useEffect(()=>{
         const fetchData = async(URL) =>{
             try{
@@ -35,12 +35,25 @@ function MarketTrackDetails({setLoading}) {
 
     },[URL])
 
-    //from database coinname
-    const userCoinName = data?.map((item ) => item?.btcname)
-    let userCoinNames = userCoinName
+
+   
+    //database fetch coin name (butcoin, dogecoin) to update market price
+    const btc_url = `/Users/coinname?QUERY=${username}`
+    useEffect(()=>{
+        const fetchData = async(btc_url) =>{
+            try{
+                const res = await axiosInstance.get(btc_url)
+                setBtcData(res.data)
+            }catch(err){
+
+            }
+        }
+        fetchData(btc_url)
+
+    },[btc_url])
 
     //fetch data from market || coincap API fetch
-    const URLS = `https://api.coincap.io/v2/assets/`
+    const URLS = `https://api.coincap.io/v2/assets/${btcdata}`
     useEffect(()=>{
       setLoading(true)
       setError(false)
@@ -50,8 +63,8 @@ function MarketTrackDetails({setLoading}) {
           try{
             const response = await axios.get(URLS)
             setDatas(response.data.data)
-            setError(false)
             setLoading(false)
+            setError(false)
           }catch(err){
             setLoading(false)
           }
@@ -60,13 +73,17 @@ function MarketTrackDetails({setLoading}) {
 
       },100)
 
-    },[URL])
+    },[URLS])
 
-    // const market_price = datas?.map((item, i) => item )
-    // console.log(market_price)
+    const price_data = [datas]
+    const market_price = price_data?.map((item) => item?.priceUsd )
+    const market_price_live = market_price[0]
+
+    //convert to 4decimal places || to fixed
+    const market_price_lives = market_price_live < 1 ?  Number(market_price_live).toFixed(5) :  Number(market_price_live).toFixed(3)
   
   return (
-       <TableContainer className='MarketTrackDetails'>
+      <TableContainer className='MarketTrackDetails'>
       <Table className='Market_Track_Details'>
         <TableHead className='MarketTrackDetails_head'>
           <TableRow className='MarketTrackDetails_row'>
@@ -79,7 +96,7 @@ function MarketTrackDetails({setLoading}) {
           </TableRow>
         </TableHead>
          <TableBody>
-          {/* {data?.map((item,i)=>
+          {data?.map((item,i)=>
             <TableRow key={i}>
               <TableCell sx={{borderBottom: "0px"}} className={item?.long === "Long" ? "notification_buy":"notification_sell"}>
                 { item?.long }
@@ -100,9 +117,9 @@ function MarketTrackDetails({setLoading}) {
                         5X
                 </TableCell>
 
-                <TableCell  className={item?.market_price < item?.entry ? "btc_price_loss" : "btc_price_profit" }>
+                <TableCell  className={market_price_lives < item?.entry ? "btc_price_loss" : "btc_price_profit" }>
                     <p className='live_market_price'>
-                        ${item?.market_price}
+                        ${market_price_lives}
                     </p>
                     <p  className={item?.change < 0 ? "live_market_price_loss" : "live_market_price_profit"}>
                         {item?.change}%
@@ -112,7 +129,7 @@ function MarketTrackDetails({setLoading}) {
                     {item?.change}%
                 </TableCell>
             </TableRow>
-        )} */}
+        )}
         </TableBody>
       </Table>
     </TableContainer>

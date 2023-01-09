@@ -1,3 +1,8 @@
+.table_tablecontaner{
+    width: 100%;
+    position: relative;
+    /* background-color: blue; */
+}
 .MarketTrackDetails{
     width: 100% !important;
     height: 50vh !important;

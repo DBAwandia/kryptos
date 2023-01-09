@@ -1,12 +1,11 @@
 import Orders from "../Models/Orders.js"
 import Users from "../Models/Users.js"
 
-//open orders
+//open orders //also update coin name
 export const longOrshort = async (req,res) =>{
     const { 
         short,long,
         name,entry,
-        btcname,
         markets,amount,
         selectPercentage,
         select,limitAmount } = req.body
@@ -23,7 +22,7 @@ export const longOrshort = async (req,res) =>{
     }
     let lists = generatedID()
 
-    const savedDetails = Orders({ordersID: lists,name,entry,btcname, short,long,markets,amount,selectPercentage,select,limitAmount})
+    const savedDetails = Orders({ordersID: lists,name,entry, short,long,markets,amount,selectPercentage,select,limitAmount})
     try{
         const saveDetails = await savedDetails.save()
         const username = req.body.username
@@ -32,6 +31,16 @@ export const longOrshort = async (req,res) =>{
         //update orderID to users model
         await Users.findOneAndUpdate({ username: usernames }, {$push: { orderID: lists }}, {new: true})
 
+        const checkIfOneTrackAlreadyExist = await Users.findOne({username: req.body.username})
+        const list = checkIfOneTrackAlreadyExist.btcname
+        //restrict from sending
+        if(list.length !== 0){
+            res.status(400).json({msg: "Delete one order/retry"})
+
+        }else{
+            await Users.findOneAndUpdate({ username: usernames }, {$push:  {btcname: req.body.btcname}}, {new: true})
+        }
+
         //save changes
         res.status(200).json(saveDetails)
 
@@ -39,6 +48,24 @@ export const longOrshort = async (req,res) =>{
         res.status(500).json(err)
     }
 }
+
+// delete coin name for new order
+export const deleteCoinName = async( req, res ) =>{
+
+    try{
+    //lets fetch the btc name
+    const findUser = await Users.findOne({username: req.body.username})
+    const coinname = findUser.btcname[0]
+    
+    //lets delete the coin name
+    await Users.findOneAndUpdate({username: req.body.username} , {$pull: {btcname: coinname}}, {new: true})
+    res.status(200).json({msg: "successfully deleted"})
+    
+    }catch(err){
+        res.status(500).json(err)
+    }
+}
+
 
 //edit orders
 export const editOrder = async (req , res) =>{
