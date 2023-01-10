@@ -53,7 +53,7 @@ button:enabled{
     border: 0;
     outline: 0;
     width: 100%;
-    background-color: #f0eded;
+    background-color: #f3efef;
     height: 5vh;
     padding: 10px 2rem;
     border-radius: 5px;
@@ -69,10 +69,10 @@ button:enabled{
     padding: var(  --padding-main);
     background: #fcf8f8;
     height: 100vh;
-    border: 0.3px solid rgba(218, 214, 214,0.2);
-    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
-    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
-    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+    border: 0.3px solid rgba(218, 214, 214,0.15);
+    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.15);
+    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.15);
+    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.15);
 }
 
 
@@ -178,7 +178,12 @@ button:enabled{
 .CompletePrice_input_limit_amount_hide{
     display: none;
 }
-input:focus {
+.CompletePrice_input_limit_amount > input:focus {
+    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
+  }
+.CompletePrice_input_amount > input:focus {
     box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
     -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
     -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.3);
