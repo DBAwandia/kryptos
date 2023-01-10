@@ -43,7 +43,7 @@ function Login() {
         rtl={false}
         pauseOnFocusLoss
         draggable
-        theme="light"
+        theme="dark"
       />
       <div className='login_container'>
         <div className='login_header'>

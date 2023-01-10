@@ -14,7 +14,7 @@ function AllMyTracks() {
   const [data, setData] = useState([])
     const image ="https://cdn.pixabay.com/photo/2018/10/08/14/54/bitcoin-3732876_960_720.jpg"
 
-    const username = "wadda"
+    const username = "ken"
 
     //database fetch ( long, short, limit )
     const URL = `/Orders/individualorderdetails?QUERY=${username}`
@@ -31,7 +31,6 @@ function AllMyTracks() {
 
     },[URL])
 
-    console.log(data)
   return (
     <div className='AllMyTracks'>
      { loading && <div className='market_loadings'>
@@ -48,11 +47,13 @@ function AllMyTracks() {
         {data.length === 0 ? 
         (
           <div className='No_data'>
-            <History className='history_icon' />
+            <History className='history_icon' onClick={()=>{
+              window.location.reload()
+            }} />
             <p>All tracks appear here/empty!! </p>
           </div>
         ) 
-        : (<MarketTrackDetails setLoading={setLoading}/>)
+        : (<MarketTrackDetails loading={loading} setLoading={setLoading}/>)
         }
       </div>
       <div className='allmytrack_container_footer'>

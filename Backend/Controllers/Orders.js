@@ -24,42 +24,48 @@ export const longOrshort = async (req,res) =>{
 
     const savedDetails = Orders({ordersID: lists,name,entry, short,long,markets,amount,selectPercentage,select,limitAmount})
     try{
+
+        //check if order exists and don't add a new order
+        const findOrderID = await Users.findOne({username: req.body.username})
+        const foundOrder = findOrderID.orderID
+
+        if (foundOrder.length > 0){
+            res.status(400).json({msg: "Delete one order/retry"})
+
+        }else{
         const saveDetails = await savedDetails.save()
         const username = req.body.username
         const usernames = username.trim()
 
-        //update orderID to users model
-        await Users.findOneAndUpdate({ username: usernames }, {$push: { orderID: lists }}, {new: true})
-
-        const checkIfOneTrackAlreadyExist = await Users.findOne({username: req.body.username})
-        const list = checkIfOneTrackAlreadyExist.btcname
-        //restrict from sending
-        if(list.length !== 0){
-            res.status(400).json({msg: "Delete one order/retry"})
-
-        }else{
-            await Users.findOneAndUpdate({ username: usernames }, {$push:  {btcname: req.body.btcname}}, {new: true})
-        }
+        //update coin name and orderID
+        await Users.findOneAndUpdate({ username: usernames }, {$push:  {btcname: req.body.btcname, orderID: lists }}, {new: true})
 
         //save changes
         res.status(200).json(saveDetails)
-
+        }
     }catch(err){
         res.status(500).json(err)
     }
 }
 
-// delete coin name for new order
+// delete coinname for new order
 export const deleteCoinName = async( req, res ) =>{
 
     try{
     //lets fetch the btc name
     const findUser = await Users.findOne({username: req.body.username})
+
+    const ordername = findUser.orderID[0]
     const coinname = findUser.btcname[0]
-    
-    //lets delete the coin name
-    await Users.findOneAndUpdate({username: req.body.username} , {$pull: {btcname: coinname}}, {new: true})
+
+       
+        // lets delete the coin name and order ID
+        await Users.findOneAndUpdate({username: req.body.username} , {$pull: {btcname: coinname , orderID: ordername}}, {new: true})
+
+  
     res.status(200).json({msg: "successfully deleted"})
+
+    
     
     }catch(err){
         res.status(500).json(err)

@@ -78,7 +78,7 @@ function CompletePrice({coinName,setLoading}) {
       try{
         await axiosInstance.post("/Orders/longORshort", 
           {
-            username: "wadda",
+            username: "ken",
             btcname: coinnames,
             name: symbols,
             short: short,
@@ -151,7 +151,7 @@ function CompletePrice({coinName,setLoading}) {
         </div>
 
         <div className='progress_bar'>
-          <p className='progress_description'>Choose %profit for notification</p>
+          <p className='progress_description'>Choose %profit target</p>
           <select className='progress_select' onChange={(e)=>setSelectPercentage(e.target.value)} required>
             <option>25%</option>
             <option>50%</option>

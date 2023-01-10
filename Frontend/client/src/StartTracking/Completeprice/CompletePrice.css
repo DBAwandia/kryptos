@@ -118,7 +118,7 @@ button:enabled{
     align-items:flex-start;
 }
 .CompletePrice_name_n_price_btc_change_24h{
-    font-weight: 400;
+    font-weight: 620;
     font-size: 2rem;
 }
 .CompletePrice_name_n_price_btc_change_24h_display_none{
@@ -284,7 +284,7 @@ input:focus {
         height: 5.3vh;
     }
     .CompletePrice_name_n_price_btc_change_24h{
-        font-weight: 420;
+        font-weight: 630;
         font-size: 0.75rem;
     }
     .CompletePrice_buy_n_sell > button{
@@ -391,7 +391,7 @@ input:focus {
         font-size: 0.8rem;
     }
     .CompletePrice_name_n_price_btc_change_24h{
-        font-weight: 420;
+        font-weight: 630;
         font-size: 0.75rem;
     }
     .CompletePrice_buy_n_sell{
@@ -510,7 +510,7 @@ input:focus {
 
     }
     .CompletePrice_name_n_price_btc_change_24h{
-        font-weight: 420;
+        font-weight: 630;
         font-size: 0.75rem;
     }
     .CompletePrice_buy_n_sell > button{

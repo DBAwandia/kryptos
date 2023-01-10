@@ -48,26 +48,21 @@ a{
     text-decoration: underline #8d8585 !important;
     text-transform: uppercase;
 }
-.news_description > a > p{
+.news_description > p{
     width: 80%;
     font-size: var( --page-list-font);
     line-height: normal;
     color: #FFFFFF;
     background: transparent;
     padding: 2px 1px;
-    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
-    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
-    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
 }
 .lazy_images {
+    object-position: center !important;
     object-fit: cover !important;
     height: 100% !important;
     height: 100% !important;
     padding: 3px !important;
     border-radius: 15px !important;
-    box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
-    -webkit-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
-    -moz-box-shadow: 2px 4px 9px -3px rgba(5,1,1,0.56);
 }
 @media screen and (max-width: 642px) {
     .slider{
@@ -91,7 +86,7 @@ a{
         padding: 2px 5px;
         text-transform: uppercase;
     }
-    .news_description > a > p{
+    .news_description > p{
         width: 50%;
         font-size: 0.8rem;
         line-height: normal;
@@ -137,7 +132,7 @@ a{
         padding: 2px 5px;
         text-transform: uppercase;
     }
-    .news_description > a > p{
+    .news_description > p{
         width:50%;
         font-size: 0.8rem;
         line-height: normal;
@@ -162,6 +157,10 @@ a{
 }
 
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
+    .lazy_images{
+        object-fit: fill !important;
+
+    }
     .slider{
         height: 40vh !important;
     }
@@ -183,9 +182,9 @@ a{
         padding: 2px 5px;
         text-transform: uppercase;
     }
-    .news_description > a > p{
+    .news_description > u{
         width:50%;
-        font-size: 0.8rem;
+        font-size: 1.4rem !important;
         line-height: normal;
         padding: 2px 5px;
         box-shadow: 0;

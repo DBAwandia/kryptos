@@ -11,6 +11,9 @@
 .Market_Track_Details{
     width: 100%;
 }
+.live_market_prices{
+    display: none;
+}
 .market_loadings{
     position: absolute;
     width: 100%;
@@ -140,6 +143,17 @@
     padding: 3px !important;
     color: #ff4f4f !important;
     padding: 3rem 1rem !important;
+}
+.delete_order{
+    border-bottom: none !important;
+    margin-left: 2rem !important;
+    color: #8f909b !important;
+    font-size: 1.8rem !important;
+    cursor: pointer !important;
+}
+.delete_order:hover{
+    color: #fab246 !important;
+
 }
 @media screen and (max-width: 642px) {
     .Trackings{
