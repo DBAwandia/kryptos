@@ -44,7 +44,6 @@ function Register() {
         rtl={false}
         pauseOnFocusLoss
         draggable
-        theme="light"
       />
       <div className='register_container'>
         <div className='register_header'>

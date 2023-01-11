@@ -18,6 +18,7 @@ function Login() {
     try{
       dispatch({type: "LOGIN_START"})
       const res = await axiosInstance.post("/Users/login" , { email: emailAndUsername, username: emailAndUsername, password: password})
+      console.log(res)
       dispatch({type: "LOGIN_SUCCESS", payload: res.data.details})
       toast.success("Login success")
        
@@ -43,7 +44,6 @@ function Login() {
         rtl={false}
         pauseOnFocusLoss
         draggable
-        theme="dark"
       />
       <div className='login_container'>
         <div className='login_header'>

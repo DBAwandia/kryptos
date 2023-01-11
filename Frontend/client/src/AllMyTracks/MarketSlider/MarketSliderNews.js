@@ -147,7 +147,7 @@ function MarketSliderNews() {
             effect=' Creative'
             disableOnInteraction="true"
             loop
-            autoplay={{delay: 5000}}
+            autoplay={{delay: 7000}}
          >
         <div className='MarketSliderNews_container'>
            {dataz.map((item)=> 

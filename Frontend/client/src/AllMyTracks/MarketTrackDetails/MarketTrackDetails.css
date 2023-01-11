@@ -291,7 +291,7 @@
     }
     .btc_change_profit, .btc_change_loss{
         font-size: 0.93rem !important;
-         padding: 1rem 0.5rem !important;
+         padding: 2rem 0.5rem !important;
          display: block !important;
     }
 }
@@ -355,12 +355,12 @@
     }
     .btc_price_profit, .btc_price_loss{
         font-size: 0.93rem !important;
-        padding: 1rem 0.5rem !important;
+        padding: 2rem 0.5rem !important;
         gap: 0px !important;
     }
     .btc_change_profit, .btc_change_loss{
         font-size: 0.93rem !important;
-         padding: 1rem 0.5rem !important;
+         padding: 2.5rem 0.5rem !important;
          display: block !important;
     }
 }

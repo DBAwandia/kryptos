@@ -1,15 +1,23 @@
 import { Dehaze, PowerSettingsNew, Search } from '@mui/icons-material'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./HomeMarket.css"
 import Footer from "../Footer/Footer"
 import HomeMarketCoinsTable from './HomeMarketCoins/HomeMarketCoinsTable'
 import MarketFooter from './MarketFooter/MarketFooter'
 import HomeMaketNavbar from './HomeMaketNavbar/HomeMaketNavbar'
+import { LoginContext } from '../LoginContext/LoginContext'
 
 function HomeMarket() {
   const [searchs, setSearchs] = useState("")
-  let user = localStorage.getItem("users")
-  console.log(user)
+
+  //get percentage from local storage
+  let percentage = localStorage.getItem("percentage")
+  let percentageChange = Math.abs(percentage)
+
+    //get user from local storage
+    let {user} = useContext(LoginContext)
+    console.log(user)
+  
   return (
     <div className="HomeMarket">
 
@@ -37,7 +45,7 @@ function HomeMarket() {
 
           <div className='homemarket_price_tag'>
             <p>Change:</p>
-            <span>+20%</span>
+            <span>{percentageChange ? percentageChange : 0.00}%</span>
           </div>
          </div>
 

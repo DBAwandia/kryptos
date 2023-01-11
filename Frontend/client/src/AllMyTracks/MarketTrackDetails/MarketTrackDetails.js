@@ -97,25 +97,38 @@ function MarketTrackDetails({setLoading,loading}) {
     const amount = data?.map(item => item?.amount)
     let amounts = Number(amount[0])
 
+    console.log(amounts)
     //entry price
     const entry_price =  data?.map(item => item?.entry)
 
     //calculate change in percentage
-    let profitOrLossChange = 100 - (market_price_live/entry_price * 100)
-
-
-    //total profit + amount
-    let inLossAndLong = (profitOrLossChange * amounts/100) + amounts
-    let inProfitAndLong = amounts - (profitOrLossChange * amounts/100)
+    let profitOrLossChange = (100 - (market_price_live* 100/entry_price) )
+    
 
     // %change
     let change_in_percentage = (Number(profitOrLossChange) < 1 ) ?  Number(profitOrLossChange).toFixed(2) : Number(profitOrLossChange).toFixed(3)
+  let percentageChangess = Math.abs(change_in_percentage)
 
-    let inLossAndLongs = Number(inLossAndLong).toFixed(2)
-    let inProfitAndLongs = Number(inProfitAndLong).toFixed(2)
+      //storeinlocalstorage
+      let timer;
+      useEffect(()=>{
+      timer =  setInterval(()=>{
+          localStorage.setItem("percentage" , percentageChangess)
+        },1000)
+     return  () =>{
+          clearInterval(timer)
+                  }
 
-    console.log(inProfitAndLongs,inLossAndLongs,profitOrLossChange)
+      },[percentageChangess])   
 
+    const ifShortAndProfit = amounts - (amounts *  change_in_percentage/100)
+    const ifShortAndLoss = amounts + (amounts *  change_in_percentage/100)
+
+    const ifLongAndProfit = amounts - (amounts *  change_in_percentage/100)
+    const ifLongAndLoss = amounts + (amounts *  change_in_percentage/100)
+
+    let checkIfLong = entry_price < market_price_live
+    let checkIfShort = market_price_live < entry_price
 
 
     //manually delete order from mongodb and from user
@@ -175,26 +188,40 @@ function MarketTrackDetails({setLoading,loading}) {
                 <TableCell  className='btc_leverage'>
                         5X
                 </TableCell>
-
                 <TableCell  className={
-                  item?.short && change_in_percentage > 0 ? "btc_price_profit" : "btc_price_loss"  
-                  // item?.long && change_in_percentage < 0  ? "btc_price_loss" : "btc_price_profit"
+                  item?.short && checkIfShort && "btc_price_profit"  ||
+                  item?.short && checkIfLong &&   "btc_price_loss"  ||
+                  item?.long && checkIfShort &&   "btc_price_loss"  ||
+                  item?.long && checkIfLong  &&   "btc_price_profit"
                    }>
                     <p className={item?.long ? "live_market_price" : "live_market_prices"}>
-                       ${ item?.long && market_price_lives < item?.entry ? inProfitAndLongs : inLossAndLongs }
+                       ${ item?.long && checkIfLong && ifLongAndProfit}
+                       ${ item?.long && checkIfShort && ifLongAndLoss }
+
                     </p>
                     <p className={item?.short ? "live_market_price" : "live_market_prices"}>
-                       ${ item?.short && market_price_lives < entry_price ? inLossAndLongs : inProfitAndLongs }
+                       ${ item?.short && checkIfShort && ifShortAndProfit }
+                       ${ item?.short && checkIfLong &&  ifShortAndLoss }
                     </p>
-                    <p  className={item?.change < 0 ? "live_market_price_loss" : "live_market_price_profit"}>
-                        {change_in_percentage}%
+                    <p 
+                        className={
+                          item?.long && checkIfShort  && "live_market_price_loss"  ||
+                          item?.long && checkIfLong  &&  "live_market_price_profit" ||  
+                          item?.short && checkIfShort  && "live_market_price_profit" ||  
+                          item?.short && checkIfLong  && "live_market_price_loss" 
+                       }
+                      >
+                        {percentageChangess}%
                     </p>
                 </TableCell>
                 <TableCell  className={
-                       (change_in_percentage > 0 ? "btc_change_profit" : "btc_change_loss")
+                       item?.long && checkIfShort  && "btc_change_loss"  ||
+                       item?.long && checkIfLong  &&  "btc_change_profit" ||  
+                       item?.short && checkIfShort  && "btc_change_profit" ||  
+                       item?.short && checkIfLong  && "btc_change_loss" 
                     }
                   >
-                    {change_in_percentage}%
+                    {percentageChangess}%
                 </TableCell>
                 <TableCell  className='delete_order' onClick={()=>handleDelete()}>
                   <Delete />
