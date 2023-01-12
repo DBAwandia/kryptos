@@ -4,6 +4,24 @@
     background-color:  #fcfbfb;
     position: relative;
 }
+.logout{
+    position: absolute;
+    top: 2%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    right: 10%;
+    z-index: 9999;
+    cursor: pointer;
+}
+.logout > p{
+    font-size: 2rem !important;
+    color: #acacac ;
+}
+.logout_icon{
+    font-size: 5rem !important;
+    color: #acacac ;
+}
 .allmytrack_container_nav{
     padding: var(--mobile-padding-main);
     margin: 0rem 0.6rem;
@@ -48,6 +66,23 @@
     .allmytrack_container_footer{
         display: block;
     }
+    .logout{
+        position: absolute;
+        top: 2.7%;
+        right: 5%;
+        gap: 0.1rem;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .logout > p{
+        display: none !important;
+    }
+    .logout_icon{
+        font-size: 1.5rem !important;
+        align-self: center !important;
+        font-weight: bolder !important;
+        color: #ff4f4f !important;
+    }
     .allmytrack_container_slider{
         margin: 0px;
     }
@@ -72,6 +107,23 @@
     .allmytrack_container_footer{
         display: block;
     }
+    .logout{
+        position: absolute;
+        top: 2.1%;
+        right: 5%;
+        gap: 0.1rem;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .logout > p{
+        font-size: 0.88rem !important;
+    }
+    .logout_icon{
+        font-size: 1.6rem !important;
+        align-self: center !important;
+        font-weight: bolder !important;
+   
+    }
     .allmytrack_container_slider{
         margin: 0px;
     }
@@ -95,6 +147,23 @@
 @media screen and  (min-width: 1009px) and (max-width: 2400px){
     .allmytrack_container_footer{
         display: none;
+    }
+    .logout{
+        position: absolute;
+        top:  3.5%;
+        right: 1%;
+        gap: 0.1rem;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .logout > p{
+        display: none !important;
+    }
+    .logout_icon{
+        font-size: 1.5rem !important;
+        align-self: center !important;
+        font-weight: bolder !important;
+        color: #ff4f4f !important;
     }
     .allmytrack_container_slider{
         margin: 0px;

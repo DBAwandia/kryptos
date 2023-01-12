@@ -1,10 +1,11 @@
 import axios from 'axios'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import "./CompletePrice.css"
 import {Link, useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {axiosInstance} from "../../BaseURL/BaseUrl"
+import { LoginContext } from '../../LoginContext/LoginContext';
 
 
 function CompletePrice({coinName,setLoading}) {
@@ -22,6 +23,10 @@ function CompletePrice({coinName,setLoading}) {
     const [ disable , setDisable ] = useState(false)
 
 
+    //username
+    const { user } = useContext(LoginContext)
+    const username = user?.username
+
     //validate form
     useEffect(()=>{
       if(amount.length < 1 || "" ){
@@ -32,9 +37,9 @@ function CompletePrice({coinName,setLoading}) {
     },[amount ,disable])
 
     //fetch from localStorage and display if user didnt click
-    const user = localStorage.getItem("coinID")
+    const users = localStorage.getItem("coinID")
 
-    const URL = `https://api.coincap.io/v2/assets/${user}`
+    const URL = `https://api.coincap.io/v2/assets/${users}`
     useEffect(()=>{
       setLoading(true)
       setError(false)
@@ -65,7 +70,6 @@ function CompletePrice({coinName,setLoading}) {
     //coinname
     const coinname = data && datas?.map(item => item?.id)
     let coinnames = coinname[0]
-    console.log(coinnames)
 
     //price usd
     const entryPrice = data && datas?.map(item => item?.priceUsd)
@@ -78,7 +82,7 @@ function CompletePrice({coinName,setLoading}) {
       try{
         await axiosInstance.post("/Orders/longORshort", 
           {
-            username: "ken",
+            username: username,
             btcname: coinnames,
             name: symbols,
             short: short,

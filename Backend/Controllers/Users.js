@@ -57,6 +57,10 @@ export const loginUser = async (req,res)=>{
                 email,
                 _id,
                 __v,
+                accountType,
+                btcname,
+                updatedAt,
+                createdAt,
                 isAdmin,
                 ...others} = user._doc
 

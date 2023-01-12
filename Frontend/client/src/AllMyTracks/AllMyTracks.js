@@ -1,20 +1,23 @@
-import React, { useEffect, useState, useSyncExternalStore } from 'react'
+import React, { useContext, useEffect, useState, useSyncExternalStore } from 'react'
 import HomeMaketNavbar from '../HomeMarket/HomeMaketNavbar/HomeMaketNavbar'
 import "./AllMyTracks.css"
 import MarketSliderNews from './MarketSlider/MarketSliderNews'
 import MarketTrackDetails from './MarketTrackDetails/MarketTrackDetails'
-import Footer from "../Footer/Footer"
 import MarketFooter from "../HomeMarket/MarketFooter/MarketFooter"
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation'
 import { axiosInstance } from '../BaseURL/BaseUrl'
-import { History } from '@mui/icons-material'
+import { History, Logout, PowerSettingsNew } from '@mui/icons-material'
+import { LoginContext } from '../LoginContext/LoginContext'
+import { useNavigate } from 'react-router-dom'
 
 function AllMyTracks() {
   const [ loading, setLoading ] = useState(false)
   const [data, setData] = useState([])
-    const image ="https://cdn.pixabay.com/photo/2018/10/08/14/54/bitcoin-3732876_960_720.jpg"
+  const navigate = useNavigate()
 
-    const username = "ken"
+  //username
+  const { user,dispatch } = useContext(LoginContext)
+  const username = user?.username
 
     //database fetch ( long, short, limit )
     const URL = `/Orders/individualorderdetails?QUERY=${username}`
@@ -31,6 +34,12 @@ function AllMyTracks() {
 
     },[URL])
 
+    //LOGOUT
+    const handleLogout = () =>{
+      dispatch({type: "LOGOUT"})
+      navigate("/notuser")
+    }
+
   return (
     <div className='AllMyTracks'>
      { loading && <div className='market_loadings'>
@@ -39,6 +48,10 @@ function AllMyTracks() {
 
       <div className='allmytrack_container_nav'>
         <HomeMaketNavbar/>
+      </div>
+      <div className='logout' onClick={()=>handleLogout()}>
+        <PowerSettingsNew className='logout_icon'/>
+        <p>Logout</p>
       </div>
       <div className='allmytrack_container_slider'>
         <MarketSliderNews/>

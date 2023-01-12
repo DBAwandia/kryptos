@@ -20,6 +20,8 @@ function Login() {
       const res = await axiosInstance.post("/Users/login" , { email: emailAndUsername, username: emailAndUsername, password: password})
       console.log(res)
       dispatch({type: "LOGIN_SUCCESS", payload: res.data.details})
+      localStorage.setItem("user" , JSON.stringify(res.data.details))
+      
       toast.success("Login success")
        
      setTimeout(()=>{

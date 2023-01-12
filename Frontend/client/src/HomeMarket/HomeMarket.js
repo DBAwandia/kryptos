@@ -14,9 +14,8 @@ function HomeMarket() {
   let percentage = localStorage.getItem("percentage")
   let percentageChange = Math.abs(percentage)
 
-    //get user from local storage
-    let {user} = useContext(LoginContext)
-    console.log(user)
+    //get user from loginContext
+    let { user } = useContext(LoginContext)
   
   return (
     <div className="HomeMarket">
@@ -39,7 +38,7 @@ function HomeMarket() {
                   <HomeMaketNavbar />
               </div>
               <div className='HomeMarket_header'>
-                  <p>Crypto Assets</p>
+                  <p>Hi {user?.username} ,welcome!!</p>
               </div>
           </div>
 
