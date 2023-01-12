@@ -15,7 +15,7 @@ function HomeMarket() {
   let percentageChange = Math.abs(percentage)
 
     //get user from loginContext
-    let { user } = useContext(LoginContext)
+    const { user } = useContext(LoginContext)
   
   return (
     <div className="HomeMarket">

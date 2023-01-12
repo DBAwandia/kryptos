@@ -29,6 +29,10 @@
     font-size: 4rem !important;
     color: #252831;
 }
+.social_icon:hover{
+    color: rgb(146, 143, 143) !important;
+}
+
 @media screen and (max-width: 642px) {
     .Footer{
         border-radius: 10% 10% 0px  0px;

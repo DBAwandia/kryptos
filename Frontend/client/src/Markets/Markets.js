@@ -45,7 +45,8 @@ function Markets() {
 
       //all data which aint filtered
       const datazz =  apiData[0]?.data
-        return (
+
+    return (
     <TableContainer className='MarketsCoins'>
       <h1>Markets</h1>
         <Offline>

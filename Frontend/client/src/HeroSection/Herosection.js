@@ -11,13 +11,11 @@ function Herosection() {
       </div>
       <div className='hero_container'>
         <h1 className='hero_header'>
-        Money Treating Everyone Equal
+          Live Crypto Tracker 
          </h1>
-        <p className='hero_description'>
-          Krypto delivers the power
-          of community to ensure everyone
-          can better their lives by having
-          access to the same opportunities.
+         <p className='hero_description'>
+          Krypto helps you
+          track all crypto coins everywhere in the World for free .
         </p>
         <Link to="/register">
           <button className='hero_button'>

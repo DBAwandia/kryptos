@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./MarketTrackDetails.css"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,6 +12,7 @@ import { Delete } from '@mui/icons-material';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../../LoginContext/LoginContext';
 
 function MarketTrackDetails({setLoading,loading}) {
     const [data, setData] = useState([])
@@ -21,7 +22,8 @@ function MarketTrackDetails({setLoading,loading}) {
     const [error, setError] = useState(false)
     const navigate = useNavigate()
 
-    const username = "ken"
+    const { user } = useContext(LoginContext)
+    const username = user?.username
 
     //database fetch ( long, short, limit )
     const URL = `/Orders/individualorderdetails?QUERY=${username}`
@@ -37,7 +39,6 @@ function MarketTrackDetails({setLoading,loading}) {
         fetchData(URL)
 
     },[URL])
-    console.log(data)
 
    
     //database fetch coin name (butcoin, dogecoin) to update market price
@@ -97,7 +98,6 @@ function MarketTrackDetails({setLoading,loading}) {
     const amount = data?.map(item => item?.amount)
     let amounts = Number(amount[0])
 
-    console.log(amounts)
     //entry price
     const entry_price =  data?.map(item => item?.entry)
 
@@ -134,7 +134,7 @@ function MarketTrackDetails({setLoading,loading}) {
     //manually delete order from mongodb and from user
     const handleDelete = async ()=>{
       try{
-        await axiosInstance.put("/Orders/deleteorder" , {username: "ken"})
+        await axiosInstance.put("/Orders/deleteorder" , {username: username})
         toast.success("Success")
         setTimeout(()=>{
           navigate("/")

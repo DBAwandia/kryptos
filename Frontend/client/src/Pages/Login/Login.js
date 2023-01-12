@@ -1,5 +1,5 @@
 import { Close } from '@mui/icons-material'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Login.css"
 import {Link, useNavigate} from "react-router-dom"
 import { LoginContext } from "../../LoginContext/LoginContext"
@@ -11,17 +11,20 @@ function Login() {
   const navigate = useNavigate()
   const [ emailAndUsername, setEmailAndUsername ] = useState("")
   const [ password, setPassword ] = useState("")
-
+  // const [enable, setEnable ] = useState(false)
+  // useEffect(()=>{
+  //   if(password.length === 0 ){
+  //     setEnable(true)
+  //   }else{
+  //     setEnable(false)
+  //   }
+  // },[password , enable])
   const {  loading  , dispatch} = useContext(LoginContext)
-
   const handleLogin = async() =>{
     try{
       dispatch({type: "LOGIN_START"})
       const res = await axiosInstance.post("/Users/login" , { email: emailAndUsername, username: emailAndUsername, password: password})
-      console.log(res)
       dispatch({type: "LOGIN_SUCCESS", payload: res.data.details})
-      localStorage.setItem("user" , JSON.stringify(res.data.details))
-      
       toast.success("Login success")
        
      setTimeout(()=>{
@@ -79,7 +82,7 @@ function Login() {
             <button className='cancelss'onClick={()=>{
               navigate("/notuser")
             }}>Cancel</button>
-            <button className='logins' onClick={()=>handleLogin()}>{loading ? "Loading..." : "Login"}</button>
+            <button className='logins'  onClick={()=>handleLogin()}>{loading ? "Loading..." : "Login"}</button>
         </div>
 
         <div className='forget_password'>

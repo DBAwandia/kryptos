@@ -1,5 +1,5 @@
-import { Close, Password } from '@mui/icons-material'
-import React, { useState } from 'react'
+import { Close } from '@mui/icons-material'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { axiosInstance } from '../../BaseURL/BaseUrl'
 import "./Register.css"
@@ -12,7 +12,15 @@ function Register() {
   const [ username, setUsername ] = useState("")
   const [ loading, setLoading ] = useState(false)
   const [ error, setError ] = useState(false)
+  // const [enable, setEnable ] = useState(false)
 
+  // useEffect(()=>{
+  //   if(email.length === 0 ||  username.length === 0 || password.length === 0){
+  //     setEnable(true)
+  //   }else{
+  //     setEnable(false)
+  //   }
+  // },[email , username , password , enable])
 
   const navigate = useNavigate()
 
@@ -79,7 +87,7 @@ function Register() {
               navigate("/notuser")
             }}>Cancel</button>
           
-            <button className='registers' onClick={handleRegister}>{loading ? "Loading..." : "Register"}</button>
+            <button  className='registers' onClick={handleRegister}>{loading ? "Loading..." : "Register"}</button>
         </div>
       </div>
     </div>

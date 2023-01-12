@@ -26,7 +26,7 @@ function CompletePrice({coinName,setLoading}) {
     //username
     const { user } = useContext(LoginContext)
     const username = user?.username
-
+    console.log(username)
     //validate form
     useEffect(()=>{
       if(amount.length < 1 || "" ){
