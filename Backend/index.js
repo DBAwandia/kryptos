@@ -28,6 +28,10 @@ db.once("open", ()=>console.log("Mongodb connected"))
 app.use("/api/Users", userRouter)
 app.use("/api/Orders", orderRouter)
 
+app.get("/" ,(req,res)=>{
+  res.send("CONNECTED")
+})
+
 
 app.listen(`${PORT}`, () => {
   console.log('listening on 5000');

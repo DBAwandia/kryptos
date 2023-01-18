@@ -28,11 +28,13 @@ function HomeMarketCoinsTable({searchs}) {
         const fetchData =async (URL)=>{
           try{
             const res = await axios.get(URL)
+            localStorage.setItem("data" , JSON.stringify(res.data) )
             setData(res.data)
             setLoading(false)
             setError(false)
             
           }catch(err){
+            setData(JSON.parse(localStorage.getItem("data")))
             setLoading(false)
             setError(true)
           }
