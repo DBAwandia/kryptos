@@ -9,9 +9,34 @@ import { LoginContext } from '../LoginContext/LoginContext'
 
 function HomeMarket() {
   const [searchs, setSearchs] = useState("")
+  const [random, setRandom] = useState("🔥🔥 XXXUSDT")
+
+  const names = ["🔥🔥🔥🔥 BTC", 
+                "🔥 ETH", 
+                "🔥🔥🔥 ADA", 
+                "🔥 MATIC", 
+                "🔥🔥 DOT", 
+                "🚀 APEUSDT",
+                "🔥🔥 BNB", 
+                "🔥🔥 SOL",
+                "🔥 XRP",
+                "🔥 TRX",
+                "🔥🔥 SAND",
+                "🔥 KSM",
+                "🔥 DAR",
+                "🔥🚀🚀🚀 DOGE"
+                ]
+  let timer;
+  useEffect(()=>{
+      timer = setInterval(()=>{
+        const random = Math.floor(Math.random() * names.length);
+        setRandom(names[random]);
+      },3500)
+      return ()=>{ clearInterval(timer)}
+  },[names])
 
   //get percentage from local storage
-  let percentage = localStorage.getItem("percentage")
+  let percentage = localStorage?.getItem("percentage") || 0.00
   let percentageChange = Math.abs(percentage)
 
     //get user from loginContext
@@ -49,7 +74,7 @@ function HomeMarket() {
          </div>
 
             <div className='HomeMarket_coin_search_input'>
-              <input type="search" placeholder="Filter Crypto Assets" autoComplete='yes' onChange={(e)=>setSearchs(e.target.value.toLowerCase())}/>
+              <input type="search" placeholder={"Filter assets" + "  " + "  " + random } autoComplete='yes' onChange={(e)=>setSearchs(e.target.value.toLowerCase())}/>
               <Search className="search" />
             </div>
 
